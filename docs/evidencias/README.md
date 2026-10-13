@@ -33,6 +33,12 @@ Estas son capturas del informe generado desde las respuestas reales de Newman. N
 
 ![Venta pagada](04-venta-pagada.png)
 
+### Ejecucion en la aplicacion Postman
+
+El 13 de octubre de 2026 se importaron los JSON en My Workspace, se selecciono el entorno Local y se ejecuto la coleccion desde la aplicacion de escritorio: 402 comprobaciones aprobadas y cero errores. Esta captura si corresponde a la interfaz real de Postman.
+
+![Resultados reales en Postman](05-postman-aplicacion.png)
+
 ## Fuentes de evidencia
 
 | Archivo | Contenido |
