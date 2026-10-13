@@ -176,6 +176,15 @@ El volumen conserva la informacion. `docker compose down -v` elimina los datos d
 
 ## Repositorio y defensa
 
-Se incluye un repositorio Git local. El enlace remoto de GitHub queda pendiente de publicar en tu cuenta; aun no existe un enlace que pueda incluirse honestamente. La rubrica solicita ese enlace, por lo que debes agregarlo aqui despues de publicarlo.
+Repositorio publico: [RSGarcia2002/BD1-ProyectoFase2-202202123](https://github.com/RSGarcia2002/BD1-ProyectoFase2-202202123).
+
+```bash
+git clone https://github.com/RSGarcia2002/BD1-ProyectoFase2-202202123.git
+cd BD1-ProyectoFase2-202202123
+node scripts/configurar-env.js
+npm ci
+./scripts/compose.sh up -d --build
+npm run importar
+```
 
 Lee [docs/DEFENSA.md](docs/DEFENSA.md) para comprender las vistas, `inserted`/`deleted`, las transacciones y las decisiones de migracion. La evaluacion incluye una pregunta teorica y una modificacion en vivo.
