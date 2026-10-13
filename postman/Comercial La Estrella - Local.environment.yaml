@@ -1,0 +1,4 @@
+name: Comercial La Estrella - Local
+values:
+  - key: baseUrl
+    value: 'http://localhost:3002'

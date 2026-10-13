@@ -1,0 +1,11 @@
+$kind: http-request
+name: 106 DELETE ventas/{{id_16}} → 200
+url: "{{baseUrl}}/api/ventas/{{id_16}}"
+method: DELETE
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 106000

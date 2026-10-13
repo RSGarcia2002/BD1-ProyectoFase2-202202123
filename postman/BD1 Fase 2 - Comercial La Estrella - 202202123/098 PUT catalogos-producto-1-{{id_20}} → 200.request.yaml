@@ -1,0 +1,19 @@
+$kind: http-request
+name: 098 PUT catalogos-producto/1/{{id_20}} → 200
+url: "{{baseUrl}}/api/catalogos-producto/1/{{id_20}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "precio_vigente_cat_pro": 231.22
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 98000

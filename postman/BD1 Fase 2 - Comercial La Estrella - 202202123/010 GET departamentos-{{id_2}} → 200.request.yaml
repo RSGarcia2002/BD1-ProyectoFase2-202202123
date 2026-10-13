@@ -1,0 +1,11 @@
+$kind: http-request
+name: 010 GET departamentos/{{id_2}} → 200
+url: "{{baseUrl}}/api/departamentos/{{id_2}}"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 10000

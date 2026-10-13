@@ -5,6 +5,6 @@ import {rmSync} from 'node:fs';
 const root=fileURLToPath(new URL('..',import.meta.url));
 const zip=join(dirname(root),'[BD1]_ProyectoFase2_202202123.zip');
 rmSync(zip,{force:true});
-const p=spawnSync('zip',['-qr',zip,basename(root),'-x','*/node_modules/*','*/.git/*','*/.env','*/.DS_Store'],{cwd:dirname(root),stdio:'inherit'});
+const p=spawnSync('zip',['-qr',zip,basename(root),'-x','*/node_modules/*','*/.git/*','*/.env','*/.DS_Store','*/postman/.postman/*','*/postman/postman/*'],{cwd:dirname(root),stdio:'inherit'});
 if(p.status!==0)process.exit(p.status??1);
 console.log(`Entrega: ${zip}`);

@@ -1,0 +1,19 @@
+$kind: http-request
+name: 051 PUT estados-venta/1 → 200
+url: "{{baseUrl}}/api/estados-venta/1"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre_es_ven": "REGISTRADA"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 51000

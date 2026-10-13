@@ -1,0 +1,11 @@
+$kind: http-request
+name: 034 GET cargos/{{id_6}} → 200
+url: "{{baseUrl}}/api/cargos/{{id_6}}"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 34000

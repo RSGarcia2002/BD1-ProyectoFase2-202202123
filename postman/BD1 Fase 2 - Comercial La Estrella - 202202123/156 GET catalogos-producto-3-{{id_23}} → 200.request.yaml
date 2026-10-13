@@ -1,0 +1,12 @@
+$kind: http-request
+name: 156 GET catalogos-producto/3/{{id_23}} → 200
+url: "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+      pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(5));
+    language: text/javascript
+order: 156000

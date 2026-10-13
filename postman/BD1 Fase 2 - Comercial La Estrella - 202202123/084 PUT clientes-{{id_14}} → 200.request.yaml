@@ -1,0 +1,19 @@
+$kind: http-request
+name: 084 PUT clientes/{{id_14}} → 200
+url: "{{baseUrl}}/api/clientes/{{id_14}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_tip_ide": 1
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 84000

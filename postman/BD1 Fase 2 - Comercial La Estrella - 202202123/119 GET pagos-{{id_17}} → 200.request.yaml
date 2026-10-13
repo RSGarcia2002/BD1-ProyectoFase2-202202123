@@ -1,0 +1,11 @@
+$kind: http-request
+name: 119 GET pagos/{{id_17}} → 200
+url: "{{baseUrl}}/api/pagos/{{id_17}}"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 119000

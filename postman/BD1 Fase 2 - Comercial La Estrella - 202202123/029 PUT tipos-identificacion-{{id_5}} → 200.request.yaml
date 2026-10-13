@@ -1,0 +1,19 @@
+$kind: http-request
+name: 029 PUT tipos-identificacion/{{id_5}} → 200
+url: "{{baseUrl}}/api/tipos-identificacion/{{id_5}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre_tip_ide": "Prueba {{id_5}}"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 29000

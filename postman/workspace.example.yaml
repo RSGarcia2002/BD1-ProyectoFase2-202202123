@@ -1,0 +1,7 @@
+# Copiar a .postman/resources.yaml solamente al abrir el proyecto por primera vez.
+# No contiene un ID de workspace personal.
+localResources:
+  collections:
+    - ../BD1 Fase 2 - Comercial La Estrella - 202202123
+  environments:
+    - ../Comercial La Estrella - Local.environment.yaml

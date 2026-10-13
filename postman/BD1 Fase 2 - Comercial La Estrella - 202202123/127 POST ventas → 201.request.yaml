@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{baseUrl}}/api/ventas"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_ven": {{id_24}},
+      "fecha_ven": "2026-08-23",
+      "id_ti": 3,
+      "id_emp": 11,
+      "id_cli": 10,
+      "id_es_ven": 1
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 201', () => pm.response.to.have.status(201));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+      pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });
+    language: text/javascript
+order: 127000

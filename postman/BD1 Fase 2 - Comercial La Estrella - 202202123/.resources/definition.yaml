@@ -1,0 +1,73 @@
+$kind: collection
+description: Coleccion reproducible obtenida de las peticiones verificadas contra SQL Server real. Ejecutar completa con Runner en orden, una iteracion. Requiere cargar antes el dataset original. Crea registros de prueba con IDs nuevos; las ventas se eliminan logicamente. La prueba concurrente real se ejecuta con npm run verificar.
+variables:
+  baseUrl: http://localhost:3002
+  id_0: "8855408489"
+  id_1: "8855408490"
+  id_2: "8855408491"
+  id_3: "8855408492"
+  id_4: "8855408493"
+  id_5: "8855408494"
+  id_6: "8855408495"
+  id_7: "8855408496"
+  id_8: "8855408497"
+  id_9: "8855408498"
+  id_10: "8855408499"
+  id_11: "8855408500"
+  id_12: "8855408501"
+  id_13: "8855408502"
+  id_14: "8855408503"
+  id_15: "8855408504"
+  id_16: "8855408506"
+  id_17: "8855408508"
+  id_18: "8855408602"
+  id_19: "8855408603"
+  id_20: "8855408989"
+  id_21: "8855408990"
+  id_22: "8855408991"
+  id_23: "8855409189"
+  id_24: "8855409190"
+  id_25: "8855409191"
+  id_26: "8855409192"
+  id_27: "8855409199"
+  id_28: "8855409200"
+  id_29: "8855409201"
+  id_30: "8855409488"
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      if (pm.info.requestName.startsWith('001 ')) {
+       const base = 8000000000 + (Date.now() % 1000000000);
+       pm.collectionVariables.set('id_0', String(base + 0));
+       pm.collectionVariables.set('id_1', String(base + 1));
+       pm.collectionVariables.set('id_2', String(base + 2));
+       pm.collectionVariables.set('id_3', String(base + 3));
+       pm.collectionVariables.set('id_4', String(base + 4));
+       pm.collectionVariables.set('id_5', String(base + 5));
+       pm.collectionVariables.set('id_6', String(base + 6));
+       pm.collectionVariables.set('id_7', String(base + 7));
+       pm.collectionVariables.set('id_8', String(base + 8));
+       pm.collectionVariables.set('id_9', String(base + 9));
+       pm.collectionVariables.set('id_10', String(base + 10));
+       pm.collectionVariables.set('id_11', String(base + 11));
+       pm.collectionVariables.set('id_12', String(base + 12));
+       pm.collectionVariables.set('id_13', String(base + 13));
+       pm.collectionVariables.set('id_14', String(base + 14));
+       pm.collectionVariables.set('id_15', String(base + 15));
+       pm.collectionVariables.set('id_16', String(base + 17));
+       pm.collectionVariables.set('id_17', String(base + 19));
+       pm.collectionVariables.set('id_18', String(base + 113));
+       pm.collectionVariables.set('id_19', String(base + 114));
+       pm.collectionVariables.set('id_20', String(base + 500));
+       pm.collectionVariables.set('id_21', String(base + 501));
+       pm.collectionVariables.set('id_22', String(base + 502));
+       pm.collectionVariables.set('id_23', String(base + 700));
+       pm.collectionVariables.set('id_24', String(base + 701));
+       pm.collectionVariables.set('id_25', String(base + 702));
+       pm.collectionVariables.set('id_26', String(base + 703));
+       pm.collectionVariables.set('id_27', String(base + 710));
+       pm.collectionVariables.set('id_28', String(base + 711));
+       pm.collectionVariables.set('id_29', String(base + 712));
+       pm.collectionVariables.set('id_30', String(base + 999));
+      }
+    language: text/javascript

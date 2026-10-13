@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{baseUrl}}/api/clientes"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_cli": {{id_14}},
+      "id_tip_ide": 1,
+      "numero_identificacion": "{{id_14}}",
+      "id_per": {{id_19}}
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 201', () => pm.response.to.have.status(201));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+      pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });
+    language: text/javascript
+order: 81000

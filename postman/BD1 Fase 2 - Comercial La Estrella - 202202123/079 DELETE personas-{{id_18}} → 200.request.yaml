@@ -1,0 +1,11 @@
+$kind: http-request
+name: 079 DELETE personas/{{id_18}} → 200
+url: "{{baseUrl}}/api/personas/{{id_18}}"
+method: DELETE
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 79000

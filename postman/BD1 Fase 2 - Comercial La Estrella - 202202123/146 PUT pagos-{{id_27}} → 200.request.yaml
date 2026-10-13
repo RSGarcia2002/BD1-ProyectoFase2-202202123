@@ -1,0 +1,19 @@
+$kind: http-request
+name: 146 PUT pagos/{{id_27}} → 200
+url: "{{baseUrl}}/api/pagos/{{id_27}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "monto_pag": 35
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 146000

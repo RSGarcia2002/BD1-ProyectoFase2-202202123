@@ -1,0 +1,11 @@
+$kind: http-request
+name: 118 GET pagos?limit=1 → 200
+url: "{{baseUrl}}/api/pagos?limit=1"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 118000

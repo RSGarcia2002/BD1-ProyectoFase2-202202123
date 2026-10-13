@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}/api/personas"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_per": {{id_18}},
+      "nombre_per": "Cristina",
+      "apellido_per": "Garcia",
+      "telefono": "59398441",
+      "correo_per": "aux{{id_13}}@example.test",
+      "direccion_per": "13 Calle 3-74 zona 4",
+      "id_mun": 41
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 201', () => pm.response.to.have.status(201));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+      pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });
+    language: text/javascript
+order: 72000

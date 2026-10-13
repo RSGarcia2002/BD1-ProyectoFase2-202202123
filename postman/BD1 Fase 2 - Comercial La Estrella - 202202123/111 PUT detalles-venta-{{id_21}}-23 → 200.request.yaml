@@ -1,0 +1,19 @@
+$kind: http-request
+name: 111 PUT detalles-venta/{{id_21}}/23 → 200
+url: "{{baseUrl}}/api/detalles-venta/{{id_21}}/23"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "cantidad_des_ven": 1
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 111000

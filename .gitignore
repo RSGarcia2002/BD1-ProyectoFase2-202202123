@@ -3,3 +3,7 @@ node_modules/
 *.zip
 .DS_Store
 coverage/
+
+# Estado local de Postman (incluye el ID personal del workspace).
+postman/.postman/
+postman/postman/

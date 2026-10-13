@@ -32,6 +32,6 @@ const init=["if (pm.info.requestName.startsWith('001 ')) {"," const base = 80000
 for(const [id,name] of vars)init.push(` pm.collectionVariables.set('${name}', String(base + ${id-first}));`);
 init.push('}');
 const collection={info:{name:'BD1 Fase 2 - Comercial La Estrella - 202202123',description:'Coleccion reproducible obtenida de las peticiones verificadas contra SQL Server real. Ejecutar completa con Runner en orden, una iteracion. Requiere cargar antes el dataset original. Crea registros de prueba con IDs nuevos; las ventas se eliminan logicamente. La prueba concurrente real se ejecuta con npm run verificar.',schema:'https://schema.getpostman.com/json/collection/v2.1.0/collection.json'},variable:[{key:'baseUrl',value:'http://localhost:3002'},...Array.from(vars,([id,key])=>({key,value:String(id)}))],event:[{listen:'prerequest',script:{type:'text/javascript',exec:init}}],item:items};
-writeFileSync(new URL('../postman/ComercialLaEstrella.postman_collection.json',import.meta.url),JSON.stringify(collection,null,2)+'\n');
-writeFileSync(new URL('../postman/Local.postman_environment.json',import.meta.url),JSON.stringify({name:'Comercial La Estrella - Local',values:[{key:'baseUrl',value:'http://localhost:3002',enabled:true}],_postman_variable_scope:'environment'},null,2)+'\n');
+writeFileSync(new URL('../postman-json/ComercialLaEstrella.postman_collection.json',import.meta.url),JSON.stringify(collection,null,2)+'\n');
+writeFileSync(new URL('../postman-json/Local.postman_environment.json',import.meta.url),JSON.stringify({name:'Comercial La Estrella - Local',values:[{key:'baseUrl',value:'http://localhost:3002',enabled:true}],_postman_variable_scope:'environment'},null,2)+'\n');
 console.log(`Coleccion generada: ${items.length} peticiones.`);

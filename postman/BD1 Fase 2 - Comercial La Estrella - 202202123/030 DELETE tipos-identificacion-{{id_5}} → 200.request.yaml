@@ -1,0 +1,11 @@
+$kind: http-request
+name: 030 DELETE tipos-identificacion/{{id_5}} → 200
+url: "{{baseUrl}}/api/tipos-identificacion/{{id_5}}"
+method: DELETE
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 30000

@@ -73,7 +73,8 @@ src/server.js                  Inicio y cierre de conexiones
 scripts/importar-datos.js       Carga oficial a traves de HTTP
 scripts/verificar-api.js        Pruebas de integracion y concurrencia
 datos/dataset-fase1.json        9068 registros convertidos del SQL original
-postman/                       Coleccion y entorno importables
+postman/                       Coleccion y entorno YAML v3 para Postman local
+postman-json/                  Exportaciones JSON para entrega y Newman
 docs/                          Guia de API, explicacion y evidencias
 ```
 
@@ -143,12 +144,14 @@ npm run verificar
 
 Las pruebas de integracion requieren el dataset cargado. Crean IDs nuevos y conservan algunas ventas de demostracion porque su DELETE es logico. Son reproducibles y no sobreescriben los IDs originales. Verifican CRUD en las 19 tablas, reglas de inventario, rollback de lotes, pagos, anulaciones y dos compras realmente simultaneas.
 
-En Postman importa `postman/ComercialLaEstrella.postman_collection.json` y `postman/Local.postman_environment.json`. Selecciona el entorno Local y ejecuta toda la coleccion en Runner, en orden y con una iteracion. Sus variables generan IDs nuevos. Los HTTP 400/404/409 indicados son pruebas negativas esperadas.
+Ejecuta `node scripts/configurar-postman.js` para preparar el workspace sin sobreescribir tu configuracion. En Postman v12 Local Mode abre la carpeta `postman/`, que contiene la coleccion y el entorno en YAML v3. Selecciona el entorno **Comercial La Estrella - Local** y ejecuta toda la coleccion en Runner, en orden y con una iteracion. Sus variables generan IDs nuevos. Los HTTP 400/404/409 indicados son pruebas negativas esperadas.
+
+Las exportaciones JSON originales se conservan en `postman-json/` para la entrega, Newman y versiones de Postman que permiten importar JSON. Mantenlas fuera del workspace local YAML para evitar volver a solicitar su conversion.
 
 Alternativa con el runner de linea de comandos de Postman:
 
 ```bash
-npx --yes newman run postman/ComercialLaEstrella.postman_collection.json
+npx --yes newman run postman-json/ComercialLaEstrella.postman_collection.json
 ```
 
 La coleccion reproduce secuencialmente el conflicto de stock; la concurrencia real esta en `npm run verificar`.

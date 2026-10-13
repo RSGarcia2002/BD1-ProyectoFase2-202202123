@@ -1,0 +1,11 @@
+$kind: http-request
+name: 109 GET detalles-venta?limit=1 → 200
+url: "{{baseUrl}}/api/detalles-venta?limit=1"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('HTTP 200', () => pm.response.to.have.status(200));
+      pm.test('Respuesta JSON', () => pm.response.to.be.json);
+    language: text/javascript
+order: 109000
