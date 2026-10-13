@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-10-13T01:40:23.741Z",
+  "requests": {
+    "total": 161,
+    "pending": 0,
+    "failed": 0
+  },
+  "assertions": {
+    "total": 402,
+    "pending": 0,
+    "failed": 0
+  },
+  "fallos": []
+}

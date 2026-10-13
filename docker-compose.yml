@@ -1,0 +1,57 @@
+name: estrella-fase2-202202123
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Configura .env}
+    ports:
+      - '127.0.0.1:${DB_PUBLIC_PORT:-1435}:1433'
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    healthcheck:
+      test: ['CMD-SHELL', 'SQLCMDPASSWORD="$$MSSQL_SA_PASSWORD" /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -C -Q "SELECT 1" -b -o /dev/null']
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 30s
+    restart: unless-stopped
+  init:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    environment:
+      SQLCMDPASSWORD: ${MSSQL_SA_PASSWORD}
+      DB_PASSWORD: ${DB_PASSWORD:?Configura .env}
+      READ_PASSWORD: ${READ_PASSWORD:?Configura .env}
+    volumes:
+      - ./init.sql:/init.sql:ro
+      - ./docker/init.sh:/init.sh:ro
+    entrypoint: ['/bin/bash', '/init.sh']
+    restart: 'no'
+  api:
+    build: .
+    environment:
+      PORT: 3000
+      DB_SERVER: sqlserver
+      DB_PORT: 1433
+      DB_NAME: ComercialEstrellaFase2
+      DB_USER: estrella_api
+      DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - '127.0.0.1:${API_PUBLIC_PORT:-3002}:3000'
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ['CMD', 'node', '-e', "fetch('http://localhost:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+volumes:
+  sqlserver_data:

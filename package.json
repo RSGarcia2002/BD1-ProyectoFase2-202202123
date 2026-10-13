@@ -1,0 +1,28 @@
+{
+  "name": "comercial-la-estrella-fase2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proyecto Fase 2 BD1, Randall Quinteros 202202123",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "importar": "node scripts/importar-datos.js",
+    "test": "node --test tests/*.test.js",
+    "verificar": "node scripts/verificar-api.js",
+    "empaquetar": "node scripts/empaquetar.js",
+    "verificar:reportes": "node scripts/verificar-reportes.js",
+    "evidencias": "node scripts/render-evidence.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "mssql": "^12.7.4"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}

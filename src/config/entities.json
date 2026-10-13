@@ -1,0 +1,446 @@
+{
+  "pais": {
+    "keys": [
+      "id_pa"
+    ],
+    "columns": {
+      "id_pa": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_pa": {
+        "type": "string",
+        "required": true,
+        "maxLength": 50
+      }
+    }
+  },
+  "departamento": {
+    "keys": [
+      "id_dep"
+    ],
+    "columns": {
+      "id_dep": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_dep": {
+        "type": "string",
+        "required": true,
+        "maxLength": 80
+      },
+      "id_pa": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "municipio": {
+    "keys": [
+      "id_mun"
+    ],
+    "columns": {
+      "id_mun": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_mun": {
+        "type": "string",
+        "required": true,
+        "maxLength": 100
+      },
+      "id_dep": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "tipo_tienda": {
+    "keys": [
+      "id_tip_tie"
+    ],
+    "columns": {
+      "id_tip_tie": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_tip_tie": {
+        "type": "string",
+        "required": true,
+        "maxLength": 60
+      }
+    }
+  },
+  "tipo_identificacion": {
+    "keys": [
+      "id_tip_ide"
+    ],
+    "columns": {
+      "id_tip_ide": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_tip_ide": {
+        "type": "string",
+        "required": true,
+        "maxLength": 40
+      }
+    }
+  },
+  "cargo": {
+    "keys": [
+      "id_car"
+    ],
+    "columns": {
+      "id_car": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_car": {
+        "type": "string",
+        "required": true,
+        "maxLength": 60
+      }
+    }
+  },
+  "categoria": {
+    "keys": [
+      "id_cat"
+    ],
+    "columns": {
+      "id_cat": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_cat": {
+        "type": "string",
+        "required": true,
+        "maxLength": 60
+      }
+    }
+  },
+  "marca": {
+    "keys": [
+      "id_mar"
+    ],
+    "columns": {
+      "id_mar": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_mar": {
+        "type": "string",
+        "required": true,
+        "maxLength": 60
+      }
+    }
+  },
+  "estado_venta": {
+    "keys": [
+      "id_es_ven"
+    ],
+    "columns": {
+      "id_es_ven": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_es_ven": {
+        "type": "string",
+        "required": true,
+        "maxLength": 20
+      }
+    }
+  },
+  "metodo_pago": {
+    "keys": [
+      "id_met_pag"
+    ],
+    "columns": {
+      "id_met_pag": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_met_pag": {
+        "type": "string",
+        "required": true,
+        "maxLength": 60
+      }
+    }
+  },
+  "persona": {
+    "keys": [
+      "id_per"
+    ],
+    "columns": {
+      "id_per": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_per": {
+        "type": "string",
+        "required": true,
+        "maxLength": 80
+      },
+      "apellido_per": {
+        "type": "string",
+        "required": true,
+        "maxLength": 80
+      },
+      "telefono": {
+        "type": "string",
+        "required": true,
+        "maxLength": 20
+      },
+      "correo_per": {
+        "type": "string",
+        "required": false,
+        "maxLength": 150
+      },
+      "direccion_per": {
+        "type": "string",
+        "required": true,
+        "maxLength": 250
+      },
+      "id_mun": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "tienda": {
+    "keys": [
+      "id_ti"
+    ],
+    "columns": {
+      "id_ti": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_ti": {
+        "type": "string",
+        "required": true,
+        "maxLength": 120
+      },
+      "direccion_ti": {
+        "type": "string",
+        "required": true,
+        "maxLength": 250
+      },
+      "telefono_ti": {
+        "type": "string",
+        "required": true,
+        "maxLength": 20
+      },
+      "id_mun": {
+        "type": "integer",
+        "required": true
+      },
+      "id_tip_tie": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "empleado": {
+    "keys": [
+      "id_emp"
+    ],
+    "columns": {
+      "id_emp": {
+        "type": "integer",
+        "required": true
+      },
+      "fecha_contratacion": {
+        "type": "date",
+        "required": true
+      },
+      "id_ti": {
+        "type": "integer",
+        "required": true
+      },
+      "id_car": {
+        "type": "integer",
+        "required": true
+      },
+      "id_per": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "cliente": {
+    "keys": [
+      "id_cli"
+    ],
+    "columns": {
+      "id_cli": {
+        "type": "integer",
+        "required": true
+      },
+      "id_tip_ide": {
+        "type": "integer",
+        "required": true
+      },
+      "numero_identificacion": {
+        "type": "string",
+        "required": true,
+        "maxLength": 30
+      },
+      "id_per": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "producto": {
+    "keys": [
+      "id_pro"
+    ],
+    "columns": {
+      "id_pro": {
+        "type": "integer",
+        "required": true
+      },
+      "nombre_pro": {
+        "type": "string",
+        "required": true,
+        "maxLength": 120
+      },
+      "descripcion_pro": {
+        "type": "string",
+        "required": true,
+        "maxLength": 500
+      },
+      "id_cat": {
+        "type": "integer",
+        "required": true
+      },
+      "id_mar": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "catalogo_producto": {
+    "keys": [
+      "id_ti",
+      "id_pro"
+    ],
+    "columns": {
+      "precio_vigente_cat_pro": {
+        "type": "decimal",
+        "required": true,
+        "precision": 12,
+        "scale": 2
+      },
+      "existencia_actual_cat_pro": {
+        "type": "integer",
+        "required": true
+      },
+      "id_ti": {
+        "type": "integer",
+        "required": true
+      },
+      "id_pro": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "venta": {
+    "keys": [
+      "id_ven"
+    ],
+    "columns": {
+      "id_ven": {
+        "type": "integer",
+        "required": true
+      },
+      "fecha_ven": {
+        "type": "date",
+        "required": true
+      },
+      "id_ti": {
+        "type": "integer",
+        "required": true
+      },
+      "id_emp": {
+        "type": "integer",
+        "required": true
+      },
+      "id_cli": {
+        "type": "integer",
+        "required": true
+      },
+      "id_es_ven": {
+        "type": "integer",
+        "required": true
+      },
+      "total_ven": {
+        "type": "decimal",
+        "precision": 18,
+        "scale": 2,
+        "required": false,
+        "readOnly": true
+      }
+    }
+  },
+  "desglose_venta": {
+    "keys": [
+      "id_ven",
+      "id_pro"
+    ],
+    "columns": {
+      "cantidad_des_ven": {
+        "type": "integer",
+        "required": true
+      },
+      "precio_unitario_des_ven": {
+        "type": "decimal",
+        "required": true,
+        "precision": 12,
+        "scale": 2
+      },
+      "subtotal_des_ven": {
+        "type": "decimal",
+        "required": false,
+        "precision": 14,
+        "scale": 2,
+        "readOnly": true
+      },
+      "id_ven": {
+        "type": "integer",
+        "required": true
+      },
+      "id_pro": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  },
+  "pago": {
+    "keys": [
+      "id_pag"
+    ],
+    "columns": {
+      "id_pag": {
+        "type": "integer",
+        "required": true
+      },
+      "monto_pag": {
+        "type": "decimal",
+        "required": true,
+        "precision": 14,
+        "scale": 2
+      },
+      "id_met_pag": {
+        "type": "integer",
+        "required": true
+      },
+      "id_ven": {
+        "type": "integer",
+        "required": true
+      }
+    }
+  }
+}

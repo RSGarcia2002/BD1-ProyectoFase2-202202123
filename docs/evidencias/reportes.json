@@ -1,0 +1,9 @@
+{
+  "fecha": "2026-10-13T01:43:45.369Z",
+  "resultado": "APROBADO",
+  "ventasRevisadas": 1518,
+  "ubicaciones": 20,
+  "productos": 117,
+  "saldos": 348,
+  "descripcion": "Totales y resultados de las tres vistas comparados por HTTP contra un calculo independiente en centavos."
+}

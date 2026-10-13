@@ -1,0 +1,908 @@
+newman
+
+BD1 Fase 2 - Comercial La Estrella - 202202123
+
+→ 001 GET ../health → 200
+  GET http://localhost:3002/health [200 OK, 263B, 18ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 002 POST paises → 201
+  POST http://localhost:3002/api/paises [201 Created, 269B, 8ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 003 GET paises?limit=1 → 200
+  GET http://localhost:3002/api/paises?limit=1 [200 OK, 289B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 004 GET paises/{{id_1}} → 200
+  GET http://localhost:3002/api/paises/8855623747 [200 OK, 264B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 005 PUT paises/{{id_1}} → 200
+  PUT http://localhost:3002/api/paises/8855623747 [200 OK, 264B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 006 DELETE paises/{{id_1}} → 200
+  DELETE http://localhost:3002/api/paises/8855623747 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 007 GET paises/{{id_1}} → 404
+  GET http://localhost:3002/api/paises/8855623747 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 008 POST departamentos → 201
+  POST http://localhost:3002/api/departamentos [201 Created, 281B, 6ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 009 GET departamentos?limit=1 → 200
+  GET http://localhost:3002/api/departamentos?limit=1 [200 OK, 302B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 010 GET departamentos/{{id_2}} → 200
+  GET http://localhost:3002/api/departamentos/8855623748 [200 OK, 276B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 011 PUT departamentos/{{id_2}} → 200
+  PUT http://localhost:3002/api/departamentos/8855623748 [200 OK, 276B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 012 DELETE departamentos/{{id_2}} → 200
+  DELETE http://localhost:3002/api/departamentos/8855623748 [200 OK, 244B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 013 GET departamentos/{{id_2}} → 404
+  GET http://localhost:3002/api/departamentos/8855623748 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 014 POST municipios → 201
+  POST http://localhost:3002/api/municipios [201 Created, 282B, 4ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 015 GET municipios?limit=1 → 200
+  GET http://localhost:3002/api/municipios?limit=1 [200 OK, 303B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 016 GET municipios/{{id_3}} → 200
+  GET http://localhost:3002/api/municipios/8855623749 [200 OK, 277B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 017 PUT municipios/{{id_3}} → 200
+  PUT http://localhost:3002/api/municipios/8855623749 [200 OK, 277B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 018 DELETE municipios/{{id_3}} → 200
+  DELETE http://localhost:3002/api/municipios/8855623749 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 019 GET municipios/{{id_3}} → 404
+  GET http://localhost:3002/api/municipios/8855623749 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 020 POST tipos-tienda → 201
+  POST http://localhost:3002/api/tipos-tienda [201 Created, 279B, 4ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 021 GET tipos-tienda?limit=1 → 200
+  GET http://localhost:3002/api/tipos-tienda?limit=1 [200 OK, 313B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 022 GET tipos-tienda/{{id_4}} → 200
+  GET http://localhost:3002/api/tipos-tienda/8855623750 [200 OK, 274B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 023 PUT tipos-tienda/{{id_4}} → 200
+  PUT http://localhost:3002/api/tipos-tienda/8855623750 [200 OK, 274B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 024 DELETE tipos-tienda/{{id_4}} → 200
+  DELETE http://localhost:3002/api/tipos-tienda/8855623750 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 025 GET tipos-tienda/{{id_4}} → 404
+  GET http://localhost:3002/api/tipos-tienda/8855623750 [404 Not Found, 253B, 2ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 026 POST tipos-identificacion → 201
+  POST http://localhost:3002/api/tipos-identificacion [201 Created, 279B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 027 GET tipos-identificacion?limit=1 → 200
+  GET http://localhost:3002/api/tipos-identificacion?limit=1 [200 OK, 293B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 028 GET tipos-identificacion/{{id_5}} → 200
+  GET http://localhost:3002/api/tipos-identificacion/8855623751 [200 OK, 274B, 2ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 029 PUT tipos-identificacion/{{id_5}} → 200
+  PUT http://localhost:3002/api/tipos-identificacion/8855623751 [200 OK, 274B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 030 DELETE tipos-identificacion/{{id_5}} → 200
+  DELETE http://localhost:3002/api/tipos-identificacion/8855623751 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 031 GET tipos-identificacion/{{id_5}} → 404
+  GET http://localhost:3002/api/tipos-identificacion/8855623751 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 032 POST cargos → 201
+  POST http://localhost:3002/api/cargos [201 Created, 271B, 4ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 033 GET cargos?limit=1 → 200
+  GET http://localhost:3002/api/cargos?limit=1 [200 OK, 299B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 034 GET cargos/{{id_6}} → 200
+  GET http://localhost:3002/api/cargos/8855623752 [200 OK, 266B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 035 PUT cargos/{{id_6}} → 200
+  PUT http://localhost:3002/api/cargos/8855623752 [200 OK, 266B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 036 DELETE cargos/{{id_6}} → 200
+  DELETE http://localhost:3002/api/cargos/8855623752 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 037 GET cargos/{{id_6}} → 404
+  GET http://localhost:3002/api/cargos/8855623752 [404 Not Found, 253B, 2ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 038 POST categorias → 201
+  POST http://localhost:3002/api/categorias [201 Created, 271B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 039 GET categorias?limit=1 → 200
+  GET http://localhost:3002/api/categorias?limit=1 [200 OK, 290B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 040 GET categorias/{{id_7}} → 200
+  GET http://localhost:3002/api/categorias/8855623753 [200 OK, 266B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 041 PUT categorias/{{id_7}} → 200
+  PUT http://localhost:3002/api/categorias/8855623753 [200 OK, 266B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 042 DELETE categorias/{{id_7}} → 200
+  DELETE http://localhost:3002/api/categorias/8855623753 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 043 GET categorias/{{id_7}} → 404
+  GET http://localhost:3002/api/categorias/8855623753 [404 Not Found, 253B, 2ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 044 POST marcas → 201
+  POST http://localhost:3002/api/marcas [201 Created, 271B, 6ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 045 GET marcas?limit=1 → 200
+  GET http://localhost:3002/api/marcas?limit=1 [200 OK, 291B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 046 GET marcas/{{id_8}} → 200
+  GET http://localhost:3002/api/marcas/8855623754 [200 OK, 266B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 047 PUT marcas/{{id_8}} → 200
+  PUT http://localhost:3002/api/marcas/8855623754 [200 OK, 266B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 048 DELETE marcas/{{id_8}} → 200
+  DELETE http://localhost:3002/api/marcas/8855623754 [200 OK, 244B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 049 GET marcas/{{id_8}} → 404
+  GET http://localhost:3002/api/marcas/8855623754 [404 Not Found, 253B, 4ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 050 POST estados-venta → 409
+  POST http://localhost:3002/api/estados-venta [409 Conflict, 279B, 5ms]
+  ✓  HTTP 409
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 051 PUT estados-venta/1 → 200
+  PUT http://localhost:3002/api/estados-venta/1 [200 OK, 256B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 052 DELETE estados-venta/1 → 409
+  DELETE http://localhost:3002/api/estados-venta/1 [409 Conflict, 295B, 4ms]
+  ✓  HTTP 409
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 053 GET estados-venta?limit=10 → 200
+  GET http://localhost:3002/api/estados-venta?limit=10 [200 OK, 383B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 054 POST metodos-pago → 201
+  POST http://localhost:3002/api/metodos-pago [201 Created, 279B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 055 GET metodos-pago?limit=1 → 200
+  GET http://localhost:3002/api/metodos-pago?limit=1 [200 OK, 298B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 056 GET metodos-pago/{{id_10}} → 200
+  GET http://localhost:3002/api/metodos-pago/8855623756 [200 OK, 274B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 057 PUT metodos-pago/{{id_10}} → 200
+  PUT http://localhost:3002/api/metodos-pago/8855623756 [200 OK, 274B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 058 DELETE metodos-pago/{{id_10}} → 200
+  DELETE http://localhost:3002/api/metodos-pago/8855623756 [200 OK, 244B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 059 GET metodos-pago/{{id_10}} → 404
+  GET http://localhost:3002/api/metodos-pago/8855623756 [404 Not Found, 253B, 4ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 060 POST personas → 201
+  POST http://localhost:3002/api/personas [201 Created, 409B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 061 GET personas?limit=1 → 200
+  GET http://localhost:3002/api/personas?limit=1 [200 OK, 432B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 062 GET personas/{{id_11}} → 200
+  GET http://localhost:3002/api/personas/8855623757 [200 OK, 404B, 2ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 063 PUT personas/{{id_11}} → 200
+  PUT http://localhost:3002/api/personas/8855623757 [200 OK, 404B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 064 DELETE personas/{{id_11}} → 200
+  DELETE http://localhost:3002/api/personas/8855623757 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 065 GET personas/{{id_11}} → 404
+  GET http://localhost:3002/api/personas/8855623757 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 066 POST tiendas → 201
+  POST http://localhost:3002/api/tiendas [201 Created, 363B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 067 GET tiendas?limit=1 → 200
+  GET http://localhost:3002/api/tiendas?limit=1 [200 OK, 403B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 068 GET tiendas/{{id_12}} → 200
+  GET http://localhost:3002/api/tiendas/8855623758 [200 OK, 358B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 069 PUT tiendas/{{id_12}} → 200
+  PUT http://localhost:3002/api/tiendas/8855623758 [200 OK, 358B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 070 DELETE tiendas/{{id_12}} → 200
+  DELETE http://localhost:3002/api/tiendas/8855623758 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 071 GET tiendas/{{id_12}} → 404
+  GET http://localhost:3002/api/tiendas/8855623758 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 072 POST personas → 201
+  POST http://localhost:3002/api/personas [201 Created, 402B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 073 POST empleados → 201
+  POST http://localhost:3002/api/empleados [201 Created, 328B, 4ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 074 GET empleados?limit=1 → 200
+  GET http://localhost:3002/api/empleados?limit=1 [200 OK, 348B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 075 GET empleados/{{id_13}} → 200
+  GET http://localhost:3002/api/empleados/8855623759 [200 OK, 323B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 076 PUT empleados/{{id_13}} → 200
+  PUT http://localhost:3002/api/empleados/8855623759 [200 OK, 323B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 077 DELETE empleados/{{id_13}} → 200
+  DELETE http://localhost:3002/api/empleados/8855623759 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 078 GET empleados/{{id_13}} → 404
+  GET http://localhost:3002/api/empleados/8855623759 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 079 DELETE personas/{{id_18}} → 200
+  DELETE http://localhost:3002/api/personas/8855623859 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 080 POST personas → 201
+  POST http://localhost:3002/api/personas [201 Created, 402B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 081 POST clientes → 201
+  POST http://localhost:3002/api/clientes [201 Created, 310B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 082 GET clientes?limit=1 → 200
+  GET http://localhost:3002/api/clientes?limit=1 [200 OK, 333B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 083 GET clientes/{{id_14}} → 200
+  GET http://localhost:3002/api/clientes/8855623760 [200 OK, 305B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 084 PUT clientes/{{id_14}} → 200
+  PUT http://localhost:3002/api/clientes/8855623760 [200 OK, 305B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 085 DELETE clientes/{{id_14}} → 200
+  DELETE http://localhost:3002/api/clientes/8855623760 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 086 GET clientes/{{id_14}} → 404
+  GET http://localhost:3002/api/clientes/8855623760 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 087 DELETE personas/{{id_19}} → 200
+  DELETE http://localhost:3002/api/personas/8855623860 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 088 POST productos → 201
+  POST http://localhost:3002/api/productos [201 Created, 365B, 4ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 089 GET productos?limit=1 → 200
+  GET http://localhost:3002/api/productos?limit=1 [200 OK, 396B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 090 GET productos/{{id_15}} → 200
+  GET http://localhost:3002/api/productos/8855623761 [200 OK, 360B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 091 PUT productos/{{id_15}} → 200
+  PUT http://localhost:3002/api/productos/8855623761 [200 OK, 360B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 092 DELETE productos/{{id_15}} → 200
+  DELETE http://localhost:3002/api/productos/8855623761 [200 OK, 244B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 093 GET productos/{{id_15}} → 404
+  GET http://localhost:3002/api/productos/8855623761 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 094 POST productos → 201
+  POST http://localhost:3002/api/productos [201 Created, 366B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 095 POST catalogos-producto → 201
+  POST http://localhost:3002/api/catalogos-producto [201 Created, 312B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 096 GET catalogos-producto?limit=1 → 200
+  GET http://localhost:3002/api/catalogos-producto?limit=1 [200 OK, 344B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 097 GET catalogos-producto/1/{{id_20}} → 200
+  GET http://localhost:3002/api/catalogos-producto/1/8855624246 [200 OK, 307B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 098 PUT catalogos-producto/1/{{id_20}} → 200
+  PUT http://localhost:3002/api/catalogos-producto/1/8855624246 [200 OK, 307B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 099 DELETE catalogos-producto/1/{{id_20}} → 200
+  DELETE http://localhost:3002/api/catalogos-producto/1/8855624246 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 100 GET catalogos-producto/1/{{id_20}} → 404
+  GET http://localhost:3002/api/catalogos-producto/1/8855624246 [404 Not Found, 253B, 2ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 101 DELETE productos/{{id_20}} → 200
+  DELETE http://localhost:3002/api/productos/8855624246 [200 OK, 244B, 6ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 102 POST ventas → 201
+  POST http://localhost:3002/api/ventas [201 Created, 340B, 7ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 103 GET ventas?limit=1 → 200
+  GET http://localhost:3002/api/ventas?limit=1 [200 OK, 376B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 104 GET ventas/{{id_16}} → 200
+  GET http://localhost:3002/api/ventas/8855623763 [200 OK, 335B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Total calculado en SQL
+  ✓  Estado correcto
+
+→ 105 PUT ventas/{{id_16}} → 200
+  PUT http://localhost:3002/api/ventas/8855623763 [200 OK, 335B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 106 DELETE ventas/{{id_16}} → 200
+  DELETE http://localhost:3002/api/ventas/8855623763 [200 OK, 262B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 107 POST ventas → 201
+  POST http://localhost:3002/api/ventas [201 Created, 340B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 108 POST detalles-venta → 201
+  POST http://localhost:3002/api/detalles-venta [201 Created, 323B, 6ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 109 GET detalles-venta?limit=1 → 200
+  GET http://localhost:3002/api/detalles-venta?limit=1 [200 OK, 360B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 110 GET detalles-venta/{{id_21}}/23 → 200
+  GET http://localhost:3002/api/detalles-venta/8855624247/23 [200 OK, 318B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 111 PUT detalles-venta/{{id_21}}/23 → 200
+  PUT http://localhost:3002/api/detalles-venta/8855624247/23 [200 OK, 318B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 112 DELETE detalles-venta/{{id_21}}/23 → 200
+  DELETE http://localhost:3002/api/detalles-venta/8855624247/23 [200 OK, 244B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 113 GET detalles-venta/{{id_21}}/23 → 404
+  GET http://localhost:3002/api/detalles-venta/8855624247/23 [404 Not Found, 253B, 4ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 114 DELETE ventas/{{id_21}} → 200
+  DELETE http://localhost:3002/api/ventas/8855624247 [200 OK, 262B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 115 POST ventas → 201
+  POST http://localhost:3002/api/ventas [201 Created, 340B, 6ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 116 POST detalles-venta → 201
+  POST http://localhost:3002/api/detalles-venta [201 Created, 323B, 6ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 117 POST pagos → 201
+  POST http://localhost:3002/api/pagos [201 Created, 287B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 118 GET pagos?limit=1 → 200
+  GET http://localhost:3002/api/pagos?limit=1 [200 OK, 315B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 119 GET pagos/{{id_17}} → 200
+  GET http://localhost:3002/api/pagos/8855623765 [200 OK, 282B, 2ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 120 PUT pagos/{{id_17}} → 200
+  PUT http://localhost:3002/api/pagos/8855623765 [200 OK, 282B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 121 DELETE pagos/{{id_17}} → 200
+  DELETE http://localhost:3002/api/pagos/8855623765 [200 OK, 244B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 122 GET pagos/{{id_17}} → 404
+  GET http://localhost:3002/api/pagos/8855623765 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 123 DELETE detalles-venta/{{id_22}}/23 → 200
+  DELETE http://localhost:3002/api/detalles-venta/8855624248/23 [200 OK, 244B, 9ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 124 DELETE ventas/{{id_22}} → 200
+  DELETE http://localhost:3002/api/ventas/8855624248 [200 OK, 262B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 125 POST productos → 201
+  POST http://localhost:3002/api/productos [201 Created, 369B, 4ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 126 POST catalogos-producto → 201
+  POST http://localhost:3002/api/catalogos-producto [201 Created, 307B, 4ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 127 POST ventas → 201
+  POST http://localhost:3002/api/ventas [201 Created, 340B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 128 POST ventas → 201
+  POST http://localhost:3002/api/ventas [201 Created, 340B, 4ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 129 POST ventas → 201
+  POST http://localhost:3002/api/ventas [201 Created, 340B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 130 POST detalles-venta → 400
+  POST http://localhost:3002/api/detalles-venta [400 Bad Request, 251B, 4ms]
+  ✓  HTTP 400
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 131 GET catalogos-producto/3/{{id_23}} → 200
+  GET http://localhost:3002/api/catalogos-producto/3/8855624446 [200 OK, 302B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 132 GET detalles-venta/{{id_24}}/{{id_23}} → 404
+  GET http://localhost:3002/api/detalles-venta/8855624447/8855624446 [404 Not Found, 253B, 3ms]
+  ✓  HTTP 404
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 133 POST detalles-venta → 400
+  POST http://localhost:3002/api/detalles-venta [400 Bad Request, 251B, 6ms]
+  ✓  HTTP 400
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 134 GET catalogos-producto/3/{{id_23}} → 200
+  GET http://localhost:3002/api/catalogos-producto/3/8855624446 [200 OK, 302B, 2ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 135 POST detalles-venta → 201
+  POST http://localhost:3002/api/detalles-venta [201 Created, 331B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 136 GET catalogos-producto/3/{{id_23}} → 200
+  GET http://localhost:3002/api/catalogos-producto/3/8855624446 [200 OK, 301B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 137 PUT detalles-venta/{{id_24}}/{{id_23}} → 200
+  PUT http://localhost:3002/api/detalles-venta/8855624447/8855624446 [200 OK, 326B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 138 GET catalogos-producto/3/{{id_23}} → 200
+  GET http://localhost:3002/api/catalogos-producto/3/8855624446 [200 OK, 301B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 139 GET ventas/{{id_24}} → 200
+  GET http://localhost:3002/api/ventas/8855624447 [200 OK, 336B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Total calculado en SQL
+  ✓  Estado correcto
+
+→ 140 POST pagos → 201
+  POST http://localhost:3002/api/pagos [201 Created, 288B, 5ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 141 GET ventas/{{id_24}} → 200
+  GET http://localhost:3002/api/ventas/8855624447 [200 OK, 336B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Total calculado en SQL
+  ✓  Estado correcto
+
+→ 142 POST pagos → 201
+  POST http://localhost:3002/api/pagos [201 Created, 288B, 6ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 143 GET ventas/{{id_24}} → 200
+  GET http://localhost:3002/api/ventas/8855624447 [200 OK, 336B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Total calculado en SQL
+  ✓  Estado correcto
+
+→ 144 DELETE pagos/{{id_28}} → 200
+  DELETE http://localhost:3002/api/pagos/8855624457 [200 OK, 244B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 145 GET ventas/{{id_24}} → 200
+  GET http://localhost:3002/api/ventas/8855624447 [200 OK, 336B, 2ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Total calculado en SQL
+  ✓  Estado correcto
+
+→ 146 PUT pagos/{{id_27}} → 200
+  PUT http://localhost:3002/api/pagos/8855624456 [200 OK, 283B, 5ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 147 GET ventas/{{id_24}} → 200
+  GET http://localhost:3002/api/ventas/8855624447 [200 OK, 336B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Total calculado en SQL
+  ✓  Estado correcto
+
+→ 148 POST detalles-venta → 201
+  POST http://localhost:3002/api/detalles-venta [201 Created, 331B, 7ms]
+  ✓  HTTP 201
+  ✓  Respuesta JSON
+  ✓  Llaves devueltas
+
+→ 149 POST detalles-venta → 400
+  POST http://localhost:3002/api/detalles-venta [400 Bad Request, 251B, 5ms]
+  ✓  HTTP 400
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 150 GET catalogos-producto/3/{{id_23}} → 200
+  GET http://localhost:3002/api/catalogos-producto/3/8855624446 [200 OK, 301B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 151 GET reportes/ventas-ubicacion → 200
+  GET http://localhost:3002/api/reportes/ventas-ubicacion [200 OK, 3.76kB, 12ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 152 GET reportes/top-productos → 200
+  GET http://localhost:3002/api/reportes/top-productos [200 OK, 19.93kB, 12ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 153 GET reportes/saldos-pendientes → 200
+  GET http://localhost:3002/api/reportes/saldos-pendientes [200 OK, 51.83kB, 7ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 154 GET catalogos-producto/3/{{id_23}} → 200
+  GET http://localhost:3002/api/catalogos-producto/3/8855624446 [200 OK, 301B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 155 DELETE ventas/{{id_24}} → 200
+  DELETE http://localhost:3002/api/ventas/8855624447 [200 OK, 262B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 156 GET catalogos-producto/3/{{id_23}} → 200
+  GET http://localhost:3002/api/catalogos-producto/3/8855624446 [200 OK, 301B, 2ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 157 DELETE ventas/{{id_24}} → 200
+  DELETE http://localhost:3002/api/ventas/8855624447 [200 OK, 262B, 4ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+
+→ 158 GET catalogos-producto/3/{{id_23}} → 200
+  GET http://localhost:3002/api/catalogos-producto/3/8855624446 [200 OK, 301B, 3ms]
+  ✓  HTTP 200
+  ✓  Respuesta JSON
+  ✓  Inventario correcto
+
+→ 159 POST pagos → 400
+  POST http://localhost:3002/api/pagos [400 Bad Request, 280B, 4ms]
+  ✓  HTTP 400
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 160 POST paises → 400
+  POST http://localhost:3002/api/paises [400 Bad Request, 261B, 1ms]
+  ✓  HTTP 400
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+→ 161 GET productos/no-es-id → 400
+  GET http://localhost:3002/api/productos/no-es-id [400 Bad Request, 279B, 2ms]
+  ✓  HTTP 400
+  ✓  Respuesta JSON
+  ✓  Mensaje esperado
+
+┌─────────────────────────┬─────────────────┬─────────────────┐
+│                         │        executed │          failed │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              iterations │               1 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│                requests │             161 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│            test-scripts │             161 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│      prerequest-scripts │             161 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              assertions │             402 │               0 │
+├─────────────────────────┴─────────────────┴─────────────────┤
+│ total run duration: 2.4s                                    │
+├─────────────────────────────────────────────────────────────┤
+│ total data received: 87.41kB (approx)                       │
+├─────────────────────────────────────────────────────────────┤
+│ average response time: 4ms [min: 1ms, max: 18ms, s.d.: 1ms] │
+└─────────────────────────────────────────────────────────────┘

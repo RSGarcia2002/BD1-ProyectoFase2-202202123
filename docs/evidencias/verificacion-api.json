@@ -1,0 +1,6282 @@
+{
+  "fecha": "2026-10-13T01:36:49.082Z",
+  "resultado": "APROBADO",
+  "peticiones": 160,
+  "casos": [
+    "CRUD 19 tablas",
+    "Stock insuficiente y rollback",
+    "Lote atomico",
+    "Descuento y actualizacion de stock",
+    "Abonos parciales y PAGADA",
+    "Recuperacion de estado al borrar un pago",
+    "Concurrencia sin sobreventa",
+    "Tres vistas",
+    "Anulacion y devolucion idempotente",
+    "Validacion de entradas"
+  ],
+  "evidencia": [
+    {
+      "method": "GET",
+      "path": "../health",
+      "status": 200,
+      "response": {
+        "status": "ok",
+        "database": "ComercialEstrellaFase2"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "paises",
+      "body": {
+        "id_pa": 8855408490,
+        "nombre_pa": "Prueba 8855408490"
+      },
+      "status": 201,
+      "response": {
+        "id_pa": 8855408490,
+        "nombre_pa": "Prueba 8855408490"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "paises?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_pa": 1,
+            "nombre_pa": "Guatemala"
+          }
+        ],
+        "total": 4,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "paises/8855408490",
+      "status": 200,
+      "response": {
+        "id_pa": 8855408490,
+        "nombre_pa": "Prueba 8855408490"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "paises/8855408490",
+      "body": {
+        "nombre_pa": "Prueba 8855408490"
+      },
+      "status": 200,
+      "response": {
+        "id_pa": 8855408490,
+        "nombre_pa": "Prueba 8855408490"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "paises/8855408490",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "paises/8855408490",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "departamentos",
+      "body": {
+        "id_dep": 8855408491,
+        "nombre_dep": "Prueba 8855408491",
+        "id_pa": 1
+      },
+      "status": 201,
+      "response": {
+        "id_dep": 8855408491,
+        "nombre_dep": "Prueba 8855408491",
+        "id_pa": 1
+      }
+    },
+    {
+      "method": "GET",
+      "path": "departamentos?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_dep": 1,
+            "nombre_dep": "Guatemala",
+            "id_pa": 1
+          }
+        ],
+        "total": 33,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "departamentos/8855408491",
+      "status": 200,
+      "response": {
+        "id_dep": 8855408491,
+        "nombre_dep": "Prueba 8855408491",
+        "id_pa": 1
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "departamentos/8855408491",
+      "body": {
+        "nombre_dep": "Prueba 8855408491"
+      },
+      "status": 200,
+      "response": {
+        "id_dep": 8855408491,
+        "nombre_dep": "Prueba 8855408491",
+        "id_pa": 1
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "departamentos/8855408491",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "departamentos/8855408491",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "municipios",
+      "body": {
+        "id_mun": 8855408492,
+        "nombre_mun": "Prueba 8855408492",
+        "id_dep": 1
+      },
+      "status": 201,
+      "response": {
+        "id_mun": 8855408492,
+        "nombre_mun": "Prueba 8855408492",
+        "id_dep": 1
+      }
+    },
+    {
+      "method": "GET",
+      "path": "municipios?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_mun": 1,
+            "nombre_mun": "Guatemala",
+            "id_dep": 1
+          }
+        ],
+        "total": 81,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "municipios/8855408492",
+      "status": 200,
+      "response": {
+        "id_mun": 8855408492,
+        "nombre_mun": "Prueba 8855408492",
+        "id_dep": 1
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "municipios/8855408492",
+      "body": {
+        "nombre_mun": "Prueba 8855408492"
+      },
+      "status": 200,
+      "response": {
+        "id_mun": 8855408492,
+        "nombre_mun": "Prueba 8855408492",
+        "id_dep": 1
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "municipios/8855408492",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "municipios/8855408492",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "tipos-tienda",
+      "body": {
+        "id_tip_tie": 8855408493,
+        "nombre_tip_tie": "Prueba 8855408493"
+      },
+      "status": 201,
+      "response": {
+        "id_tip_tie": 8855408493,
+        "nombre_tip_tie": "Prueba 8855408493"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tipos-tienda?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_tip_tie": 1,
+            "nombre_tip_tie": "Tienda de conveniencia"
+          }
+        ],
+        "total": 5,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tipos-tienda/8855408493",
+      "status": 200,
+      "response": {
+        "id_tip_tie": 8855408493,
+        "nombre_tip_tie": "Prueba 8855408493"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "tipos-tienda/8855408493",
+      "body": {
+        "nombre_tip_tie": "Prueba 8855408493"
+      },
+      "status": 200,
+      "response": {
+        "id_tip_tie": 8855408493,
+        "nombre_tip_tie": "Prueba 8855408493"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "tipos-tienda/8855408493",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tipos-tienda/8855408493",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "tipos-identificacion",
+      "body": {
+        "id_tip_ide": 8855408494,
+        "nombre_tip_ide": "Prueba 8855408494"
+      },
+      "status": 201,
+      "response": {
+        "id_tip_ide": 8855408494,
+        "nombre_tip_ide": "Prueba 8855408494"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tipos-identificacion?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_tip_ide": 1,
+            "nombre_tip_ide": "DPI"
+          }
+        ],
+        "total": 4,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tipos-identificacion/8855408494",
+      "status": 200,
+      "response": {
+        "id_tip_ide": 8855408494,
+        "nombre_tip_ide": "Prueba 8855408494"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "tipos-identificacion/8855408494",
+      "body": {
+        "nombre_tip_ide": "Prueba 8855408494"
+      },
+      "status": 200,
+      "response": {
+        "id_tip_ide": 8855408494,
+        "nombre_tip_ide": "Prueba 8855408494"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "tipos-identificacion/8855408494",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tipos-identificacion/8855408494",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "cargos",
+      "body": {
+        "id_car": 8855408495,
+        "nombre_car": "Prueba 8855408495"
+      },
+      "status": 201,
+      "response": {
+        "id_car": 8855408495,
+        "nombre_car": "Prueba 8855408495"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "cargos?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_car": 1,
+            "nombre_car": "Gerente de tienda"
+          }
+        ],
+        "total": 5,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "cargos/8855408495",
+      "status": 200,
+      "response": {
+        "id_car": 8855408495,
+        "nombre_car": "Prueba 8855408495"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "cargos/8855408495",
+      "body": {
+        "nombre_car": "Prueba 8855408495"
+      },
+      "status": 200,
+      "response": {
+        "id_car": 8855408495,
+        "nombre_car": "Prueba 8855408495"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "cargos/8855408495",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "cargos/8855408495",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "categorias",
+      "body": {
+        "id_cat": 8855408496,
+        "nombre_cat": "Prueba 8855408496"
+      },
+      "status": 201,
+      "response": {
+        "id_cat": 8855408496,
+        "nombre_cat": "Prueba 8855408496"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "categorias?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_cat": 1,
+            "nombre_cat": "Bebidas"
+          }
+        ],
+        "total": 11,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "categorias/8855408496",
+      "status": 200,
+      "response": {
+        "id_cat": 8855408496,
+        "nombre_cat": "Prueba 8855408496"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "categorias/8855408496",
+      "body": {
+        "nombre_cat": "Prueba 8855408496"
+      },
+      "status": 200,
+      "response": {
+        "id_cat": 8855408496,
+        "nombre_cat": "Prueba 8855408496"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "categorias/8855408496",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "categorias/8855408496",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "marcas",
+      "body": {
+        "id_mar": 8855408497,
+        "nombre_mar": "Prueba 8855408497"
+      },
+      "status": 201,
+      "response": {
+        "id_mar": 8855408497,
+        "nombre_mar": "Prueba 8855408497"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "marcas?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_mar": 1,
+            "nombre_mar": "Norteña"
+          }
+        ],
+        "total": 16,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "marcas/8855408497",
+      "status": 200,
+      "response": {
+        "id_mar": 8855408497,
+        "nombre_mar": "Prueba 8855408497"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "marcas/8855408497",
+      "body": {
+        "nombre_mar": "Prueba 8855408497"
+      },
+      "status": 200,
+      "response": {
+        "id_mar": 8855408497,
+        "nombre_mar": "Prueba 8855408497"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "marcas/8855408497",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "marcas/8855408497",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "estados-venta",
+      "body": {
+        "id_es_ven": 8855408498,
+        "nombre_es_ven": "REGISTRADA"
+      },
+      "status": 409,
+      "response": {
+        "error": "Ya existe un registro con esa llave o valor unico"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "estados-venta/1",
+      "body": {
+        "nombre_es_ven": "REGISTRADA"
+      },
+      "status": 200,
+      "response": {
+        "id_es_ven": 1,
+        "nombre_es_ven": "REGISTRADA"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "estados-venta/1",
+      "status": 409,
+      "response": {
+        "error": "La operacion viola una relacion o restriccion de la base de datos"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "estados-venta?limit=10",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_es_ven": 1,
+            "nombre_es_ven": "REGISTRADA"
+          },
+          {
+            "id_es_ven": 2,
+            "nombre_es_ven": "PAGADA"
+          },
+          {
+            "id_es_ven": 3,
+            "nombre_es_ven": "ANULADA"
+          }
+        ],
+        "total": 3,
+        "limit": 10,
+        "offset": 0
+      }
+    },
+    {
+      "method": "POST",
+      "path": "metodos-pago",
+      "body": {
+        "id_met_pag": 8855408499,
+        "nombre_met_pag": "Prueba 8855408499"
+      },
+      "status": 201,
+      "response": {
+        "id_met_pag": 8855408499,
+        "nombre_met_pag": "Prueba 8855408499"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "metodos-pago?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_met_pag": 1,
+            "nombre_met_pag": "Efectivo"
+          }
+        ],
+        "total": 5,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "metodos-pago/8855408499",
+      "status": 200,
+      "response": {
+        "id_met_pag": 8855408499,
+        "nombre_met_pag": "Prueba 8855408499"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "metodos-pago/8855408499",
+      "body": {
+        "nombre_met_pag": "Prueba 8855408499"
+      },
+      "status": 200,
+      "response": {
+        "id_met_pag": 8855408499,
+        "nombre_met_pag": "Prueba 8855408499"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "metodos-pago/8855408499",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "metodos-pago/8855408499",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "personas",
+      "body": {
+        "id_per": 8855408500,
+        "nombre_per": "Prueba 8855408500",
+        "apellido_per": "Garcia",
+        "telefono": "59398441",
+        "correo_per": "t8855408500@example.test",
+        "direccion_per": "13 Calle 3-74 zona 4",
+        "id_mun": 41
+      },
+      "status": 201,
+      "response": {
+        "id_per": 8855408500,
+        "nombre_per": "Prueba 8855408500",
+        "apellido_per": "Garcia",
+        "telefono": "59398441",
+        "correo_per": "t8855408500@example.test",
+        "direccion_per": "13 Calle 3-74 zona 4",
+        "id_mun": 41
+      }
+    },
+    {
+      "method": "GET",
+      "path": "personas?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_per": 1,
+            "nombre_per": "Cristina",
+            "apellido_per": "Garcia",
+            "telefono": "59398441",
+            "correo_per": "cristina.garcia@correo.com",
+            "direccion_per": "13 Calle 3-74 zona 4",
+            "id_mun": 41
+          }
+        ],
+        "total": 389,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "personas/8855408500",
+      "status": 200,
+      "response": {
+        "id_per": 8855408500,
+        "nombre_per": "Prueba 8855408500",
+        "apellido_per": "Garcia",
+        "telefono": "59398441",
+        "correo_per": "t8855408500@example.test",
+        "direccion_per": "13 Calle 3-74 zona 4",
+        "id_mun": 41
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "personas/8855408500",
+      "body": {
+        "nombre_per": "Prueba 8855408500"
+      },
+      "status": 200,
+      "response": {
+        "id_per": 8855408500,
+        "nombre_per": "Prueba 8855408500",
+        "apellido_per": "Garcia",
+        "telefono": "59398441",
+        "correo_per": "t8855408500@example.test",
+        "direccion_per": "13 Calle 3-74 zona 4",
+        "id_mun": 41
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "personas/8855408500",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "personas/8855408500",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "tiendas",
+      "body": {
+        "id_ti": 8855408501,
+        "nombre_ti": "Prueba 8855408501",
+        "direccion_ti": "18 Avenida 7-38 zona 15",
+        "telefono_ti": "24335942",
+        "id_mun": 41,
+        "id_tip_tie": 1
+      },
+      "status": 201,
+      "response": {
+        "id_ti": 8855408501,
+        "nombre_ti": "Prueba 8855408501",
+        "direccion_ti": "18 Avenida 7-38 zona 15",
+        "telefono_ti": "24335942",
+        "id_mun": 41,
+        "id_tip_tie": 1
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tiendas?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_ti": 1,
+            "nombre_ti": "Comercial La Estrella Zona 1",
+            "direccion_ti": "18 Avenida 7-38 zona 15",
+            "telefono_ti": "24335942",
+            "id_mun": 41,
+            "id_tip_tie": 1
+          }
+        ],
+        "total": 21,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tiendas/8855408501",
+      "status": 200,
+      "response": {
+        "id_ti": 8855408501,
+        "nombre_ti": "Prueba 8855408501",
+        "direccion_ti": "18 Avenida 7-38 zona 15",
+        "telefono_ti": "24335942",
+        "id_mun": 41,
+        "id_tip_tie": 1
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "tiendas/8855408501",
+      "body": {
+        "nombre_ti": "Prueba 8855408501"
+      },
+      "status": 200,
+      "response": {
+        "id_ti": 8855408501,
+        "nombre_ti": "Prueba 8855408501",
+        "direccion_ti": "18 Avenida 7-38 zona 15",
+        "telefono_ti": "24335942",
+        "id_mun": 41,
+        "id_tip_tie": 1
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "tiendas/8855408501",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "tiendas/8855408501",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "personas",
+      "body": {
+        "id_per": 8855408602,
+        "nombre_per": "Cristina",
+        "apellido_per": "Garcia",
+        "telefono": "59398441",
+        "correo_per": "aux8855408502@example.test",
+        "direccion_per": "13 Calle 3-74 zona 4",
+        "id_mun": 41
+      },
+      "status": 201,
+      "response": {
+        "id_per": 8855408602,
+        "nombre_per": "Cristina",
+        "apellido_per": "Garcia",
+        "telefono": "59398441",
+        "correo_per": "aux8855408502@example.test",
+        "direccion_per": "13 Calle 3-74 zona 4",
+        "id_mun": 41
+      }
+    },
+    {
+      "method": "POST",
+      "path": "empleados",
+      "body": {
+        "id_emp": 8855408502,
+        "fecha_contratacion": "2021-09-15",
+        "id_ti": 1,
+        "id_car": 1,
+        "id_per": 8855408602
+      },
+      "status": 201,
+      "response": {
+        "id_emp": 8855408502,
+        "fecha_contratacion": "2021-09-15T00:00:00.000Z",
+        "id_ti": 1,
+        "id_car": 1,
+        "id_per": 8855408602
+      }
+    },
+    {
+      "method": "GET",
+      "path": "empleados?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_emp": 1,
+            "fecha_contratacion": "2021-09-15T00:00:00.000Z",
+            "id_ti": 1,
+            "id_car": 1,
+            "id_per": 1
+          }
+        ],
+        "total": 89,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "empleados/8855408502",
+      "status": 200,
+      "response": {
+        "id_emp": 8855408502,
+        "fecha_contratacion": "2021-09-15T00:00:00.000Z",
+        "id_ti": 1,
+        "id_car": 1,
+        "id_per": 8855408602
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "empleados/8855408502",
+      "body": {
+        "fecha_contratacion": "2021-09-15"
+      },
+      "status": 200,
+      "response": {
+        "id_emp": 8855408502,
+        "fecha_contratacion": "2021-09-15T00:00:00.000Z",
+        "id_ti": 1,
+        "id_car": 1,
+        "id_per": 8855408602
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "empleados/8855408502",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "empleados/8855408502",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "personas/8855408602",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "personas",
+      "body": {
+        "id_per": 8855408603,
+        "nombre_per": "Cristina",
+        "apellido_per": "Garcia",
+        "telefono": "59398441",
+        "correo_per": "aux8855408503@example.test",
+        "direccion_per": "13 Calle 3-74 zona 4",
+        "id_mun": 41
+      },
+      "status": 201,
+      "response": {
+        "id_per": 8855408603,
+        "nombre_per": "Cristina",
+        "apellido_per": "Garcia",
+        "telefono": "59398441",
+        "correo_per": "aux8855408503@example.test",
+        "direccion_per": "13 Calle 3-74 zona 4",
+        "id_mun": 41
+      }
+    },
+    {
+      "method": "POST",
+      "path": "clientes",
+      "body": {
+        "id_cli": 8855408503,
+        "id_tip_ide": 1,
+        "numero_identificacion": "8855408503",
+        "id_per": 8855408603
+      },
+      "status": 201,
+      "response": {
+        "id_cli": 8855408503,
+        "id_tip_ide": 1,
+        "numero_identificacion": "8855408503",
+        "id_per": 8855408603
+      }
+    },
+    {
+      "method": "GET",
+      "path": "clientes?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_cli": 1,
+            "id_tip_ide": 1,
+            "numero_identificacion": "3358880404",
+            "id_per": 89
+          }
+        ],
+        "total": 301,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "clientes/8855408503",
+      "status": 200,
+      "response": {
+        "id_cli": 8855408503,
+        "id_tip_ide": 1,
+        "numero_identificacion": "8855408503",
+        "id_per": 8855408603
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "clientes/8855408503",
+      "body": {
+        "id_tip_ide": 1
+      },
+      "status": 200,
+      "response": {
+        "id_cli": 8855408503,
+        "id_tip_ide": 1,
+        "numero_identificacion": "8855408503",
+        "id_per": 8855408603
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "clientes/8855408503",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "clientes/8855408503",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "personas/8855408603",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "productos",
+      "body": {
+        "id_pro": 8855408504,
+        "nombre_pro": "Prueba 8855408504",
+        "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+        "id_cat": 1,
+        "id_mar": 4
+      },
+      "status": 201,
+      "response": {
+        "id_pro": 8855408504,
+        "nombre_pro": "Prueba 8855408504",
+        "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+        "id_cat": 1,
+        "id_mar": 4
+      }
+    },
+    {
+      "method": "GET",
+      "path": "productos?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_pro": 1,
+            "nombre_pro": "Agua pura Original",
+            "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+            "id_cat": 1,
+            "id_mar": 4
+          }
+        ],
+        "total": 115,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "productos/8855408504",
+      "status": 200,
+      "response": {
+        "id_pro": 8855408504,
+        "nombre_pro": "Prueba 8855408504",
+        "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+        "id_cat": 1,
+        "id_mar": 4
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "productos/8855408504",
+      "body": {
+        "nombre_pro": "Prueba 8855408504"
+      },
+      "status": 200,
+      "response": {
+        "id_pro": 8855408504,
+        "nombre_pro": "Prueba 8855408504",
+        "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+        "id_cat": 1,
+        "id_mar": 4
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "productos/8855408504",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "productos/8855408504",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "productos",
+      "body": {
+        "id_pro": 8855408989,
+        "nombre_pro": "Agua pura Original",
+        "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+        "id_cat": 1,
+        "id_mar": 4
+      },
+      "status": 201,
+      "response": {
+        "id_pro": 8855408989,
+        "nombre_pro": "Agua pura Original",
+        "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+        "id_cat": 1,
+        "id_mar": 4
+      }
+    },
+    {
+      "method": "POST",
+      "path": "catalogos-producto",
+      "body": {
+        "precio_vigente_cat_pro": 231.22,
+        "existencia_actual_cat_pro": 107,
+        "id_ti": 1,
+        "id_pro": 8855408989
+      },
+      "status": 201,
+      "response": {
+        "precio_vigente_cat_pro": 231.22,
+        "existencia_actual_cat_pro": 107,
+        "id_ti": 1,
+        "id_pro": 8855408989
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "precio_vigente_cat_pro": 191.61,
+            "existencia_actual_cat_pro": 161,
+            "id_ti": 1,
+            "id_pro": 1
+          }
+        ],
+        "total": 1425,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/1/8855408989",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 231.22,
+        "existencia_actual_cat_pro": 107,
+        "id_ti": 1,
+        "id_pro": 8855408989
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "catalogos-producto/1/8855408989",
+      "body": {
+        "precio_vigente_cat_pro": 231.22
+      },
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 231.22,
+        "existencia_actual_cat_pro": 107,
+        "id_ti": 1,
+        "id_pro": 8855408989
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "catalogos-producto/1/8855408989",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/1/8855408989",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "productos/8855408989",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "ventas",
+      "body": {
+        "id_ven": 8855408506,
+        "fecha_ven": "2026-08-23",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      },
+      "status": 201,
+      "response": {
+        "id_ven": 8855408506,
+        "total_ven": 0,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "GET",
+      "path": "ventas?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_ven": 1,
+            "total_ven": 114.88,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_emp": 11,
+            "id_cli": 10,
+            "id_es_ven": 2
+          }
+        ],
+        "total": 1501,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "ventas/8855408506",
+      "status": 200,
+      "response": {
+        "id_ven": 8855408506,
+        "total_ven": 0,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "ventas/8855408506",
+      "body": {
+        "fecha_ven": "2026-08-23"
+      },
+      "status": 200,
+      "response": {
+        "id_ven": 8855408506,
+        "total_ven": 0,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "ventas/8855408506",
+      "status": 200,
+      "response": {
+        "message": "Venta ANULADA; inventario restituido"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "ventas",
+      "body": {
+        "id_ven": 8855408990,
+        "fecha_ven": "2026-08-23",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      },
+      "status": 201,
+      "response": {
+        "id_ven": 8855408990,
+        "total_ven": 0,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "POST",
+      "path": "detalles-venta",
+      "body": {
+        "cantidad_des_ven": 1,
+        "precio_unitario_des_ven": 10,
+        "id_ven": 8855408990,
+        "id_pro": 23
+      },
+      "status": 201,
+      "response": {
+        "cantidad_des_ven": 1,
+        "precio_unitario_des_ven": 10,
+        "subtotal_des_ven": 10,
+        "id_ven": 8855408990,
+        "id_pro": 23
+      }
+    },
+    {
+      "method": "GET",
+      "path": "detalles-venta?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "cantidad_des_ven": 1,
+            "precio_unitario_des_ven": 77.74,
+            "subtotal_des_ven": 77.74,
+            "id_ven": 1,
+            "id_pro": 35
+          }
+        ],
+        "total": 3688,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "detalles-venta/8855408990/23",
+      "status": 200,
+      "response": {
+        "cantidad_des_ven": 1,
+        "precio_unitario_des_ven": 10,
+        "subtotal_des_ven": 10,
+        "id_ven": 8855408990,
+        "id_pro": 23
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "detalles-venta/8855408990/23",
+      "body": {
+        "cantidad_des_ven": 1
+      },
+      "status": 200,
+      "response": {
+        "cantidad_des_ven": 1,
+        "precio_unitario_des_ven": 10,
+        "subtotal_des_ven": 10,
+        "id_ven": 8855408990,
+        "id_pro": 23
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "detalles-venta/8855408990/23",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "detalles-venta/8855408990/23",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "ventas/8855408990",
+      "status": 200,
+      "response": {
+        "message": "Venta ANULADA; inventario restituido"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "ventas",
+      "body": {
+        "id_ven": 8855408991,
+        "fecha_ven": "2026-08-23",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      },
+      "status": 201,
+      "response": {
+        "id_ven": 8855408991,
+        "total_ven": 0,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "POST",
+      "path": "detalles-venta",
+      "body": {
+        "id_ven": 8855408991,
+        "id_pro": 23,
+        "cantidad_des_ven": 1,
+        "precio_unitario_des_ven": 10
+      },
+      "status": 201,
+      "response": {
+        "cantidad_des_ven": 1,
+        "precio_unitario_des_ven": 10,
+        "subtotal_des_ven": 10,
+        "id_ven": 8855408991,
+        "id_pro": 23
+      }
+    },
+    {
+      "method": "POST",
+      "path": "pagos",
+      "body": {
+        "id_pag": 8855408508,
+        "monto_pag": 2,
+        "id_met_pag": 1,
+        "id_ven": 8855408991
+      },
+      "status": 201,
+      "response": {
+        "id_pag": 8855408508,
+        "monto_pag": 2,
+        "id_met_pag": 1,
+        "id_ven": 8855408991
+      }
+    },
+    {
+      "method": "GET",
+      "path": "pagos?limit=1",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_pag": 1,
+            "monto_pag": 114.88,
+            "id_met_pag": 1,
+            "id_ven": 1
+          }
+        ],
+        "total": 1390,
+        "limit": 1,
+        "offset": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "pagos/8855408508",
+      "status": 200,
+      "response": {
+        "id_pag": 8855408508,
+        "monto_pag": 2,
+        "id_met_pag": 1,
+        "id_ven": 8855408991
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "pagos/8855408508",
+      "body": {
+        "monto_pag": 2
+      },
+      "status": 200,
+      "response": {
+        "id_pag": 8855408508,
+        "monto_pag": 2,
+        "id_met_pag": 1,
+        "id_ven": 8855408991
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "pagos/8855408508",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "pagos/8855408508",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "detalles-venta/8855408991/23",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "ventas/8855408991",
+      "status": 200,
+      "response": {
+        "message": "Venta ANULADA; inventario restituido"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "productos",
+      "body": {
+        "id_pro": 8855409189,
+        "nombre_pro": "Inventario 8855408489",
+        "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+        "id_cat": 1,
+        "id_mar": 4
+      },
+      "status": 201,
+      "response": {
+        "id_pro": 8855409189,
+        "nombre_pro": "Inventario 8855408489",
+        "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
+        "id_cat": 1,
+        "id_mar": 4
+      }
+    },
+    {
+      "method": "POST",
+      "path": "catalogos-producto",
+      "body": {
+        "id_ti": 3,
+        "id_pro": 8855409189,
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 10
+      },
+      "status": 201,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 10,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "POST",
+      "path": "ventas",
+      "body": {
+        "id_ven": 8855409190,
+        "fecha_ven": "2026-08-23",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      },
+      "status": 201,
+      "response": {
+        "id_ven": 8855409190,
+        "total_ven": 0,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "POST",
+      "path": "ventas",
+      "body": {
+        "id_ven": 8855409191,
+        "fecha_ven": "2026-08-23",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      },
+      "status": 201,
+      "response": {
+        "id_ven": 8855409191,
+        "total_ven": 0,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "POST",
+      "path": "ventas",
+      "body": {
+        "id_ven": 8855409192,
+        "fecha_ven": "2026-08-23",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      },
+      "status": 201,
+      "response": {
+        "id_ven": 8855409192,
+        "total_ven": 0,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "POST",
+      "path": "detalles-venta",
+      "body": {
+        "id_ven": 8855409190,
+        "id_pro": 8855409189,
+        "cantidad_des_ven": 11,
+        "precio_unitario_des_ven": 10
+      },
+      "status": 400,
+      "response": {
+        "error": "Stock insuficiente"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/3/8855409189",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 10,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "GET",
+      "path": "detalles-venta/8855409190/8855409189",
+      "status": 404,
+      "response": {
+        "error": "Registro no encontrado"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "detalles-venta",
+      "body": [
+        {
+          "id_ven": 8855409190,
+          "id_pro": 8855409189,
+          "cantidad_des_ven": 6,
+          "precio_unitario_des_ven": 10
+        },
+        {
+          "id_ven": 8855409191,
+          "id_pro": 8855409189,
+          "cantidad_des_ven": 6,
+          "precio_unitario_des_ven": 10
+        }
+      ],
+      "status": 400,
+      "response": {
+        "error": "Stock insuficiente"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/3/8855409189",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 10,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "POST",
+      "path": "detalles-venta",
+      "body": {
+        "id_ven": 8855409190,
+        "id_pro": 8855409189,
+        "cantidad_des_ven": 2,
+        "precio_unitario_des_ven": 10
+      },
+      "status": 201,
+      "response": {
+        "cantidad_des_ven": 2,
+        "precio_unitario_des_ven": 10,
+        "subtotal_des_ven": 20,
+        "id_ven": 8855409190,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/3/8855409189",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 8,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "detalles-venta/8855409190/8855409189",
+      "body": {
+        "cantidad_des_ven": 3
+      },
+      "status": 200,
+      "response": {
+        "cantidad_des_ven": 3,
+        "precio_unitario_des_ven": 10,
+        "subtotal_des_ven": 30,
+        "id_ven": 8855409190,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/3/8855409189",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 7,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "GET",
+      "path": "ventas/8855409190",
+      "status": 200,
+      "response": {
+        "id_ven": 8855409190,
+        "total_ven": 30,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "POST",
+      "path": "pagos",
+      "body": {
+        "id_pag": 8855409199,
+        "monto_pag": 10,
+        "id_met_pag": 1,
+        "id_ven": 8855409190
+      },
+      "status": 201,
+      "response": {
+        "id_pag": 8855409199,
+        "monto_pag": 10,
+        "id_met_pag": 1,
+        "id_ven": 8855409190
+      }
+    },
+    {
+      "method": "GET",
+      "path": "ventas/8855409190",
+      "status": 200,
+      "response": {
+        "id_ven": 8855409190,
+        "total_ven": 30,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "POST",
+      "path": "pagos",
+      "body": {
+        "id_pag": 8855409200,
+        "monto_pag": 20,
+        "id_met_pag": 1,
+        "id_ven": 8855409190
+      },
+      "status": 201,
+      "response": {
+        "id_pag": 8855409200,
+        "monto_pag": 20,
+        "id_met_pag": 1,
+        "id_ven": 8855409190
+      }
+    },
+    {
+      "method": "GET",
+      "path": "ventas/8855409190",
+      "status": 200,
+      "response": {
+        "id_ven": 8855409190,
+        "total_ven": 30,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 2
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "pagos/8855409200",
+      "status": 200,
+      "response": {
+        "message": "Registro eliminado"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "ventas/8855409190",
+      "status": 200,
+      "response": {
+        "id_ven": 8855409190,
+        "total_ven": 30,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 1
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "pagos/8855409199",
+      "body": {
+        "monto_pag": 35
+      },
+      "status": 200,
+      "response": {
+        "id_pag": 8855409199,
+        "monto_pag": 35,
+        "id_met_pag": 1,
+        "id_ven": 8855409190
+      }
+    },
+    {
+      "method": "GET",
+      "path": "ventas/8855409190",
+      "status": 200,
+      "response": {
+        "id_ven": 8855409190,
+        "total_ven": 30,
+        "fecha_ven": "2026-08-23T00:00:00.000Z",
+        "id_ti": 3,
+        "id_emp": 11,
+        "id_cli": 10,
+        "id_es_ven": 2
+      }
+    },
+    {
+      "caso": "Compras concurrentes",
+      "resultados": [
+        {
+          "sale": 8855409191,
+          "status": 201,
+          "body": {
+            "cantidad_des_ven": 5,
+            "precio_unitario_des_ven": 10,
+            "subtotal_des_ven": 50,
+            "id_ven": 8855409191,
+            "id_pro": 8855409189
+          }
+        },
+        {
+          "sale": 8855409192,
+          "status": 400,
+          "body": {
+            "error": "Stock insuficiente"
+          }
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/3/8855409189",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 2,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "GET",
+      "path": "reportes/ventas-ubicacion",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_ti": 5,
+            "tienda": "Comercial La Estrella Chimaltenango",
+            "municipio": "Panajachel",
+            "departamento": "Solola",
+            "pais": "Guatemala",
+            "cantidad_ventas": 91,
+            "total_facturado": 111797.36
+          },
+          {
+            "id_ti": 18,
+            "tienda": "Comercial La Estrella Monterrey",
+            "municipio": "Iztapalapa",
+            "departamento": "Ciudad de Mexico",
+            "pais": "Mexico",
+            "cantidad_ventas": 81,
+            "total_facturado": 94703.64
+          },
+          {
+            "id_ti": 15,
+            "tienda": "Comercial La Estrella Jutiapa",
+            "municipio": "Champerico",
+            "departamento": "Retalhuleu",
+            "pais": "Guatemala",
+            "cantidad_ventas": 74,
+            "total_facturado": 87126.46
+          },
+          {
+            "id_ti": 14,
+            "tienda": "Comercial La Estrella Zacapa",
+            "municipio": "Rabinal",
+            "departamento": "Baja Verapaz",
+            "pais": "Guatemala",
+            "cantidad_ventas": 74,
+            "total_facturado": 85689.82
+          },
+          {
+            "id_ti": 16,
+            "tienda": "Comercial La Estrella Ciudad de Mexico",
+            "municipio": "Coyoacan",
+            "departamento": "Ciudad de Mexico",
+            "pais": "Mexico",
+            "cantidad_ventas": 66,
+            "total_facturado": 81647.85
+          },
+          {
+            "id_ti": 8,
+            "tienda": "Comercial La Estrella Coatepeque",
+            "municipio": "Tecpan Guatemala",
+            "departamento": "Chimaltenango",
+            "pais": "Guatemala",
+            "cantidad_ventas": 62,
+            "total_facturado": 79302.53
+          },
+          {
+            "id_ti": 13,
+            "tienda": "Comercial La Estrella Puerto Barrios",
+            "municipio": "Ciudad Vieja",
+            "departamento": "Sacatepequez",
+            "pais": "Guatemala",
+            "cantidad_ventas": 77,
+            "total_facturado": 79183.41
+          },
+          {
+            "id_ti": 1,
+            "tienda": "Comercial La Estrella Zona 1",
+            "municipio": "Fray Bartolome de las Casas",
+            "departamento": "Alta Verapaz",
+            "pais": "Guatemala",
+            "cantidad_ventas": 71,
+            "total_facturado": 76647.89
+          },
+          {
+            "id_ti": 4,
+            "tienda": "Comercial La Estrella Antigua",
+            "municipio": "Zacapa",
+            "departamento": "Zacapa",
+            "pais": "Guatemala",
+            "cantidad_ventas": 79,
+            "total_facturado": 76497.83
+          },
+          {
+            "id_ti": 19,
+            "tienda": "Comercial La Estrella San Salvador",
+            "municipio": "Santa Tecla",
+            "departamento": "La Libertad",
+            "pais": "El Salvador",
+            "cantidad_ventas": 68,
+            "total_facturado": 75411.06
+          },
+          {
+            "id_ti": 6,
+            "tienda": "Comercial La Estrella Escuintla",
+            "municipio": "Chiquimulilla",
+            "departamento": "Santa Rosa",
+            "pais": "Guatemala",
+            "cantidad_ventas": 72,
+            "total_facturado": 74297.89
+          },
+          {
+            "id_ti": 3,
+            "tienda": "Comercial La Estrella Villa Nueva",
+            "municipio": "Mixco",
+            "departamento": "Guatemala",
+            "pais": "Guatemala",
+            "cantidad_ventas": 69,
+            "total_facturado": 72808.23
+          },
+          {
+            "id_ti": 7,
+            "tienda": "Comercial La Estrella Xela",
+            "municipio": "Barberena",
+            "departamento": "Santa Rosa",
+            "pais": "Guatemala",
+            "cantidad_ventas": 69,
+            "total_facturado": 65684.31
+          },
+          {
+            "id_ti": 2,
+            "tienda": "Comercial La Estrella Mixco",
+            "municipio": "Chimaltenango",
+            "departamento": "Chimaltenango",
+            "pais": "Guatemala",
+            "cantidad_ventas": 63,
+            "total_facturado": 64755.5
+          },
+          {
+            "id_ti": 9,
+            "tienda": "Comercial La Estrella Mazatenango",
+            "municipio": "Jutiapa",
+            "departamento": "Jutiapa",
+            "pais": "Guatemala",
+            "cantidad_ventas": 55,
+            "total_facturado": 64207.49
+          },
+          {
+            "id_ti": 20,
+            "tienda": "Comercial La Estrella Santa Ana",
+            "municipio": "Izalco",
+            "departamento": "Sonsonate",
+            "pais": "El Salvador",
+            "cantidad_ventas": 54,
+            "total_facturado": 63486.93
+          },
+          {
+            "id_ti": 10,
+            "tienda": "Comercial La Estrella Huehuetenango",
+            "municipio": "Jocotenango",
+            "departamento": "Sacatepequez",
+            "pais": "Guatemala",
+            "cantidad_ventas": 53,
+            "total_facturado": 60976.58
+          },
+          {
+            "id_ti": 17,
+            "tienda": "Comercial La Estrella Guadalajara",
+            "municipio": "Cholula",
+            "departamento": "Puebla",
+            "pais": "Mexico",
+            "cantidad_ventas": 70,
+            "total_facturado": 60949.98
+          },
+          {
+            "id_ti": 11,
+            "tienda": "Comercial La Estrella Coban",
+            "municipio": "Santa Elena",
+            "departamento": "Peten",
+            "pais": "Guatemala",
+            "cantidad_ventas": 57,
+            "total_facturado": 60564.28
+          },
+          {
+            "id_ti": 12,
+            "tienda": "Comercial La Estrella Peten",
+            "municipio": "Santa Cruz del Quiche",
+            "departamento": "Quiche",
+            "pais": "Guatemala",
+            "cantidad_ventas": 61,
+            "total_facturado": 54813.68
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "reportes/top-productos",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "codigo_producto": 90,
+            "producto": "Helado de vainilla Light",
+            "categoria": "Congelados",
+            "marca": "GranjaFeliz",
+            "unidades_totales_vendidas": 174,
+            "monto_total_generado": 10461.93
+          },
+          {
+            "codigo_producto": 19,
+            "producto": "Tortillas de maiz frito Especial",
+            "categoria": "Snacks",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 162,
+            "monto_total_generado": 9623.54
+          },
+          {
+            "codigo_producto": 41,
+            "producto": "Pan de molde Light",
+            "categoria": "Panaderia",
+            "marca": "AguaViva",
+            "unidades_totales_vendidas": 162,
+            "monto_total_generado": 2123.15
+          },
+          {
+            "codigo_producto": 20,
+            "producto": "Tortillas de maiz frito Especial 20",
+            "categoria": "Snacks",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 161,
+            "monto_total_generado": 3893.51
+          },
+          {
+            "codigo_producto": 27,
+            "producto": "Frituras de platano Premium",
+            "categoria": "Snacks",
+            "marca": "Bienestar Total",
+            "unidades_totales_vendidas": 161,
+            "monto_total_generado": 24077.18
+          },
+          {
+            "codigo_producto": 91,
+            "producto": "Nuggets de pollo Premium",
+            "categoria": "Congelados",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 157,
+            "monto_total_generado": 13141.57
+          },
+          {
+            "codigo_producto": 44,
+            "producto": "Pan dulce Especial",
+            "categoria": "Panaderia",
+            "marca": "FrescoYa",
+            "unidades_totales_vendidas": 145,
+            "monto_total_generado": 6215.57
+          },
+          {
+            "codigo_producto": 88,
+            "producto": "Vegetales mixtos congelados Familiar",
+            "categoria": "Congelados",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 143,
+            "monto_total_generado": 35598.62
+          },
+          {
+            "codigo_producto": 24,
+            "producto": "Galletas saladas Original 24",
+            "categoria": "Snacks",
+            "marca": "BrilloHogar",
+            "unidades_totales_vendidas": 139,
+            "monto_total_generado": 22059.43
+          },
+          {
+            "codigo_producto": 50,
+            "producto": "Pan integral Familiar 50",
+            "categoria": "Panaderia",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 139,
+            "monto_total_generado": 18335.2
+          },
+          {
+            "codigo_producto": 92,
+            "producto": "Nuggets de pollo Tradicional",
+            "categoria": "Congelados",
+            "marca": "CasaLimpia",
+            "unidades_totales_vendidas": 137,
+            "monto_total_generado": 33598.96
+          },
+          {
+            "codigo_producto": 61,
+            "producto": "Jabon de baño Light",
+            "categoria": "Cuidado personal",
+            "marca": "Lacteos del Valle",
+            "unidades_totales_vendidas": 134,
+            "monto_total_generado": 7066.79
+          },
+          {
+            "codigo_producto": 12,
+            "producto": "Bebida energetica Clasico",
+            "categoria": "Bebidas",
+            "marca": "Bienestar Total",
+            "unidades_totales_vendidas": 133,
+            "monto_total_generado": 32919.43
+          },
+          {
+            "codigo_producto": 18,
+            "producto": "Papas fritas Extra",
+            "categoria": "Snacks",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 132,
+            "monto_total_generado": 2676.89
+          },
+          {
+            "codigo_producto": 51,
+            "producto": "Detergente en polvo Clasico",
+            "categoria": "Limpieza del hogar",
+            "marca": "Lacteos del Valle",
+            "unidades_totales_vendidas": 132,
+            "monto_total_generado": 24867.37
+          },
+          {
+            "codigo_producto": 65,
+            "producto": "Pasta dental Original",
+            "categoria": "Cuidado personal",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 131,
+            "monto_total_generado": 13541.39
+          },
+          {
+            "codigo_producto": 76,
+            "producto": "Azucar Clasico",
+            "categoria": "Abarrotes",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 131,
+            "monto_total_generado": 32171.21
+          },
+          {
+            "codigo_producto": 108,
+            "producto": "Toalla de cocina Extra",
+            "categoria": "Articulos de hogar",
+            "marca": "Lacteos del Valle",
+            "unidades_totales_vendidas": 131,
+            "monto_total_generado": 29912.01
+          },
+          {
+            "codigo_producto": 81,
+            "producto": "Harina de trigo Tradicional",
+            "categoria": "Abarrotes",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 130,
+            "monto_total_generado": 15315.58
+          },
+          {
+            "codigo_producto": 11,
+            "producto": "Bebida energetica Especial",
+            "categoria": "Bebidas",
+            "marca": "SnackTime",
+            "unidades_totales_vendidas": 128,
+            "monto_total_generado": 5704.1
+          },
+          {
+            "codigo_producto": 95,
+            "producto": "Audifonos Premium",
+            "categoria": "Electronica",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 128,
+            "monto_total_generado": 27056.63
+          },
+          {
+            "codigo_producto": 68,
+            "producto": "Desodorante Premium",
+            "categoria": "Cuidado personal",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 126,
+            "monto_total_generado": 9858.59
+          },
+          {
+            "codigo_producto": 36,
+            "producto": "Crema Premium",
+            "categoria": "Lacteos",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 122,
+            "monto_total_generado": 1542.88
+          },
+          {
+            "codigo_producto": 70,
+            "producto": "Papel higienico Familiar",
+            "categoria": "Cuidado personal",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 122,
+            "monto_total_generado": 25076.88
+          },
+          {
+            "codigo_producto": 23,
+            "producto": "Galletas saladas Original",
+            "categoria": "Snacks",
+            "marca": "Delisabor",
+            "unidades_totales_vendidas": 121,
+            "monto_total_generado": 30124.9
+          },
+          {
+            "codigo_producto": 71,
+            "producto": "Arroz Clasico",
+            "categoria": "Abarrotes",
+            "marca": "Delisabor",
+            "unidades_totales_vendidas": 121,
+            "monto_total_generado": 29935.81
+          },
+          {
+            "codigo_producto": 21,
+            "producto": "Mani salado Clasico",
+            "categoria": "Snacks",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 120,
+            "monto_total_generado": 1636.64
+          },
+          {
+            "codigo_producto": 73,
+            "producto": "Frijol negro Familiar",
+            "categoria": "Abarrotes",
+            "marca": "BrilloHogar",
+            "unidades_totales_vendidas": 120,
+            "monto_total_generado": 24579.41
+          },
+          {
+            "codigo_producto": 87,
+            "producto": "Vegetales mixtos congelados Premium",
+            "categoria": "Congelados",
+            "marca": "Bienestar Total",
+            "unidades_totales_vendidas": 120,
+            "monto_total_generado": 19680.44
+          },
+          {
+            "codigo_producto": 56,
+            "producto": "Cloro Clasico",
+            "categoria": "Limpieza del hogar",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 119,
+            "monto_total_generado": 27518.61
+          },
+          {
+            "codigo_producto": 7,
+            "producto": "Cafe molido Familiar",
+            "categoria": "Bebidas",
+            "marca": "BrilloHogar",
+            "unidades_totales_vendidas": 118,
+            "monto_total_generado": 10431.4
+          },
+          {
+            "codigo_producto": 30,
+            "producto": "Leche entera Tradicional",
+            "categoria": "Lacteos",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 118,
+            "monto_total_generado": 19343.34
+          },
+          {
+            "codigo_producto": 85,
+            "producto": "Pizza congelada Especial",
+            "categoria": "Congelados",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 118,
+            "monto_total_generado": 3901.49
+          },
+          {
+            "codigo_producto": 103,
+            "producto": "Cable HDMI Extra",
+            "categoria": "Electronica",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 117,
+            "monto_total_generado": 11100.29
+          },
+          {
+            "codigo_producto": 63,
+            "producto": "Shampoo Familiar",
+            "categoria": "Cuidado personal",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 115,
+            "monto_total_generado": 16891.63
+          },
+          {
+            "codigo_producto": 15,
+            "producto": "Nectar de durazno Extra",
+            "categoria": "Bebidas",
+            "marca": "CasaLimpia",
+            "unidades_totales_vendidas": 114,
+            "monto_total_generado": 4633.25
+          },
+          {
+            "codigo_producto": 82,
+            "producto": "Harina de trigo Tradicional 82",
+            "categoria": "Abarrotes",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 114,
+            "monto_total_generado": 13294.3
+          },
+          {
+            "codigo_producto": 29,
+            "producto": "Leche entera Light",
+            "categoria": "Lacteos",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 113,
+            "monto_total_generado": 23698.93
+          },
+          {
+            "codigo_producto": 101,
+            "producto": "Bocina portatil Original",
+            "categoria": "Electronica",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 113,
+            "monto_total_generado": 27036.34
+          },
+          {
+            "codigo_producto": 37,
+            "producto": "Mantequilla Original",
+            "categoria": "Lacteos",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 112,
+            "monto_total_generado": 17272.54
+          },
+          {
+            "codigo_producto": 74,
+            "producto": "Frijol negro Premium",
+            "categoria": "Abarrotes",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 112,
+            "monto_total_generado": 16571.27
+          },
+          {
+            "codigo_producto": 31,
+            "producto": "Yogurt natural Extra",
+            "categoria": "Lacteos",
+            "marca": "Bienestar Total",
+            "unidades_totales_vendidas": 111,
+            "monto_total_generado": 12782.62
+          },
+          {
+            "codigo_producto": 45,
+            "producto": "Tortillas de harina Light",
+            "categoria": "Panaderia",
+            "marca": "FrescoYa",
+            "unidades_totales_vendidas": 111,
+            "monto_total_generado": 27651.01
+          },
+          {
+            "codigo_producto": 17,
+            "producto": "Papas fritas Light",
+            "categoria": "Snacks",
+            "marca": "AguaViva",
+            "unidades_totales_vendidas": 110,
+            "monto_total_generado": 12418.8
+          },
+          {
+            "codigo_producto": 46,
+            "producto": "Tortillas de harina Familiar",
+            "categoria": "Panaderia",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 109,
+            "monto_total_generado": 21231.05
+          },
+          {
+            "codigo_producto": 49,
+            "producto": "Pan integral Familiar",
+            "categoria": "Panaderia",
+            "marca": "Norteña",
+            "unidades_totales_vendidas": 109,
+            "monto_total_generado": 16241.49
+          },
+          {
+            "codigo_producto": 112,
+            "producto": "Bolsas de basura Tradicional",
+            "categoria": "Articulos de hogar",
+            "marca": "GranjaFeliz",
+            "unidades_totales_vendidas": 109,
+            "monto_total_generado": 24406.58
+          },
+          {
+            "codigo_producto": 32,
+            "producto": "Yogurt natural Especial",
+            "categoria": "Lacteos",
+            "marca": "FrescoYa",
+            "unidades_totales_vendidas": 108,
+            "monto_total_generado": 5903.65
+          },
+          {
+            "codigo_producto": 80,
+            "producto": "Aceite vegetal Clasico",
+            "categoria": "Abarrotes",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 108,
+            "monto_total_generado": 26324.79
+          },
+          {
+            "codigo_producto": 2,
+            "producto": "Agua pura Especial",
+            "categoria": "Bebidas",
+            "marca": "Lacteos del Valle",
+            "unidades_totales_vendidas": 107,
+            "monto_total_generado": 12522.47
+          },
+          {
+            "codigo_producto": 40,
+            "producto": "Leche deslactosada Premium",
+            "categoria": "Lacteos",
+            "marca": "Bienestar Total",
+            "unidades_totales_vendidas": 107,
+            "monto_total_generado": 4922.5
+          },
+          {
+            "codigo_producto": 55,
+            "producto": "Cloro Tradicional",
+            "categoria": "Limpieza del hogar",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 107,
+            "monto_total_generado": 23058.63
+          },
+          {
+            "codigo_producto": 94,
+            "producto": "Papas congeladas Clasico",
+            "categoria": "Congelados",
+            "marca": "Norteña",
+            "unidades_totales_vendidas": 107,
+            "monto_total_generado": 697.12
+          },
+          {
+            "codigo_producto": 105,
+            "producto": "Escoba Tradicional",
+            "categoria": "Articulos de hogar",
+            "marca": "AguaViva",
+            "unidades_totales_vendidas": 106,
+            "monto_total_generado": 7423.84
+          },
+          {
+            "codigo_producto": 53,
+            "producto": "Jabon liquido para trastos Familiar",
+            "categoria": "Limpieza del hogar",
+            "marca": "Norteña",
+            "unidades_totales_vendidas": 105,
+            "monto_total_generado": 2754.83
+          },
+          {
+            "codigo_producto": 48,
+            "producto": "Croissant Light",
+            "categoria": "Panaderia",
+            "marca": "Norteña",
+            "unidades_totales_vendidas": 104,
+            "monto_total_generado": 10838.78
+          },
+          {
+            "codigo_producto": 52,
+            "producto": "Detergente en polvo Familiar",
+            "categoria": "Limpieza del hogar",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 104,
+            "monto_total_generado": 2212.08
+          },
+          {
+            "codigo_producto": 83,
+            "producto": "Pasta para sopa Clasico",
+            "categoria": "Abarrotes",
+            "marca": "Bienestar Total",
+            "unidades_totales_vendidas": 104,
+            "monto_total_generado": 15679.56
+          },
+          {
+            "codigo_producto": 114,
+            "producto": "Foco LED Premium",
+            "categoria": "Articulos de hogar",
+            "marca": "BrilloHogar",
+            "unidades_totales_vendidas": 104,
+            "monto_total_generado": 5640.67
+          },
+          {
+            "codigo_producto": 100,
+            "producto": "Power bank Familiar",
+            "categoria": "Electronica",
+            "marca": "Delisabor",
+            "unidades_totales_vendidas": 102,
+            "monto_total_generado": 2347.69
+          },
+          {
+            "codigo_producto": 10,
+            "producto": "Te helado Familiar 10",
+            "categoria": "Bebidas",
+            "marca": "Lacteos del Valle",
+            "unidades_totales_vendidas": 101,
+            "monto_total_generado": 18337.4
+          },
+          {
+            "codigo_producto": 57,
+            "producto": "Desinfectante multiusos Original",
+            "categoria": "Limpieza del hogar",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 101,
+            "monto_total_generado": 9272.75
+          },
+          {
+            "codigo_producto": 64,
+            "producto": "Shampoo Familiar 64",
+            "categoria": "Cuidado personal",
+            "marca": "GranjaFeliz",
+            "unidades_totales_vendidas": 100,
+            "monto_total_generado": 6902.88
+          },
+          {
+            "codigo_producto": 98,
+            "producto": "Cargador USB Extra",
+            "categoria": "Electronica",
+            "marca": "SnackTime",
+            "unidades_totales_vendidas": 100,
+            "monto_total_generado": 17151.27
+          },
+          {
+            "codigo_producto": 86,
+            "producto": "Pizza congelada Tradicional",
+            "categoria": "Congelados",
+            "marca": "GranjaFeliz",
+            "unidades_totales_vendidas": 99,
+            "monto_total_generado": 2020.77
+          },
+          {
+            "codigo_producto": 109,
+            "producto": "Vela aromatica Especial",
+            "categoria": "Articulos de hogar",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 97,
+            "monto_total_generado": 12444.56
+          },
+          {
+            "codigo_producto": 8,
+            "producto": "Cafe molido Familiar 8",
+            "categoria": "Bebidas",
+            "marca": "GranjaFeliz",
+            "unidades_totales_vendidas": 96,
+            "monto_total_generado": 13401.93
+          },
+          {
+            "codigo_producto": 72,
+            "producto": "Arroz Tradicional",
+            "categoria": "Abarrotes",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 96,
+            "monto_total_generado": 21732.77
+          },
+          {
+            "codigo_producto": 4,
+            "producto": "Gaseosa Extra",
+            "categoria": "Bebidas",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 95,
+            "monto_total_generado": 4276.54
+          },
+          {
+            "codigo_producto": 58,
+            "producto": "Desinfectante multiusos Light",
+            "categoria": "Limpieza del hogar",
+            "marca": "Delisabor",
+            "unidades_totales_vendidas": 95,
+            "monto_total_generado": 23322.28
+          },
+          {
+            "codigo_producto": 110,
+            "producto": "Vela aromatica Original",
+            "categoria": "Articulos de hogar",
+            "marca": "CasaLimpia",
+            "unidades_totales_vendidas": 95,
+            "monto_total_generado": 5022.42
+          },
+          {
+            "codigo_producto": 97,
+            "producto": "Cargador USB Light",
+            "categoria": "Electronica",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 94,
+            "monto_total_generado": 2498.12
+          },
+          {
+            "codigo_producto": 6,
+            "producto": "Jugo de naranja Light",
+            "categoria": "Bebidas",
+            "marca": "AguaViva",
+            "unidades_totales_vendidas": 92,
+            "monto_total_generado": 9618.07
+          },
+          {
+            "codigo_producto": 54,
+            "producto": "Jabon liquido para trastos Familiar 54",
+            "categoria": "Limpieza del hogar",
+            "marca": "CasaLimpia",
+            "unidades_totales_vendidas": 91,
+            "monto_total_generado": 6882.47
+          },
+          {
+            "codigo_producto": 69,
+            "producto": "Papel higienico Tradicional",
+            "categoria": "Cuidado personal",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 91,
+            "monto_total_generado": 22235.85
+          },
+          {
+            "codigo_producto": 9,
+            "producto": "Te helado Familiar",
+            "categoria": "Bebidas",
+            "marca": "FrescoYa",
+            "unidades_totales_vendidas": 89,
+            "monto_total_generado": 15526.11
+          },
+          {
+            "codigo_producto": 107,
+            "producto": "Toalla de cocina Especial",
+            "categoria": "Articulos de hogar",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 89,
+            "monto_total_generado": 15431.18
+          },
+          {
+            "codigo_producto": 13,
+            "producto": "Agua mineral Especial",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 88,
+            "monto_total_generado": 472.91
+          },
+          {
+            "codigo_producto": 62,
+            "producto": "Jabon de baño Tradicional",
+            "categoria": "Cuidado personal",
+            "marca": "BrilloHogar",
+            "unidades_totales_vendidas": 88,
+            "monto_total_generado": 21072.61
+          },
+          {
+            "codigo_producto": 14,
+            "producto": "Agua mineral Premium",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 87,
+            "monto_total_generado": 2300.29
+          },
+          {
+            "codigo_producto": 106,
+            "producto": "Escoba Light",
+            "categoria": "Articulos de hogar",
+            "marca": "GranjaFeliz",
+            "unidades_totales_vendidas": 84,
+            "monto_total_generado": 20271.5
+          },
+          {
+            "codigo_producto": 1,
+            "producto": "Agua pura Original",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 83,
+            "monto_total_generado": 15966.74
+          },
+          {
+            "codigo_producto": 77,
+            "producto": "Sal Premium",
+            "categoria": "Abarrotes",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 83,
+            "monto_total_generado": 11873.69
+          },
+          {
+            "codigo_producto": 28,
+            "producto": "Frituras de platano Original",
+            "categoria": "Snacks",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 81,
+            "monto_total_generado": 19579.53
+          },
+          {
+            "codigo_producto": 34,
+            "producto": "Queso fresco Familiar",
+            "categoria": "Lacteos",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 81,
+            "monto_total_generado": 16646.92
+          },
+          {
+            "codigo_producto": 38,
+            "producto": "Mantequilla Familiar",
+            "categoria": "Lacteos",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 81,
+            "monto_total_generado": 10743.37
+          },
+          {
+            "codigo_producto": 59,
+            "producto": "Suavizante de telas Especial",
+            "categoria": "Limpieza del hogar",
+            "marca": "FrescoYa",
+            "unidades_totales_vendidas": 81,
+            "monto_total_generado": 5969.28
+          },
+          {
+            "codigo_producto": 96,
+            "producto": "Audifonos Clasico",
+            "categoria": "Electronica",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 81,
+            "monto_total_generado": 5315.94
+          },
+          {
+            "codigo_producto": 5,
+            "producto": "Jugo de naranja Clasico",
+            "categoria": "Bebidas",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 80,
+            "monto_total_generado": 4601.38
+          },
+          {
+            "codigo_producto": 22,
+            "producto": "Mani salado Extra",
+            "categoria": "Snacks",
+            "marca": "Norteña",
+            "unidades_totales_vendidas": 80,
+            "monto_total_generado": 8098.5
+          },
+          {
+            "codigo_producto": 47,
+            "producto": "Croissant Tradicional",
+            "categoria": "Panaderia",
+            "marca": "AguaViva",
+            "unidades_totales_vendidas": 80,
+            "monto_total_generado": 7419.82
+          },
+          {
+            "codigo_producto": 78,
+            "producto": "Sal Especial",
+            "categoria": "Abarrotes",
+            "marca": "Delisabor",
+            "unidades_totales_vendidas": 79,
+            "monto_total_generado": 14815.61
+          },
+          {
+            "codigo_producto": 25,
+            "producto": "Palomitas Familiar",
+            "categoria": "Snacks",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 78,
+            "monto_total_generado": 10719.08
+          },
+          {
+            "codigo_producto": 26,
+            "producto": "Palomitas Tradicional",
+            "categoria": "Snacks",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 75,
+            "monto_total_generado": 13627.06
+          },
+          {
+            "codigo_producto": 89,
+            "producto": "Helado de vainilla Especial",
+            "categoria": "Congelados",
+            "marca": "CasaLimpia",
+            "unidades_totales_vendidas": 74,
+            "monto_total_generado": 12909.52
+          },
+          {
+            "codigo_producto": 39,
+            "producto": "Leche deslactosada Familiar",
+            "categoria": "Lacteos",
+            "marca": "Lacteos del Valle",
+            "unidades_totales_vendidas": 72,
+            "monto_total_generado": 4391.52
+          },
+          {
+            "codigo_producto": 84,
+            "producto": "Pasta para sopa Tradicional",
+            "categoria": "Abarrotes",
+            "marca": "SnackTime",
+            "unidades_totales_vendidas": 71,
+            "monto_total_generado": 753.31
+          },
+          {
+            "codigo_producto": 104,
+            "producto": "Cable HDMI Original",
+            "categoria": "Electronica",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 71,
+            "monto_total_generado": 16395.23
+          },
+          {
+            "codigo_producto": 111,
+            "producto": "Bolsas de basura Extra",
+            "categoria": "Articulos de hogar",
+            "marca": "HogarPlus",
+            "unidades_totales_vendidas": 71,
+            "monto_total_generado": 12985.72
+          },
+          {
+            "codigo_producto": 67,
+            "producto": "Desodorante Especial",
+            "categoria": "Cuidado personal",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 68,
+            "monto_total_generado": 1506.23
+          },
+          {
+            "codigo_producto": 93,
+            "producto": "Papas congeladas Light",
+            "categoria": "Congelados",
+            "marca": "CasaLimpia",
+            "unidades_totales_vendidas": 68,
+            "monto_total_generado": 8972.92
+          },
+          {
+            "codigo_producto": 102,
+            "producto": "Bocina portatil Tradicional",
+            "categoria": "Electronica",
+            "marca": "CasaLimpia",
+            "unidades_totales_vendidas": 67,
+            "monto_total_generado": 8340.68
+          },
+          {
+            "codigo_producto": 42,
+            "producto": "Pan de molde Extra",
+            "categoria": "Panaderia",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 66,
+            "monto_total_generado": 4253.34
+          },
+          {
+            "codigo_producto": 79,
+            "producto": "Aceite vegetal Familiar",
+            "categoria": "Abarrotes",
+            "marca": "AguaViva",
+            "unidades_totales_vendidas": 66,
+            "monto_total_generado": 12930.13
+          },
+          {
+            "codigo_producto": 75,
+            "producto": "Azucar Especial",
+            "categoria": "Abarrotes",
+            "marca": "Lacteos del Valle",
+            "unidades_totales_vendidas": 62,
+            "monto_total_generado": 11023.88
+          },
+          {
+            "codigo_producto": 3,
+            "producto": "Gaseosa Premium",
+            "categoria": "Bebidas",
+            "marca": "TecnoMax",
+            "unidades_totales_vendidas": 60,
+            "monto_total_generado": 10413.15
+          },
+          {
+            "codigo_producto": 113,
+            "producto": "Foco LED Familiar",
+            "categoria": "Articulos de hogar",
+            "marca": "SnackTime",
+            "unidades_totales_vendidas": 60,
+            "monto_total_generado": 3325.76
+          },
+          {
+            "codigo_producto": 35,
+            "producto": "Crema Familiar",
+            "categoria": "Lacteos",
+            "marca": "FrescoYa",
+            "unidades_totales_vendidas": 58,
+            "monto_total_generado": 4481.83
+          },
+          {
+            "codigo_producto": 99,
+            "producto": "Power bank Extra",
+            "categoria": "Electronica",
+            "marca": "La Espiga",
+            "unidades_totales_vendidas": 55,
+            "monto_total_generado": 11527.2
+          },
+          {
+            "codigo_producto": 60,
+            "producto": "Suavizante de telas Especial 60",
+            "categoria": "Limpieza del hogar",
+            "marca": "BrilloHogar",
+            "unidades_totales_vendidas": 54,
+            "monto_total_generado": 8147.75
+          },
+          {
+            "codigo_producto": 16,
+            "producto": "Nectar de durazno Clasico",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 53,
+            "monto_total_generado": 12675.33
+          },
+          {
+            "codigo_producto": 33,
+            "producto": "Queso fresco Clasico",
+            "categoria": "Lacteos",
+            "marca": "VitalCare",
+            "unidades_totales_vendidas": 53,
+            "monto_total_generado": 8814.03
+          },
+          {
+            "codigo_producto": 43,
+            "producto": "Pan dulce Premium",
+            "categoria": "Panaderia",
+            "marca": "SnackTime",
+            "unidades_totales_vendidas": 52,
+            "monto_total_generado": 219.04
+          },
+          {
+            "codigo_producto": 66,
+            "producto": "Pasta dental Extra",
+            "categoria": "Cuidado personal",
+            "marca": "Lacteos del Valle",
+            "unidades_totales_vendidas": 43,
+            "monto_total_generado": 1287.39
+          },
+          {
+            "codigo_producto": 8855409189,
+            "producto": "Inventario 8855408489",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 8,
+            "monto_total_generado": 80
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "reportes/saldos-pendientes",
+      "status": 200,
+      "response": {
+        "data": [
+          {
+            "id_ven": 12,
+            "fecha_ven": "2025-09-19T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 224,
+            "total_venta": 1246.2,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1246.2
+          },
+          {
+            "id_ven": 16,
+            "fecha_ven": "2026-02-26T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 158,
+            "total_venta": 1422.6,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1422.6
+          },
+          {
+            "id_ven": 18,
+            "fecha_ven": "2025-10-23T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 214,
+            "total_venta": 1285.5,
+            "monto_total_pagado": 632.32,
+            "saldo_pendiente": 653.18
+          },
+          {
+            "id_ven": 21,
+            "fecha_ven": "2025-01-08T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 137,
+            "total_venta": 383.22,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 383.22
+          },
+          {
+            "id_ven": 23,
+            "fecha_ven": "2025-12-31T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 30,
+            "total_venta": 523.48,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 523.48
+          },
+          {
+            "id_ven": 26,
+            "fecha_ven": "2026-02-14T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 249,
+            "total_venta": 887.2,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 887.2
+          },
+          {
+            "id_ven": 34,
+            "fecha_ven": "2026-07-06T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 5,
+            "total_venta": 2002.26,
+            "monto_total_pagado": 740.91,
+            "saldo_pendiente": 1261.35
+          },
+          {
+            "id_ven": 38,
+            "fecha_ven": "2025-12-23T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 243,
+            "total_venta": 2239.96,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2239.96
+          },
+          {
+            "id_ven": 39,
+            "fecha_ven": "2025-11-28T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 68,
+            "total_venta": 217.59,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 217.59
+          },
+          {
+            "id_ven": 46,
+            "fecha_ven": "2026-04-03T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 285,
+            "total_venta": 277.6,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 277.6
+          },
+          {
+            "id_ven": 47,
+            "fecha_ven": "2025-09-20T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 288,
+            "total_venta": 131.25,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 131.25
+          },
+          {
+            "id_ven": 52,
+            "fecha_ven": "2025-07-17T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 138,
+            "total_venta": 386.75,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 386.75
+          },
+          {
+            "id_ven": 61,
+            "fecha_ven": "2025-06-22T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 230,
+            "total_venta": 1140.97,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1140.97
+          },
+          {
+            "id_ven": 67,
+            "fecha_ven": "2026-03-26T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 56,
+            "total_venta": 2100.05,
+            "monto_total_pagado": 658.87,
+            "saldo_pendiente": 1441.18
+          },
+          {
+            "id_ven": 79,
+            "fecha_ven": "2025-11-05T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 176,
+            "total_venta": 383.01,
+            "monto_total_pagado": 172.71,
+            "saldo_pendiente": 210.3
+          },
+          {
+            "id_ven": 82,
+            "fecha_ven": "2026-03-25T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 85,
+            "total_venta": 1245.45,
+            "monto_total_pagado": 411.85,
+            "saldo_pendiente": 833.6
+          },
+          {
+            "id_ven": 87,
+            "fecha_ven": "2025-07-31T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 283,
+            "total_venta": 867.56,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 867.56
+          },
+          {
+            "id_ven": 88,
+            "fecha_ven": "2025-08-26T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 229,
+            "total_venta": 917.94,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 917.94
+          },
+          {
+            "id_ven": 96,
+            "fecha_ven": "2025-03-28T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 185,
+            "total_venta": 994.13,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 994.13
+          },
+          {
+            "id_ven": 100,
+            "fecha_ven": "2026-07-04T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 273,
+            "total_venta": 2819.16,
+            "monto_total_pagado": 711.42,
+            "saldo_pendiente": 2107.74
+          },
+          {
+            "id_ven": 103,
+            "fecha_ven": "2025-02-25T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 191,
+            "total_venta": 600,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 600
+          },
+          {
+            "id_ven": 112,
+            "fecha_ven": "2025-11-19T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 100,
+            "total_venta": 1220.6,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1220.6
+          },
+          {
+            "id_ven": 122,
+            "fecha_ven": "2025-08-06T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 249,
+            "total_venta": 2258.83,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2258.83
+          },
+          {
+            "id_ven": 125,
+            "fecha_ven": "2025-07-08T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 133,
+            "total_venta": 753.63,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 753.63
+          },
+          {
+            "id_ven": 127,
+            "fecha_ven": "2026-07-29T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 6,
+            "total_venta": 651.29,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 651.29
+          },
+          {
+            "id_ven": 131,
+            "fecha_ven": "2025-12-27T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 181,
+            "total_venta": 1952.05,
+            "monto_total_pagado": 1087.17,
+            "saldo_pendiente": 864.88
+          },
+          {
+            "id_ven": 132,
+            "fecha_ven": "2025-10-18T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 224,
+            "total_venta": 47.14,
+            "monto_total_pagado": 9.89,
+            "saldo_pendiente": 37.25
+          },
+          {
+            "id_ven": 134,
+            "fecha_ven": "2025-07-20T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 59,
+            "total_venta": 625.56,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 625.56
+          },
+          {
+            "id_ven": 136,
+            "fecha_ven": "2025-06-07T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 14,
+            "total_venta": 2082.96,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2082.96
+          },
+          {
+            "id_ven": 137,
+            "fecha_ven": "2025-02-22T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 202,
+            "total_venta": 1822.59,
+            "monto_total_pagado": 617.1,
+            "saldo_pendiente": 1205.49
+          },
+          {
+            "id_ven": 138,
+            "fecha_ven": "2026-02-06T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 296,
+            "total_venta": 847.49,
+            "monto_total_pagado": 175.37,
+            "saldo_pendiente": 672.12
+          },
+          {
+            "id_ven": 140,
+            "fecha_ven": "2025-09-09T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 275,
+            "total_venta": 1224.62,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1224.62
+          },
+          {
+            "id_ven": 143,
+            "fecha_ven": "2026-01-20T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 215,
+            "total_venta": 2795.81,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2795.81
+          },
+          {
+            "id_ven": 151,
+            "fecha_ven": "2025-08-09T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 38,
+            "total_venta": 1482.18,
+            "monto_total_pagado": 588.9,
+            "saldo_pendiente": 893.28
+          },
+          {
+            "id_ven": 153,
+            "fecha_ven": "2025-11-22T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 223,
+            "total_venta": 895.44,
+            "monto_total_pagado": 326.52,
+            "saldo_pendiente": 568.92
+          },
+          {
+            "id_ven": 166,
+            "fecha_ven": "2026-05-03T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 15,
+            "total_venta": 1861.33,
+            "monto_total_pagado": 933.11,
+            "saldo_pendiente": 928.22
+          },
+          {
+            "id_ven": 169,
+            "fecha_ven": "2025-08-20T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 142,
+            "total_venta": 1971.93,
+            "monto_total_pagado": 635.25,
+            "saldo_pendiente": 1336.68
+          },
+          {
+            "id_ven": 174,
+            "fecha_ven": "2025-11-05T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 181,
+            "total_venta": 1516.24,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1516.24
+          },
+          {
+            "id_ven": 178,
+            "fecha_ven": "2025-03-08T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 148,
+            "total_venta": 32.51,
+            "monto_total_pagado": 22.6,
+            "saldo_pendiente": 9.91
+          },
+          {
+            "id_ven": 185,
+            "fecha_ven": "2026-07-11T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 66,
+            "total_venta": 1212.04,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1212.04
+          },
+          {
+            "id_ven": 190,
+            "fecha_ven": "2025-07-08T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 248,
+            "total_venta": 1047.85,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1047.85
+          },
+          {
+            "id_ven": 192,
+            "fecha_ven": "2026-01-31T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 201,
+            "total_venta": 773.28,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 773.28
+          },
+          {
+            "id_ven": 196,
+            "fecha_ven": "2026-08-13T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 93,
+            "total_venta": 2204.87,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2204.87
+          },
+          {
+            "id_ven": 197,
+            "fecha_ven": "2025-01-31T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 24,
+            "total_venta": 1304.44,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1304.44
+          },
+          {
+            "id_ven": 202,
+            "fecha_ven": "2025-07-09T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 175,
+            "total_venta": 3377.16,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 3377.16
+          },
+          {
+            "id_ven": 207,
+            "fecha_ven": "2025-03-16T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 253,
+            "total_venta": 203.96,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 203.96
+          },
+          {
+            "id_ven": 209,
+            "fecha_ven": "2025-11-07T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 245,
+            "total_venta": 426.21,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 426.21
+          },
+          {
+            "id_ven": 216,
+            "fecha_ven": "2025-05-21T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 105,
+            "total_venta": 373.68,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 373.68
+          },
+          {
+            "id_ven": 220,
+            "fecha_ven": "2025-02-28T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 219,
+            "total_venta": 2599.25,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2599.25
+          },
+          {
+            "id_ven": 230,
+            "fecha_ven": "2026-01-23T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 111,
+            "total_venta": 91.12,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 91.12
+          },
+          {
+            "id_ven": 234,
+            "fecha_ven": "2026-08-07T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 118,
+            "total_venta": 1483.94,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1483.94
+          },
+          {
+            "id_ven": 236,
+            "fecha_ven": "2025-07-04T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 102,
+            "total_venta": 105.95,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 105.95
+          },
+          {
+            "id_ven": 242,
+            "fecha_ven": "2026-06-15T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 289,
+            "total_venta": 2155.61,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2155.61
+          },
+          {
+            "id_ven": 246,
+            "fecha_ven": "2026-03-13T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 293,
+            "total_venta": 1001.84,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1001.84
+          },
+          {
+            "id_ven": 249,
+            "fecha_ven": "2026-07-26T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 98,
+            "total_venta": 62.26,
+            "monto_total_pagado": 26.51,
+            "saldo_pendiente": 35.75
+          },
+          {
+            "id_ven": 258,
+            "fecha_ven": "2025-01-22T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 11,
+            "total_venta": 725.04,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 725.04
+          },
+          {
+            "id_ven": 262,
+            "fecha_ven": "2025-05-15T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 206,
+            "total_venta": 1681.26,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1681.26
+          },
+          {
+            "id_ven": 263,
+            "fecha_ven": "2026-08-26T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 49,
+            "total_venta": 1384.1,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1384.1
+          },
+          {
+            "id_ven": 288,
+            "fecha_ven": "2025-07-06T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 47,
+            "total_venta": 621.22,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 621.22
+          },
+          {
+            "id_ven": 292,
+            "fecha_ven": "2025-12-17T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 107,
+            "total_venta": 1262.67,
+            "monto_total_pagado": 950.98,
+            "saldo_pendiente": 311.69
+          },
+          {
+            "id_ven": 295,
+            "fecha_ven": "2026-03-22T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 295,
+            "total_venta": 2603.22,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2603.22
+          },
+          {
+            "id_ven": 300,
+            "fecha_ven": "2025-09-06T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 238,
+            "total_venta": 144.64,
+            "monto_total_pagado": 110.09,
+            "saldo_pendiente": 34.55
+          },
+          {
+            "id_ven": 302,
+            "fecha_ven": "2026-05-29T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 175,
+            "total_venta": 724.94,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 724.94
+          },
+          {
+            "id_ven": 306,
+            "fecha_ven": "2025-12-10T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 243,
+            "total_venta": 2287.97,
+            "monto_total_pagado": 467.14,
+            "saldo_pendiente": 1820.83
+          },
+          {
+            "id_ven": 314,
+            "fecha_ven": "2026-03-01T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 10,
+            "total_venta": 2445.32,
+            "monto_total_pagado": 515.58,
+            "saldo_pendiente": 1929.74
+          },
+          {
+            "id_ven": 317,
+            "fecha_ven": "2025-08-01T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 43,
+            "total_venta": 2164.22,
+            "monto_total_pagado": 1244.25,
+            "saldo_pendiente": 919.97
+          },
+          {
+            "id_ven": 320,
+            "fecha_ven": "2025-06-12T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 92,
+            "total_venta": 681.9,
+            "monto_total_pagado": 284.97,
+            "saldo_pendiente": 396.93
+          },
+          {
+            "id_ven": 324,
+            "fecha_ven": "2026-06-08T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 283,
+            "total_venta": 831.12,
+            "monto_total_pagado": 633.55,
+            "saldo_pendiente": 197.57
+          },
+          {
+            "id_ven": 325,
+            "fecha_ven": "2025-03-08T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 151,
+            "total_venta": 722.94,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 722.94
+          },
+          {
+            "id_ven": 327,
+            "fecha_ven": "2025-02-03T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 4,
+            "total_venta": 2632.13,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2632.13
+          },
+          {
+            "id_ven": 333,
+            "fecha_ven": "2025-06-08T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 151,
+            "total_venta": 932.03,
+            "monto_total_pagado": 313.86,
+            "saldo_pendiente": 618.17
+          },
+          {
+            "id_ven": 337,
+            "fecha_ven": "2026-01-08T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 104,
+            "total_venta": 2227.45,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2227.45
+          },
+          {
+            "id_ven": 342,
+            "fecha_ven": "2026-03-30T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 58,
+            "total_venta": 1620.77,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1620.77
+          },
+          {
+            "id_ven": 346,
+            "fecha_ven": "2025-04-16T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 242,
+            "total_venta": 422.76,
+            "monto_total_pagado": 278.95,
+            "saldo_pendiente": 143.81
+          },
+          {
+            "id_ven": 348,
+            "fecha_ven": "2025-12-29T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 171,
+            "total_venta": 2082.44,
+            "monto_total_pagado": 1590.97,
+            "saldo_pendiente": 491.47
+          },
+          {
+            "id_ven": 349,
+            "fecha_ven": "2026-04-13T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 72,
+            "total_venta": 762.18,
+            "monto_total_pagado": 455.2,
+            "saldo_pendiente": 306.98
+          },
+          {
+            "id_ven": 353,
+            "fecha_ven": "2025-06-05T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 212,
+            "total_venta": 864.84,
+            "monto_total_pagado": 456.59,
+            "saldo_pendiente": 408.25
+          },
+          {
+            "id_ven": 358,
+            "fecha_ven": "2025-07-15T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 240,
+            "total_venta": 1748.31,
+            "monto_total_pagado": 953.06,
+            "saldo_pendiente": 795.25
+          },
+          {
+            "id_ven": 364,
+            "fecha_ven": "2026-01-02T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 251,
+            "total_venta": 2097.42,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2097.42
+          },
+          {
+            "id_ven": 366,
+            "fecha_ven": "2025-10-09T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 9,
+            "total_venta": 1391.42,
+            "monto_total_pagado": 408.32,
+            "saldo_pendiente": 983.1
+          },
+          {
+            "id_ven": 374,
+            "fecha_ven": "2026-01-19T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 217,
+            "total_venta": 1269.42,
+            "monto_total_pagado": 404.61,
+            "saldo_pendiente": 864.81
+          },
+          {
+            "id_ven": 377,
+            "fecha_ven": "2025-12-17T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 50,
+            "total_venta": 1724.18,
+            "monto_total_pagado": 579.8,
+            "saldo_pendiente": 1144.38
+          },
+          {
+            "id_ven": 382,
+            "fecha_ven": "2026-07-24T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 129,
+            "total_venta": 712.86,
+            "monto_total_pagado": 494.34,
+            "saldo_pendiente": 218.52
+          },
+          {
+            "id_ven": 392,
+            "fecha_ven": "2026-02-27T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 150,
+            "total_venta": 1154.09,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1154.09
+          },
+          {
+            "id_ven": 395,
+            "fecha_ven": "2026-01-06T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 225,
+            "total_venta": 663.85,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 663.85
+          },
+          {
+            "id_ven": 402,
+            "fecha_ven": "2026-06-04T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 50,
+            "total_venta": 620.79,
+            "monto_total_pagado": 385.69,
+            "saldo_pendiente": 235.1
+          },
+          {
+            "id_ven": 404,
+            "fecha_ven": "2025-03-07T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 76,
+            "total_venta": 141,
+            "monto_total_pagado": 104.05,
+            "saldo_pendiente": 36.95
+          },
+          {
+            "id_ven": 406,
+            "fecha_ven": "2026-08-07T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 120,
+            "total_venta": 1532.4,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1532.4
+          },
+          {
+            "id_ven": 412,
+            "fecha_ven": "2025-04-10T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 177,
+            "total_venta": 1102.84,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1102.84
+          },
+          {
+            "id_ven": 416,
+            "fecha_ven": "2025-04-04T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 267,
+            "total_venta": 2367.62,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2367.62
+          },
+          {
+            "id_ven": 420,
+            "fecha_ven": "2026-06-21T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 261,
+            "total_venta": 819.58,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 819.58
+          },
+          {
+            "id_ven": 423,
+            "fecha_ven": "2026-08-08T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 217,
+            "total_venta": 1392.99,
+            "monto_total_pagado": 966.92,
+            "saldo_pendiente": 426.07
+          },
+          {
+            "id_ven": 428,
+            "fecha_ven": "2026-05-31T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 22,
+            "total_venta": 1267.13,
+            "monto_total_pagado": 369.53,
+            "saldo_pendiente": 897.6
+          },
+          {
+            "id_ven": 433,
+            "fecha_ven": "2025-08-18T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 62,
+            "total_venta": 120.15,
+            "monto_total_pagado": 70.81,
+            "saldo_pendiente": 49.34
+          },
+          {
+            "id_ven": 435,
+            "fecha_ven": "2026-07-04T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 233,
+            "total_venta": 1120.02,
+            "monto_total_pagado": 874.09,
+            "saldo_pendiente": 245.93
+          },
+          {
+            "id_ven": 436,
+            "fecha_ven": "2026-03-19T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 11,
+            "total_venta": 1988.54,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1988.54
+          },
+          {
+            "id_ven": 438,
+            "fecha_ven": "2025-08-11T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 126,
+            "total_venta": 995.73,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 995.73
+          },
+          {
+            "id_ven": 441,
+            "fecha_ven": "2025-09-09T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 240,
+            "total_venta": 1164.65,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1164.65
+          },
+          {
+            "id_ven": 442,
+            "fecha_ven": "2025-04-10T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 19,
+            "total_venta": 180.21,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 180.21
+          },
+          {
+            "id_ven": 458,
+            "fecha_ven": "2025-05-28T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 135,
+            "total_venta": 793.23,
+            "monto_total_pagado": 562.53,
+            "saldo_pendiente": 230.7
+          },
+          {
+            "id_ven": 468,
+            "fecha_ven": "2025-12-01T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 108,
+            "total_venta": 1987.67,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1987.67
+          },
+          {
+            "id_ven": 470,
+            "fecha_ven": "2026-04-27T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 289,
+            "total_venta": 1361.4,
+            "monto_total_pagado": 673.3,
+            "saldo_pendiente": 688.1
+          },
+          {
+            "id_ven": 471,
+            "fecha_ven": "2025-07-17T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 200,
+            "total_venta": 1137.6,
+            "monto_total_pagado": 229.6,
+            "saldo_pendiente": 908
+          },
+          {
+            "id_ven": 472,
+            "fecha_ven": "2025-05-30T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 288,
+            "total_venta": 2069.05,
+            "monto_total_pagado": 1560.53,
+            "saldo_pendiente": 508.52
+          },
+          {
+            "id_ven": 473,
+            "fecha_ven": "2026-06-21T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 100,
+            "total_venta": 644.21,
+            "monto_total_pagado": 184.52,
+            "saldo_pendiente": 459.69
+          },
+          {
+            "id_ven": 481,
+            "fecha_ven": "2025-01-25T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 253,
+            "total_venta": 606.65,
+            "monto_total_pagado": 376.79,
+            "saldo_pendiente": 229.86
+          },
+          {
+            "id_ven": 487,
+            "fecha_ven": "2025-01-01T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 55,
+            "total_venta": 607.17,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 607.17
+          },
+          {
+            "id_ven": 489,
+            "fecha_ven": "2026-03-10T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 98,
+            "total_venta": 599.05,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 599.05
+          },
+          {
+            "id_ven": 494,
+            "fecha_ven": "2025-08-26T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 251,
+            "total_venta": 136.35,
+            "monto_total_pagado": 57.32,
+            "saldo_pendiente": 79.03
+          },
+          {
+            "id_ven": 495,
+            "fecha_ven": "2026-01-16T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 192,
+            "total_venta": 1504.83,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1504.83
+          },
+          {
+            "id_ven": 503,
+            "fecha_ven": "2026-01-02T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 217,
+            "total_venta": 377,
+            "monto_total_pagado": 163.11,
+            "saldo_pendiente": 213.89
+          },
+          {
+            "id_ven": 509,
+            "fecha_ven": "2025-06-30T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 199,
+            "total_venta": 142.92,
+            "monto_total_pagado": 102.81,
+            "saldo_pendiente": 40.11
+          },
+          {
+            "id_ven": 512,
+            "fecha_ven": "2025-09-27T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 45,
+            "total_venta": 520.97,
+            "monto_total_pagado": 131.19,
+            "saldo_pendiente": 389.78
+          },
+          {
+            "id_ven": 515,
+            "fecha_ven": "2025-09-07T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 164,
+            "total_venta": 721.28,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 721.28
+          },
+          {
+            "id_ven": 521,
+            "fecha_ven": "2025-11-07T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 175,
+            "total_venta": 1199.08,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1199.08
+          },
+          {
+            "id_ven": 524,
+            "fecha_ven": "2025-07-12T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 218,
+            "total_venta": 1729.5,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1729.5
+          },
+          {
+            "id_ven": 525,
+            "fecha_ven": "2025-07-29T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 165,
+            "total_venta": 264.81,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 264.81
+          },
+          {
+            "id_ven": 526,
+            "fecha_ven": "2025-07-07T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 173,
+            "total_venta": 833.94,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 833.94
+          },
+          {
+            "id_ven": 529,
+            "fecha_ven": "2025-02-12T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 28,
+            "total_venta": 377.19,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 377.19
+          },
+          {
+            "id_ven": 540,
+            "fecha_ven": "2025-02-19T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 187,
+            "total_venta": 52.77,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 52.77
+          },
+          {
+            "id_ven": 543,
+            "fecha_ven": "2025-10-03T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 52,
+            "total_venta": 318.32,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 318.32
+          },
+          {
+            "id_ven": 547,
+            "fecha_ven": "2025-12-29T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 267,
+            "total_venta": 1038.83,
+            "monto_total_pagado": 581.62,
+            "saldo_pendiente": 457.21
+          },
+          {
+            "id_ven": 555,
+            "fecha_ven": "2026-03-27T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 170,
+            "total_venta": 1720.4,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1720.4
+          },
+          {
+            "id_ven": 566,
+            "fecha_ven": "2025-06-19T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 21,
+            "total_venta": 1086.56,
+            "monto_total_pagado": 818.76,
+            "saldo_pendiente": 267.8
+          },
+          {
+            "id_ven": 570,
+            "fecha_ven": "2026-08-25T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 31,
+            "total_venta": 228.74,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 228.74
+          },
+          {
+            "id_ven": 573,
+            "fecha_ven": "2025-12-01T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 69,
+            "total_venta": 1539.25,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1539.25
+          },
+          {
+            "id_ven": 574,
+            "fecha_ven": "2025-02-13T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 76,
+            "total_venta": 902.37,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 902.37
+          },
+          {
+            "id_ven": 588,
+            "fecha_ven": "2026-03-02T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 174,
+            "total_venta": 1031.2,
+            "monto_total_pagado": 727.83,
+            "saldo_pendiente": 303.37
+          },
+          {
+            "id_ven": 593,
+            "fecha_ven": "2025-09-28T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 49,
+            "total_venta": 1172.98,
+            "monto_total_pagado": 429.2,
+            "saldo_pendiente": 743.78
+          },
+          {
+            "id_ven": 604,
+            "fecha_ven": "2025-03-04T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 82,
+            "total_venta": 496.2,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 496.2
+          },
+          {
+            "id_ven": 608,
+            "fecha_ven": "2025-11-14T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 265,
+            "total_venta": 1222.65,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1222.65
+          },
+          {
+            "id_ven": 609,
+            "fecha_ven": "2025-09-16T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 145,
+            "total_venta": 535.12,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 535.12
+          },
+          {
+            "id_ven": 614,
+            "fecha_ven": "2025-08-15T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 70,
+            "total_venta": 231.9,
+            "monto_total_pagado": 128.12,
+            "saldo_pendiente": 103.78
+          },
+          {
+            "id_ven": 623,
+            "fecha_ven": "2026-01-20T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 152,
+            "total_venta": 2044.58,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2044.58
+          },
+          {
+            "id_ven": 624,
+            "fecha_ven": "2026-08-18T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 203,
+            "total_venta": 1334.37,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1334.37
+          },
+          {
+            "id_ven": 625,
+            "fecha_ven": "2026-06-05T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 26,
+            "total_venta": 71.45,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 71.45
+          },
+          {
+            "id_ven": 628,
+            "fecha_ven": "2025-01-12T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 17,
+            "total_venta": 186.32,
+            "monto_total_pagado": 55.7,
+            "saldo_pendiente": 130.62
+          },
+          {
+            "id_ven": 634,
+            "fecha_ven": "2025-11-14T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 188,
+            "total_venta": 1717.26,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1717.26
+          },
+          {
+            "id_ven": 635,
+            "fecha_ven": "2025-12-30T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 236,
+            "total_venta": 1398.06,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1398.06
+          },
+          {
+            "id_ven": 645,
+            "fecha_ven": "2025-05-25T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 114,
+            "total_venta": 349.44,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 349.44
+          },
+          {
+            "id_ven": 648,
+            "fecha_ven": "2026-05-24T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 259,
+            "total_venta": 1912.62,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1912.62
+          },
+          {
+            "id_ven": 658,
+            "fecha_ven": "2025-01-06T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 284,
+            "total_venta": 4172.6,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 4172.6
+          },
+          {
+            "id_ven": 662,
+            "fecha_ven": "2026-01-20T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 294,
+            "total_venta": 1709.29,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1709.29
+          },
+          {
+            "id_ven": 666,
+            "fecha_ven": "2026-04-14T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 61,
+            "total_venta": 663.6,
+            "monto_total_pagado": 218.69,
+            "saldo_pendiente": 444.91
+          },
+          {
+            "id_ven": 667,
+            "fecha_ven": "2026-01-06T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 167,
+            "total_venta": 858.2,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 858.2
+          },
+          {
+            "id_ven": 669,
+            "fecha_ven": "2026-03-21T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 76,
+            "total_venta": 17.08,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 17.08
+          },
+          {
+            "id_ven": 674,
+            "fecha_ven": "2025-07-20T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 268,
+            "total_venta": 2205.07,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2205.07
+          },
+          {
+            "id_ven": 677,
+            "fecha_ven": "2026-08-02T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 83,
+            "total_venta": 163.25,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 163.25
+          },
+          {
+            "id_ven": 680,
+            "fecha_ven": "2025-09-01T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 217,
+            "total_venta": 1297.34,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1297.34
+          },
+          {
+            "id_ven": 681,
+            "fecha_ven": "2025-03-18T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 230,
+            "total_venta": 954.87,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 954.87
+          },
+          {
+            "id_ven": 683,
+            "fecha_ven": "2025-09-14T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 105,
+            "total_venta": 3323.4,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 3323.4
+          },
+          {
+            "id_ven": 685,
+            "fecha_ven": "2026-03-13T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 120,
+            "total_venta": 683.75,
+            "monto_total_pagado": 416.35,
+            "saldo_pendiente": 267.4
+          },
+          {
+            "id_ven": 691,
+            "fecha_ven": "2025-05-10T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 82,
+            "total_venta": 159.31,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 159.31
+          },
+          {
+            "id_ven": 700,
+            "fecha_ven": "2025-10-03T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 295,
+            "total_venta": 1017.01,
+            "monto_total_pagado": 303.73,
+            "saldo_pendiente": 713.28
+          },
+          {
+            "id_ven": 701,
+            "fecha_ven": "2025-12-12T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 273,
+            "total_venta": 2339.57,
+            "monto_total_pagado": 1442.95,
+            "saldo_pendiente": 896.62
+          },
+          {
+            "id_ven": 702,
+            "fecha_ven": "2025-08-17T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 53,
+            "total_venta": 1419.48,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1419.48
+          },
+          {
+            "id_ven": 716,
+            "fecha_ven": "2025-06-03T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 212,
+            "total_venta": 2012.11,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2012.11
+          },
+          {
+            "id_ven": 722,
+            "fecha_ven": "2025-09-04T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 284,
+            "total_venta": 1764.62,
+            "monto_total_pagado": 836.96,
+            "saldo_pendiente": 927.66
+          },
+          {
+            "id_ven": 723,
+            "fecha_ven": "2026-08-02T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 112,
+            "total_venta": 152.84,
+            "monto_total_pagado": 118.16,
+            "saldo_pendiente": 34.68
+          },
+          {
+            "id_ven": 724,
+            "fecha_ven": "2026-03-14T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 52,
+            "total_venta": 63.42,
+            "monto_total_pagado": 33.64,
+            "saldo_pendiente": 29.78
+          },
+          {
+            "id_ven": 725,
+            "fecha_ven": "2025-09-08T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 187,
+            "total_venta": 790.26,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 790.26
+          },
+          {
+            "id_ven": 730,
+            "fecha_ven": "2025-08-04T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 179,
+            "total_venta": 509.67,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 509.67
+          },
+          {
+            "id_ven": 732,
+            "fecha_ven": "2026-08-08T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 108,
+            "total_venta": 470.9,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 470.9
+          },
+          {
+            "id_ven": 747,
+            "fecha_ven": "2026-03-10T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 189,
+            "total_venta": 2074.94,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2074.94
+          },
+          {
+            "id_ven": 748,
+            "fecha_ven": "2026-03-12T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 146,
+            "total_venta": 422.07,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 422.07
+          },
+          {
+            "id_ven": 756,
+            "fecha_ven": "2026-03-24T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 202,
+            "total_venta": 278.6,
+            "monto_total_pagado": 95.93,
+            "saldo_pendiente": 182.67
+          },
+          {
+            "id_ven": 760,
+            "fecha_ven": "2026-02-09T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 255,
+            "total_venta": 619.8,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 619.8
+          },
+          {
+            "id_ven": 764,
+            "fecha_ven": "2025-06-12T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 29,
+            "total_venta": 517.74,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 517.74
+          },
+          {
+            "id_ven": 765,
+            "fecha_ven": "2026-01-14T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 121,
+            "total_venta": 2658.2,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2658.2
+          },
+          {
+            "id_ven": 772,
+            "fecha_ven": "2025-10-17T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 216,
+            "total_venta": 828.38,
+            "monto_total_pagado": 420.01,
+            "saldo_pendiente": 408.37
+          },
+          {
+            "id_ven": 779,
+            "fecha_ven": "2025-07-17T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 17,
+            "total_venta": 887.24,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 887.24
+          },
+          {
+            "id_ven": 780,
+            "fecha_ven": "2025-05-10T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 265,
+            "total_venta": 633,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 633
+          },
+          {
+            "id_ven": 783,
+            "fecha_ven": "2025-11-16T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 291,
+            "total_venta": 287.34,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 287.34
+          },
+          {
+            "id_ven": 787,
+            "fecha_ven": "2026-09-01T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 13,
+            "total_venta": 673.79,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 673.79
+          },
+          {
+            "id_ven": 800,
+            "fecha_ven": "2025-07-21T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 75,
+            "total_venta": 340.48,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 340.48
+          },
+          {
+            "id_ven": 801,
+            "fecha_ven": "2025-10-20T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 230,
+            "total_venta": 1769.64,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1769.64
+          },
+          {
+            "id_ven": 804,
+            "fecha_ven": "2025-12-05T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 118,
+            "total_venta": 1327.68,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1327.68
+          },
+          {
+            "id_ven": 815,
+            "fecha_ven": "2025-02-18T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 262,
+            "total_venta": 987.08,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 987.08
+          },
+          {
+            "id_ven": 829,
+            "fecha_ven": "2025-01-01T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 255,
+            "total_venta": 73.86,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 73.86
+          },
+          {
+            "id_ven": 836,
+            "fecha_ven": "2025-08-21T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 151,
+            "total_venta": 997.64,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 997.64
+          },
+          {
+            "id_ven": 840,
+            "fecha_ven": "2026-02-20T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 31,
+            "total_venta": 1719.24,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1719.24
+          },
+          {
+            "id_ven": 849,
+            "fecha_ven": "2025-08-25T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 15,
+            "total_venta": 147.8,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 147.8
+          },
+          {
+            "id_ven": 854,
+            "fecha_ven": "2025-02-15T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 135,
+            "total_venta": 374.34,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 374.34
+          },
+          {
+            "id_ven": 855,
+            "fecha_ven": "2026-08-07T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 100,
+            "total_venta": 669.99,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 669.99
+          },
+          {
+            "id_ven": 857,
+            "fecha_ven": "2025-05-14T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 131,
+            "total_venta": 2170.06,
+            "monto_total_pagado": 1191.94,
+            "saldo_pendiente": 978.12
+          },
+          {
+            "id_ven": 861,
+            "fecha_ven": "2025-10-16T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 4,
+            "total_venta": 2220.64,
+            "monto_total_pagado": 1197.72,
+            "saldo_pendiente": 1022.92
+          },
+          {
+            "id_ven": 864,
+            "fecha_ven": "2025-12-19T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 47,
+            "total_venta": 1145.77,
+            "monto_total_pagado": 525.76,
+            "saldo_pendiente": 620.01
+          },
+          {
+            "id_ven": 867,
+            "fecha_ven": "2025-03-25T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 282,
+            "total_venta": 947.82,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 947.82
+          },
+          {
+            "id_ven": 868,
+            "fecha_ven": "2025-02-15T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 265,
+            "total_venta": 776.89,
+            "monto_total_pagado": 611.76,
+            "saldo_pendiente": 165.13
+          },
+          {
+            "id_ven": 871,
+            "fecha_ven": "2025-08-05T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 143,
+            "total_venta": 978.12,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 978.12
+          },
+          {
+            "id_ven": 872,
+            "fecha_ven": "2025-05-10T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 6,
+            "total_venta": 24,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 24
+          },
+          {
+            "id_ven": 873,
+            "fecha_ven": "2025-08-13T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 77,
+            "total_venta": 778.32,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 778.32
+          },
+          {
+            "id_ven": 880,
+            "fecha_ven": "2025-07-13T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 157,
+            "total_venta": 1270.15,
+            "monto_total_pagado": 899.15,
+            "saldo_pendiente": 371
+          },
+          {
+            "id_ven": 882,
+            "fecha_ven": "2025-09-30T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 165,
+            "total_venta": 970.1,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 970.1
+          },
+          {
+            "id_ven": 887,
+            "fecha_ven": "2026-08-24T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 206,
+            "total_venta": 739,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 739
+          },
+          {
+            "id_ven": 892,
+            "fecha_ven": "2025-11-21T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 155,
+            "total_venta": 218.09,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 218.09
+          },
+          {
+            "id_ven": 900,
+            "fecha_ven": "2025-07-02T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 248,
+            "total_venta": 498.4,
+            "monto_total_pagado": 297.81,
+            "saldo_pendiente": 200.59
+          },
+          {
+            "id_ven": 908,
+            "fecha_ven": "2026-07-01T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 135,
+            "total_venta": 299.23,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 299.23
+          },
+          {
+            "id_ven": 913,
+            "fecha_ven": "2025-01-14T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 77,
+            "total_venta": 92.92,
+            "monto_total_pagado": 55.44,
+            "saldo_pendiente": 37.48
+          },
+          {
+            "id_ven": 914,
+            "fecha_ven": "2026-04-30T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 293,
+            "total_venta": 1381.74,
+            "monto_total_pagado": 336.64,
+            "saldo_pendiente": 1045.1
+          },
+          {
+            "id_ven": 923,
+            "fecha_ven": "2025-01-25T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 181,
+            "total_venta": 2322.01,
+            "monto_total_pagado": 533.98,
+            "saldo_pendiente": 1788.03
+          },
+          {
+            "id_ven": 925,
+            "fecha_ven": "2025-09-21T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 18,
+            "total_venta": 941.8,
+            "monto_total_pagado": 366.21,
+            "saldo_pendiente": 575.59
+          },
+          {
+            "id_ven": 926,
+            "fecha_ven": "2026-08-26T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 20,
+            "total_venta": 2339.08,
+            "monto_total_pagado": 1706.68,
+            "saldo_pendiente": 632.4
+          },
+          {
+            "id_ven": 938,
+            "fecha_ven": "2025-09-23T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 97,
+            "total_venta": 2269.72,
+            "monto_total_pagado": 732.72,
+            "saldo_pendiente": 1537
+          },
+          {
+            "id_ven": 941,
+            "fecha_ven": "2026-08-06T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 73,
+            "total_venta": 1042.37,
+            "monto_total_pagado": 829.86,
+            "saldo_pendiente": 212.51
+          },
+          {
+            "id_ven": 945,
+            "fecha_ven": "2025-03-11T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 226,
+            "total_venta": 637.56,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 637.56
+          },
+          {
+            "id_ven": 947,
+            "fecha_ven": "2025-08-25T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 89,
+            "total_venta": 979.32,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 979.32
+          },
+          {
+            "id_ven": 950,
+            "fecha_ven": "2025-11-25T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 254,
+            "total_venta": 527.05,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 527.05
+          },
+          {
+            "id_ven": 952,
+            "fecha_ven": "2025-10-16T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 274,
+            "total_venta": 463.48,
+            "monto_total_pagado": 252.15,
+            "saldo_pendiente": 211.33
+          },
+          {
+            "id_ven": 954,
+            "fecha_ven": "2026-03-02T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 284,
+            "total_venta": 795.92,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 795.92
+          },
+          {
+            "id_ven": 959,
+            "fecha_ven": "2026-01-22T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 192,
+            "total_venta": 1147.4,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1147.4
+          },
+          {
+            "id_ven": 962,
+            "fecha_ven": "2025-01-29T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 69,
+            "total_venta": 264.85,
+            "monto_total_pagado": 199.81,
+            "saldo_pendiente": 65.04
+          },
+          {
+            "id_ven": 965,
+            "fecha_ven": "2025-08-17T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 55,
+            "total_venta": 41.43,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 41.43
+          },
+          {
+            "id_ven": 968,
+            "fecha_ven": "2025-05-17T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 157,
+            "total_venta": 284.12,
+            "monto_total_pagado": 215.03,
+            "saldo_pendiente": 69.09
+          },
+          {
+            "id_ven": 969,
+            "fecha_ven": "2025-09-08T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 246,
+            "total_venta": 3016.46,
+            "monto_total_pagado": 2178.28,
+            "saldo_pendiente": 838.18
+          },
+          {
+            "id_ven": 971,
+            "fecha_ven": "2025-11-09T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 9,
+            "total_venta": 297.2,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 297.2
+          },
+          {
+            "id_ven": 972,
+            "fecha_ven": "2025-10-16T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 58,
+            "total_venta": 735.4,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 735.4
+          },
+          {
+            "id_ven": 974,
+            "fecha_ven": "2025-08-13T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 30,
+            "total_venta": 777.06,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 777.06
+          },
+          {
+            "id_ven": 976,
+            "fecha_ven": "2026-06-27T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 126,
+            "total_venta": 871.6,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 871.6
+          },
+          {
+            "id_ven": 977,
+            "fecha_ven": "2026-08-02T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 88,
+            "total_venta": 764.92,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 764.92
+          },
+          {
+            "id_ven": 979,
+            "fecha_ven": "2025-08-08T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 105,
+            "total_venta": 678.71,
+            "monto_total_pagado": 320.98,
+            "saldo_pendiente": 357.73
+          },
+          {
+            "id_ven": 981,
+            "fecha_ven": "2025-04-12T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 79,
+            "total_venta": 2030.04,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2030.04
+          },
+          {
+            "id_ven": 982,
+            "fecha_ven": "2025-11-30T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 245,
+            "total_venta": 574.24,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 574.24
+          },
+          {
+            "id_ven": 983,
+            "fecha_ven": "2026-01-15T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 217,
+            "total_venta": 223.41,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 223.41
+          },
+          {
+            "id_ven": 985,
+            "fecha_ven": "2025-12-25T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 154,
+            "total_venta": 1369.45,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1369.45
+          },
+          {
+            "id_ven": 993,
+            "fecha_ven": "2025-05-02T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 88,
+            "total_venta": 881.44,
+            "monto_total_pagado": 418.87,
+            "saldo_pendiente": 462.57
+          },
+          {
+            "id_ven": 996,
+            "fecha_ven": "2026-04-03T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 77,
+            "total_venta": 244.34,
+            "monto_total_pagado": 148.51,
+            "saldo_pendiente": 95.83
+          },
+          {
+            "id_ven": 1014,
+            "fecha_ven": "2025-12-02T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 109,
+            "total_venta": 2089.44,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2089.44
+          },
+          {
+            "id_ven": 1015,
+            "fecha_ven": "2025-10-13T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 150,
+            "total_venta": 3303.49,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 3303.49
+          },
+          {
+            "id_ven": 1026,
+            "fecha_ven": "2026-07-06T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 259,
+            "total_venta": 1889.06,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1889.06
+          },
+          {
+            "id_ven": 1027,
+            "fecha_ven": "2025-09-04T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 295,
+            "total_venta": 26.32,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 26.32
+          },
+          {
+            "id_ven": 1031,
+            "fecha_ven": "2025-03-03T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 124,
+            "total_venta": 678.87,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 678.87
+          },
+          {
+            "id_ven": 1032,
+            "fecha_ven": "2025-03-30T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 127,
+            "total_venta": 1600.88,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1600.88
+          },
+          {
+            "id_ven": 1036,
+            "fecha_ven": "2026-02-24T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 154,
+            "total_venta": 5.19,
+            "monto_total_pagado": 3.12,
+            "saldo_pendiente": 2.07
+          },
+          {
+            "id_ven": 1039,
+            "fecha_ven": "2025-09-24T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 206,
+            "total_venta": 26.02,
+            "monto_total_pagado": 13.58,
+            "saldo_pendiente": 12.44
+          },
+          {
+            "id_ven": 1040,
+            "fecha_ven": "2025-10-04T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 233,
+            "total_venta": 2156.13,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2156.13
+          },
+          {
+            "id_ven": 1043,
+            "fecha_ven": "2025-08-16T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 263,
+            "total_venta": 1096.16,
+            "monto_total_pagado": 384.36,
+            "saldo_pendiente": 711.8
+          },
+          {
+            "id_ven": 1045,
+            "fecha_ven": "2025-02-05T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 44,
+            "total_venta": 726.22,
+            "monto_total_pagado": 169.91,
+            "saldo_pendiente": 556.31
+          },
+          {
+            "id_ven": 1056,
+            "fecha_ven": "2025-05-29T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 28,
+            "total_venta": 991.77,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 991.77
+          },
+          {
+            "id_ven": 1059,
+            "fecha_ven": "2025-03-22T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 210,
+            "total_venta": 879.83,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 879.83
+          },
+          {
+            "id_ven": 1061,
+            "fecha_ven": "2025-06-24T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 47,
+            "total_venta": 2547.62,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2547.62
+          },
+          {
+            "id_ven": 1067,
+            "fecha_ven": "2025-01-02T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 169,
+            "total_venta": 275.73,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 275.73
+          },
+          {
+            "id_ven": 1069,
+            "fecha_ven": "2026-02-20T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 61,
+            "total_venta": 231.51,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 231.51
+          },
+          {
+            "id_ven": 1073,
+            "fecha_ven": "2025-04-05T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 163,
+            "total_venta": 773.47,
+            "monto_total_pagado": 163.13,
+            "saldo_pendiente": 610.34
+          },
+          {
+            "id_ven": 1075,
+            "fecha_ven": "2026-08-19T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 146,
+            "total_venta": 2056.88,
+            "monto_total_pagado": 483.65,
+            "saldo_pendiente": 1573.23
+          },
+          {
+            "id_ven": 1076,
+            "fecha_ven": "2025-05-23T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 9,
+            "total_venta": 207.8,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 207.8
+          },
+          {
+            "id_ven": 1082,
+            "fecha_ven": "2025-04-02T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 16,
+            "total_venta": 170.88,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 170.88
+          },
+          {
+            "id_ven": 1084,
+            "fecha_ven": "2026-01-26T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 160,
+            "total_venta": 2253.28,
+            "monto_total_pagado": 1566.32,
+            "saldo_pendiente": 686.96
+          },
+          {
+            "id_ven": 1086,
+            "fecha_ven": "2025-04-14T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 163,
+            "total_venta": 715.1,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 715.1
+          },
+          {
+            "id_ven": 1095,
+            "fecha_ven": "2025-03-26T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 143,
+            "total_venta": 1117.42,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1117.42
+          },
+          {
+            "id_ven": 1099,
+            "fecha_ven": "2026-08-27T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 51,
+            "total_venta": 2092.96,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2092.96
+          },
+          {
+            "id_ven": 1111,
+            "fecha_ven": "2026-01-09T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 244,
+            "total_venta": 2102.24,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2102.24
+          },
+          {
+            "id_ven": 1120,
+            "fecha_ven": "2026-06-13T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 285,
+            "total_venta": 102.56,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 102.56
+          },
+          {
+            "id_ven": 1121,
+            "fecha_ven": "2026-01-22T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 229,
+            "total_venta": 747.6,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 747.6
+          },
+          {
+            "id_ven": 1130,
+            "fecha_ven": "2025-01-31T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 96,
+            "total_venta": 2203.14,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2203.14
+          },
+          {
+            "id_ven": 1132,
+            "fecha_ven": "2025-02-10T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 229,
+            "total_venta": 213.09,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 213.09
+          },
+          {
+            "id_ven": 1135,
+            "fecha_ven": "2025-08-13T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 56,
+            "total_venta": 530.64,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 530.64
+          },
+          {
+            "id_ven": 1137,
+            "fecha_ven": "2025-05-09T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 31,
+            "total_venta": 2361.32,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2361.32
+          },
+          {
+            "id_ven": 1139,
+            "fecha_ven": "2026-01-08T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 254,
+            "total_venta": 71.33,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 71.33
+          },
+          {
+            "id_ven": 1143,
+            "fecha_ven": "2025-08-20T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 18,
+            "total_venta": 739.2,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 739.2
+          },
+          {
+            "id_ven": 1152,
+            "fecha_ven": "2025-09-01T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 154,
+            "total_venta": 1030.28,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1030.28
+          },
+          {
+            "id_ven": 1154,
+            "fecha_ven": "2025-11-26T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 131,
+            "total_venta": 501.22,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 501.22
+          },
+          {
+            "id_ven": 1167,
+            "fecha_ven": "2025-05-31T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 218,
+            "total_venta": 258.96,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 258.96
+          },
+          {
+            "id_ven": 1168,
+            "fecha_ven": "2025-10-17T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 133,
+            "total_venta": 1943.56,
+            "monto_total_pagado": 1261.99,
+            "saldo_pendiente": 681.57
+          },
+          {
+            "id_ven": 1176,
+            "fecha_ven": "2026-05-16T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 157,
+            "total_venta": 1738.15,
+            "monto_total_pagado": 824.27,
+            "saldo_pendiente": 913.88
+          },
+          {
+            "id_ven": 1177,
+            "fecha_ven": "2026-04-08T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 278,
+            "total_venta": 1972.6,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1972.6
+          },
+          {
+            "id_ven": 1178,
+            "fecha_ven": "2026-01-12T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 35,
+            "total_venta": 760.95,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 760.95
+          },
+          {
+            "id_ven": 1185,
+            "fecha_ven": "2025-01-25T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 205,
+            "total_venta": 1564.75,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1564.75
+          },
+          {
+            "id_ven": 1188,
+            "fecha_ven": "2025-07-01T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 298,
+            "total_venta": 21.75,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 21.75
+          },
+          {
+            "id_ven": 1191,
+            "fecha_ven": "2025-11-06T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 168,
+            "total_venta": 16.92,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 16.92
+          },
+          {
+            "id_ven": 1195,
+            "fecha_ven": "2025-10-05T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 193,
+            "total_venta": 849,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 849
+          },
+          {
+            "id_ven": 1196,
+            "fecha_ven": "2025-09-16T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 195,
+            "total_venta": 464.91,
+            "monto_total_pagado": 218.16,
+            "saldo_pendiente": 246.75
+          },
+          {
+            "id_ven": 1207,
+            "fecha_ven": "2026-06-30T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 41,
+            "total_venta": 1230.55,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1230.55
+          },
+          {
+            "id_ven": 1208,
+            "fecha_ven": "2025-12-27T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 61,
+            "total_venta": 2870.22,
+            "monto_total_pagado": 914.31,
+            "saldo_pendiente": 1955.91
+          },
+          {
+            "id_ven": 1210,
+            "fecha_ven": "2025-05-19T00:00:00.000Z",
+            "id_ti": 19,
+            "id_cli": 90,
+            "total_venta": 1241.62,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1241.62
+          },
+          {
+            "id_ven": 1213,
+            "fecha_ven": "2025-11-25T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 111,
+            "total_venta": 3387.41,
+            "monto_total_pagado": 2539.94,
+            "saldo_pendiente": 847.47
+          },
+          {
+            "id_ven": 1219,
+            "fecha_ven": "2025-12-11T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 120,
+            "total_venta": 878.88,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 878.88
+          },
+          {
+            "id_ven": 1223,
+            "fecha_ven": "2025-05-04T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 132,
+            "total_venta": 459.26,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 459.26
+          },
+          {
+            "id_ven": 1226,
+            "fecha_ven": "2025-11-02T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 98,
+            "total_venta": 1772.1,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1772.1
+          },
+          {
+            "id_ven": 1230,
+            "fecha_ven": "2025-11-25T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 49,
+            "total_venta": 757.66,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 757.66
+          },
+          {
+            "id_ven": 1233,
+            "fecha_ven": "2025-01-25T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 277,
+            "total_venta": 1013.61,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1013.61
+          },
+          {
+            "id_ven": 1238,
+            "fecha_ven": "2026-07-08T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 48,
+            "total_venta": 1251.32,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1251.32
+          },
+          {
+            "id_ven": 1243,
+            "fecha_ven": "2026-05-13T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 216,
+            "total_venta": 3457.41,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 3457.41
+          },
+          {
+            "id_ven": 1244,
+            "fecha_ven": "2025-05-22T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 7,
+            "total_venta": 160.47,
+            "monto_total_pagado": 68.1,
+            "saldo_pendiente": 92.37
+          },
+          {
+            "id_ven": 1246,
+            "fecha_ven": "2026-06-28T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 67,
+            "total_venta": 335.76,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 335.76
+          },
+          {
+            "id_ven": 1247,
+            "fecha_ven": "2025-01-12T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 62,
+            "total_venta": 108.29,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 108.29
+          },
+          {
+            "id_ven": 1249,
+            "fecha_ven": "2026-04-24T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 292,
+            "total_venta": 2091.24,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2091.24
+          },
+          {
+            "id_ven": 1254,
+            "fecha_ven": "2026-04-05T00:00:00.000Z",
+            "id_ti": 15,
+            "id_cli": 152,
+            "total_venta": 219.55,
+            "monto_total_pagado": 90.45,
+            "saldo_pendiente": 129.1
+          },
+          {
+            "id_ven": 1267,
+            "fecha_ven": "2025-10-03T00:00:00.000Z",
+            "id_ti": 11,
+            "id_cli": 169,
+            "total_venta": 305.62,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 305.62
+          },
+          {
+            "id_ven": 1270,
+            "fecha_ven": "2025-11-02T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 206,
+            "total_venta": 160.46,
+            "monto_total_pagado": 66.9,
+            "saldo_pendiente": 93.56
+          },
+          {
+            "id_ven": 1279,
+            "fecha_ven": "2026-06-01T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 237,
+            "total_venta": 107.55,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 107.55
+          },
+          {
+            "id_ven": 1288,
+            "fecha_ven": "2025-11-02T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 24,
+            "total_venta": 1302.83,
+            "monto_total_pagado": 883.82,
+            "saldo_pendiente": 419.01
+          },
+          {
+            "id_ven": 1289,
+            "fecha_ven": "2025-10-12T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 16,
+            "total_venta": 1546.14,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1546.14
+          },
+          {
+            "id_ven": 1290,
+            "fecha_ven": "2026-08-13T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 249,
+            "total_venta": 314.3,
+            "monto_total_pagado": 102.41,
+            "saldo_pendiente": 211.89
+          },
+          {
+            "id_ven": 1296,
+            "fecha_ven": "2026-06-19T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 257,
+            "total_venta": 1389.63,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1389.63
+          },
+          {
+            "id_ven": 1302,
+            "fecha_ven": "2025-10-07T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 162,
+            "total_venta": 1379.14,
+            "monto_total_pagado": 794.76,
+            "saldo_pendiente": 584.38
+          },
+          {
+            "id_ven": 1305,
+            "fecha_ven": "2026-02-19T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 86,
+            "total_venta": 979.85,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 979.85
+          },
+          {
+            "id_ven": 1307,
+            "fecha_ven": "2025-12-08T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 15,
+            "total_venta": 480.6,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 480.6
+          },
+          {
+            "id_ven": 1310,
+            "fecha_ven": "2026-03-24T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 262,
+            "total_venta": 3200.4,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 3200.4
+          },
+          {
+            "id_ven": 1325,
+            "fecha_ven": "2025-10-08T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 154,
+            "total_venta": 2086.38,
+            "monto_total_pagado": 1338.55,
+            "saldo_pendiente": 747.83
+          },
+          {
+            "id_ven": 1334,
+            "fecha_ven": "2026-01-20T00:00:00.000Z",
+            "id_ti": 6,
+            "id_cli": 225,
+            "total_venta": 591.33,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 591.33
+          },
+          {
+            "id_ven": 1335,
+            "fecha_ven": "2025-07-03T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 2,
+            "total_venta": 2088.58,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2088.58
+          },
+          {
+            "id_ven": 1337,
+            "fecha_ven": "2026-01-18T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 43,
+            "total_venta": 745.44,
+            "monto_total_pagado": 498.7,
+            "saldo_pendiente": 246.74
+          },
+          {
+            "id_ven": 1351,
+            "fecha_ven": "2026-02-26T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 172,
+            "total_venta": 1107.34,
+            "monto_total_pagado": 755.75,
+            "saldo_pendiente": 351.59
+          },
+          {
+            "id_ven": 1354,
+            "fecha_ven": "2026-07-31T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 171,
+            "total_venta": 1104.45,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1104.45
+          },
+          {
+            "id_ven": 1357,
+            "fecha_ven": "2026-07-19T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 296,
+            "total_venta": 1600.9,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1600.9
+          },
+          {
+            "id_ven": 1361,
+            "fecha_ven": "2026-02-08T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 52,
+            "total_venta": 173.74,
+            "monto_total_pagado": 118.81,
+            "saldo_pendiente": 54.93
+          },
+          {
+            "id_ven": 1362,
+            "fecha_ven": "2026-04-28T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 31,
+            "total_venta": 564.12,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 564.12
+          },
+          {
+            "id_ven": 1372,
+            "fecha_ven": "2025-02-03T00:00:00.000Z",
+            "id_ti": 4,
+            "id_cli": 279,
+            "total_venta": 1236.5,
+            "monto_total_pagado": 463.92,
+            "saldo_pendiente": 772.58
+          },
+          {
+            "id_ven": 1378,
+            "fecha_ven": "2025-05-06T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 195,
+            "total_venta": 731.49,
+            "monto_total_pagado": 167.31,
+            "saldo_pendiente": 564.18
+          },
+          {
+            "id_ven": 1384,
+            "fecha_ven": "2025-04-24T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 141,
+            "total_venta": 579.15,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 579.15
+          },
+          {
+            "id_ven": 1385,
+            "fecha_ven": "2025-02-11T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 134,
+            "total_venta": 1464.52,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1464.52
+          },
+          {
+            "id_ven": 1396,
+            "fecha_ven": "2026-05-20T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 177,
+            "total_venta": 2028.57,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2028.57
+          },
+          {
+            "id_ven": 1400,
+            "fecha_ven": "2026-05-06T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 100,
+            "total_venta": 380.01,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 380.01
+          },
+          {
+            "id_ven": 1402,
+            "fecha_ven": "2026-04-11T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 41,
+            "total_venta": 1629.03,
+            "monto_total_pagado": 848.31,
+            "saldo_pendiente": 780.72
+          },
+          {
+            "id_ven": 1404,
+            "fecha_ven": "2025-12-13T00:00:00.000Z",
+            "id_ti": 7,
+            "id_cli": 74,
+            "total_venta": 905.37,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 905.37
+          },
+          {
+            "id_ven": 1412,
+            "fecha_ven": "2025-12-19T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 147,
+            "total_venta": 164.48,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 164.48
+          },
+          {
+            "id_ven": 1414,
+            "fecha_ven": "2025-03-24T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 54,
+            "total_venta": 1140.02,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1140.02
+          },
+          {
+            "id_ven": 1415,
+            "fecha_ven": "2025-01-28T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 65,
+            "total_venta": 1756.74,
+            "monto_total_pagado": 928.37,
+            "saldo_pendiente": 828.37
+          },
+          {
+            "id_ven": 1420,
+            "fecha_ven": "2025-09-07T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 77,
+            "total_venta": 196.2,
+            "monto_total_pagado": 79.8,
+            "saldo_pendiente": 116.4
+          },
+          {
+            "id_ven": 1424,
+            "fecha_ven": "2026-01-10T00:00:00.000Z",
+            "id_ti": 8,
+            "id_cli": 251,
+            "total_venta": 1025.1,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1025.1
+          },
+          {
+            "id_ven": 1430,
+            "fecha_ven": "2025-10-26T00:00:00.000Z",
+            "id_ti": 12,
+            "id_cli": 267,
+            "total_venta": 13.53,
+            "monto_total_pagado": 7.98,
+            "saldo_pendiente": 5.55
+          },
+          {
+            "id_ven": 1431,
+            "fecha_ven": "2026-07-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 232,
+            "total_venta": 1479.76,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1479.76
+          },
+          {
+            "id_ven": 1432,
+            "fecha_ven": "2026-08-05T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 29,
+            "total_venta": 2677.36,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2677.36
+          },
+          {
+            "id_ven": 1434,
+            "fecha_ven": "2025-01-28T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 78,
+            "total_venta": 1427.7,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1427.7
+          },
+          {
+            "id_ven": 1435,
+            "fecha_ven": "2026-02-02T00:00:00.000Z",
+            "id_ti": 17,
+            "id_cli": 65,
+            "total_venta": 2467.82,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2467.82
+          },
+          {
+            "id_ven": 1437,
+            "fecha_ven": "2026-03-22T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 147,
+            "total_venta": 1157.65,
+            "monto_total_pagado": 728.3,
+            "saldo_pendiente": 429.35
+          },
+          {
+            "id_ven": 1444,
+            "fecha_ven": "2025-06-08T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 20,
+            "total_venta": 717.8,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 717.8
+          },
+          {
+            "id_ven": 1445,
+            "fecha_ven": "2026-05-11T00:00:00.000Z",
+            "id_ti": 18,
+            "id_cli": 105,
+            "total_venta": 2617.96,
+            "monto_total_pagado": 1416.97,
+            "saldo_pendiente": 1200.99
+          },
+          {
+            "id_ven": 1446,
+            "fecha_ven": "2026-08-17T00:00:00.000Z",
+            "id_ti": 13,
+            "id_cli": 183,
+            "total_venta": 1369.2,
+            "monto_total_pagado": 988.39,
+            "saldo_pendiente": 380.81
+          },
+          {
+            "id_ven": 1450,
+            "fecha_ven": "2025-06-05T00:00:00.000Z",
+            "id_ti": 1,
+            "id_cli": 4,
+            "total_venta": 2290.52,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2290.52
+          },
+          {
+            "id_ven": 1454,
+            "fecha_ven": "2026-05-08T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 66,
+            "total_venta": 1205.04,
+            "monto_total_pagado": 839.15,
+            "saldo_pendiente": 365.89
+          },
+          {
+            "id_ven": 1456,
+            "fecha_ven": "2025-05-04T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 219,
+            "total_venta": 2179.39,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2179.39
+          },
+          {
+            "id_ven": 1460,
+            "fecha_ven": "2025-02-21T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 216,
+            "total_venta": 751.81,
+            "monto_total_pagado": 467.07,
+            "saldo_pendiente": 284.74
+          },
+          {
+            "id_ven": 1462,
+            "fecha_ven": "2026-04-12T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 173,
+            "total_venta": 392.16,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 392.16
+          },
+          {
+            "id_ven": 1471,
+            "fecha_ven": "2026-07-11T00:00:00.000Z",
+            "id_ti": 9,
+            "id_cli": 172,
+            "total_venta": 427.13,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 427.13
+          },
+          {
+            "id_ven": 1473,
+            "fecha_ven": "2025-12-24T00:00:00.000Z",
+            "id_ti": 14,
+            "id_cli": 35,
+            "total_venta": 1422.68,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1422.68
+          },
+          {
+            "id_ven": 1484,
+            "fecha_ven": "2025-01-05T00:00:00.000Z",
+            "id_ti": 2,
+            "id_cli": 23,
+            "total_venta": 1913.1,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1913.1
+          },
+          {
+            "id_ven": 1487,
+            "fecha_ven": "2025-08-21T00:00:00.000Z",
+            "id_ti": 5,
+            "id_cli": 83,
+            "total_venta": 1922.59,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1922.59
+          },
+          {
+            "id_ven": 1490,
+            "fecha_ven": "2026-02-22T00:00:00.000Z",
+            "id_ti": 10,
+            "id_cli": 189,
+            "total_venta": 1497.45,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 1497.45
+          },
+          {
+            "id_ven": 1493,
+            "fecha_ven": "2026-02-06T00:00:00.000Z",
+            "id_ti": 16,
+            "id_cli": 223,
+            "total_venta": 688.5,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 688.5
+          },
+          {
+            "id_ven": 1497,
+            "fecha_ven": "2025-02-16T00:00:00.000Z",
+            "id_ti": 20,
+            "id_cli": 291,
+            "total_venta": 2615.01,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 2615.01
+          },
+          {
+            "id_ven": 8855409191,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 50,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 50
+          },
+          {
+            "id_ven": 8855409192,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 0,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 0
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/3/8855409189",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 2,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "ventas/8855409190",
+      "status": 200,
+      "response": {
+        "message": "Venta ANULADA; inventario restituido"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/3/8855409189",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 5,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "ventas/8855409190",
+      "status": 200,
+      "response": {
+        "message": "Venta ANULADA; inventario restituido"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "catalogos-producto/3/8855409189",
+      "status": 200,
+      "response": {
+        "precio_vigente_cat_pro": 10,
+        "existencia_actual_cat_pro": 5,
+        "id_ti": 3,
+        "id_pro": 8855409189
+      }
+    },
+    {
+      "method": "POST",
+      "path": "pagos",
+      "body": {
+        "id_pag": 8855409201,
+        "monto_pag": 1,
+        "id_met_pag": 1,
+        "id_ven": 8855409190
+      },
+      "status": 400,
+      "response": {
+        "error": "No se pueden modificar pagos de ventas ANULADAS"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "paises",
+      "body": {
+        "id_pa": 8855409488,
+        "nombre_pa": "X",
+        "inyeccion": "DROP TABLE venta"
+      },
+      "status": 400,
+      "response": {
+        "error": "Campo desconocido: inyeccion"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "productos/no-es-id",
+      "status": 400,
+      "response": {
+        "error": "id_pro debe ser un entero entre 0 y 9999999999"
+      }
+    }
+  ]
+}

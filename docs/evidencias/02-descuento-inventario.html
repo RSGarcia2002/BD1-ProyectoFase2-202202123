@@ -1,0 +1,17 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><title>Descuento automatico de inventario</title><style>body{margin:0;background:#edf2f7;color:#14273e;font:17px -apple-system,BlinkMacSystemFont,Arial,sans-serif}main{max-width:1080px;margin:auto;padding:40px}header{border-top:7px solid #1769aa;padding-top:22px}small{color:#42617c;letter-spacing:1px}h1{font-size:34px;margin:16px 0 12px}p{line-height:1.6}article{background:white;border:1px solid #d0dce7;border-radius:12px;margin-top:22px;padding:24px;box-shadow:0 3px 14px #1f477a0c}.request{font:15px ui-monospace,monospace;background:#e8f1fa;padding:14px;overflow-wrap:anywhere}.request b{color:#11603e}.request span{float:right;font-weight:bold}h3{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#547088;margin:20px 0 8px}pre{font:15px/1.55 ui-monospace,SFMono-Regular,monospace;white-space:pre-wrap;margin:0;color:#152c42}footer{font-size:13px;color:#506c84;margin-top:24px;border-top:1px solid #c9d7e5;padding-top:18px}.badge{display:inline-block;padding:7px 12px;border-radius:6px;background:#d9eee3;color:#1b5d3a;font-size:14px;font-weight:600}</style><main><header><small>COMERCIAL LA ESTRELLA · BD1 · 202202123</small><h1>Descuento automatico de inventario</h1><p>Dos unidades vendidas: existencias de 10 a 8 en la tienda correspondiente.</p><div class="badge">Coleccion Postman validada con Newman</div></header><article><div class="request"><b>POST</b> /api/detalles-venta <span>HTTP 201</span></div><h3>Solicitud JSON</h3><pre>{
+  "id_ven": 8855624447,
+  "id_pro": 8855624446,
+  "cantidad_des_ven": 2,
+  "precio_unitario_des_ven": 10
+}</pre><h3>Respuesta real</h3><pre>{
+  "cantidad_des_ven": 2,
+  "precio_unitario_des_ven": 10,
+  "subtotal_des_ven": 20,
+  "id_ven": 8855624447,
+  "id_pro": 8855624446
+}</pre></article><article><div class="request"><b>GET</b> /api/catalogos-producto/3/8855624446 <span>HTTP 200</span></div><h3>Respuesta real</h3><pre>{
+  "precio_vigente_cat_pro": 10,
+  "existencia_actual_cat_pro": 8,
+  "id_ti": 3,
+  "id_pro": 8855624446
+}</pre></article><footer>Captura de informe generado a partir de solicitudes y respuestas reales. Ejecucion: 12/10/2026, 7:40:23 p. m.. Fuente: postman-newman.json. No representa la interfaz grafica de Postman.</footer></main></html>

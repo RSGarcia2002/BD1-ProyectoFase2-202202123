@@ -1,0 +1,45 @@
+{
+  "fecha": "2026-10-13T01:44:42.506Z",
+  "lector": {
+    "lectura": 1,
+    "insercion": 0,
+    "actualizacion": 0,
+    "eliminacion": 0
+  },
+  "api": {
+    "crear_tablas": 0,
+    "insertar": 1
+  },
+  "tablas": [
+    "cargo",
+    "catalogo_producto",
+    "categoria",
+    "cliente",
+    "departamento",
+    "desglose_venta",
+    "empleado",
+    "estado_venta",
+    "marca",
+    "metodo_pago",
+    "municipio",
+    "pago",
+    "pais",
+    "persona",
+    "producto",
+    "schema_version",
+    "tienda",
+    "tipo_identificacion",
+    "tipo_tienda",
+    "venta"
+  ],
+  "vistas": [
+    "Vista_Saldos_Pendientes",
+    "Vista_Top_Productos",
+    "Vista_Ventas_Ubicacion"
+  ],
+  "triggers": [
+    "Insert_Detalle",
+    "Insert_Pago",
+    "Validar_Venta"
+  ]
+}

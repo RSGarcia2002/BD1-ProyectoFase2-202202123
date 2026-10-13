@@ -1,0 +1,102 @@
+{
+  "fecha": "2026-10-13T01:36:39.191Z",
+  "total": 9068,
+  "tablas": [
+    {
+      "tabla": "pais",
+      "esperados": 3,
+      "obtenidos": 3
+    },
+    {
+      "tabla": "departamento",
+      "esperados": 32,
+      "obtenidos": 32
+    },
+    {
+      "tabla": "municipio",
+      "esperados": 80,
+      "obtenidos": 80
+    },
+    {
+      "tabla": "tipo_tienda",
+      "esperados": 4,
+      "obtenidos": 4
+    },
+    {
+      "tabla": "tipo_identificacion",
+      "esperados": 3,
+      "obtenidos": 3
+    },
+    {
+      "tabla": "cargo",
+      "esperados": 4,
+      "obtenidos": 4
+    },
+    {
+      "tabla": "categoria",
+      "esperados": 10,
+      "obtenidos": 10
+    },
+    {
+      "tabla": "marca",
+      "esperados": 15,
+      "obtenidos": 15
+    },
+    {
+      "tabla": "estado_venta",
+      "esperados": 3,
+      "obtenidos": 3
+    },
+    {
+      "tabla": "metodo_pago",
+      "esperados": 4,
+      "obtenidos": 4
+    },
+    {
+      "tabla": "persona",
+      "esperados": 388,
+      "obtenidos": 388
+    },
+    {
+      "tabla": "tienda",
+      "esperados": 20,
+      "obtenidos": 20
+    },
+    {
+      "tabla": "empleado",
+      "esperados": 88,
+      "obtenidos": 88
+    },
+    {
+      "tabla": "cliente",
+      "esperados": 300,
+      "obtenidos": 300
+    },
+    {
+      "tabla": "producto",
+      "esperados": 114,
+      "obtenidos": 114
+    },
+    {
+      "tabla": "catalogo_producto",
+      "esperados": 1424,
+      "obtenidos": 1424
+    },
+    {
+      "tabla": "venta",
+      "esperados": 1500,
+      "obtenidos": 1500
+    },
+    {
+      "tabla": "desglose_venta",
+      "esperados": 3687,
+      "obtenidos": 3687
+    },
+    {
+      "tabla": "pago",
+      "esperados": 1389,
+      "obtenidos": 1389
+    }
+  ],
+  "estadosCoinciden": true
+}

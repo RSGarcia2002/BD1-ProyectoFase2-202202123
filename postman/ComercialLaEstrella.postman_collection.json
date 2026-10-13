@@ -1,0 +1,4323 @@
+{
+  "info": {
+    "name": "BD1 Fase 2 - Comercial La Estrella - 202202123",
+    "description": "Coleccion reproducible obtenida de las peticiones verificadas contra SQL Server real. Ejecutar completa con Runner en orden, una iteracion. Requiere cargar antes el dataset original. Crea registros de prueba con IDs nuevos; las ventas se eliminan logicamente. La prueba concurrente real se ejecuta con npm run verificar.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3002"
+    },
+    {
+      "key": "id_0",
+      "value": "8855408489"
+    },
+    {
+      "key": "id_1",
+      "value": "8855408490"
+    },
+    {
+      "key": "id_2",
+      "value": "8855408491"
+    },
+    {
+      "key": "id_3",
+      "value": "8855408492"
+    },
+    {
+      "key": "id_4",
+      "value": "8855408493"
+    },
+    {
+      "key": "id_5",
+      "value": "8855408494"
+    },
+    {
+      "key": "id_6",
+      "value": "8855408495"
+    },
+    {
+      "key": "id_7",
+      "value": "8855408496"
+    },
+    {
+      "key": "id_8",
+      "value": "8855408497"
+    },
+    {
+      "key": "id_9",
+      "value": "8855408498"
+    },
+    {
+      "key": "id_10",
+      "value": "8855408499"
+    },
+    {
+      "key": "id_11",
+      "value": "8855408500"
+    },
+    {
+      "key": "id_12",
+      "value": "8855408501"
+    },
+    {
+      "key": "id_13",
+      "value": "8855408502"
+    },
+    {
+      "key": "id_14",
+      "value": "8855408503"
+    },
+    {
+      "key": "id_15",
+      "value": "8855408504"
+    },
+    {
+      "key": "id_16",
+      "value": "8855408506"
+    },
+    {
+      "key": "id_17",
+      "value": "8855408508"
+    },
+    {
+      "key": "id_18",
+      "value": "8855408602"
+    },
+    {
+      "key": "id_19",
+      "value": "8855408603"
+    },
+    {
+      "key": "id_20",
+      "value": "8855408989"
+    },
+    {
+      "key": "id_21",
+      "value": "8855408990"
+    },
+    {
+      "key": "id_22",
+      "value": "8855408991"
+    },
+    {
+      "key": "id_23",
+      "value": "8855409189"
+    },
+    {
+      "key": "id_24",
+      "value": "8855409190"
+    },
+    {
+      "key": "id_25",
+      "value": "8855409191"
+    },
+    {
+      "key": "id_26",
+      "value": "8855409192"
+    },
+    {
+      "key": "id_27",
+      "value": "8855409199"
+    },
+    {
+      "key": "id_28",
+      "value": "8855409200"
+    },
+    {
+      "key": "id_29",
+      "value": "8855409201"
+    },
+    {
+      "key": "id_30",
+      "value": "8855409488"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if (pm.info.requestName.startsWith('001 ')) {",
+          " const base = 8000000000 + (Date.now() % 1000000000);",
+          " pm.collectionVariables.set('id_0', String(base + 0));",
+          " pm.collectionVariables.set('id_1', String(base + 1));",
+          " pm.collectionVariables.set('id_2', String(base + 2));",
+          " pm.collectionVariables.set('id_3', String(base + 3));",
+          " pm.collectionVariables.set('id_4', String(base + 4));",
+          " pm.collectionVariables.set('id_5', String(base + 5));",
+          " pm.collectionVariables.set('id_6', String(base + 6));",
+          " pm.collectionVariables.set('id_7', String(base + 7));",
+          " pm.collectionVariables.set('id_8', String(base + 8));",
+          " pm.collectionVariables.set('id_9', String(base + 9));",
+          " pm.collectionVariables.set('id_10', String(base + 10));",
+          " pm.collectionVariables.set('id_11', String(base + 11));",
+          " pm.collectionVariables.set('id_12', String(base + 12));",
+          " pm.collectionVariables.set('id_13', String(base + 13));",
+          " pm.collectionVariables.set('id_14', String(base + 14));",
+          " pm.collectionVariables.set('id_15', String(base + 15));",
+          " pm.collectionVariables.set('id_16', String(base + 17));",
+          " pm.collectionVariables.set('id_17', String(base + 19));",
+          " pm.collectionVariables.set('id_18', String(base + 113));",
+          " pm.collectionVariables.set('id_19', String(base + 114));",
+          " pm.collectionVariables.set('id_20', String(base + 500));",
+          " pm.collectionVariables.set('id_21', String(base + 501));",
+          " pm.collectionVariables.set('id_22', String(base + 502));",
+          " pm.collectionVariables.set('id_23', String(base + 700));",
+          " pm.collectionVariables.set('id_24', String(base + 701));",
+          " pm.collectionVariables.set('id_25', String(base + 702));",
+          " pm.collectionVariables.set('id_26', String(base + 703));",
+          " pm.collectionVariables.set('id_27', String(base + 710));",
+          " pm.collectionVariables.set('id_28', String(base + 711));",
+          " pm.collectionVariables.set('id_29', String(base + 712));",
+          " pm.collectionVariables.set('id_30', String(base + 999));",
+          "}"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "001 GET ../health → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/health"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "002 POST paises → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/paises",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pa\": {{id_1}},\n  \"nombre_pa\": \"Prueba {{id_1}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "003 GET paises?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/paises?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "004 GET paises/{{id_1}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/paises/{{id_1}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "005 PUT paises/{{id_1}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/paises/{{id_1}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_pa\": \"Prueba {{id_1}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "006 DELETE paises/{{id_1}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/paises/{{id_1}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "007 GET paises/{{id_1}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/paises/{{id_1}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "008 POST departamentos → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/departamentos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_dep\": {{id_2}},\n  \"nombre_dep\": \"Prueba {{id_2}}\",\n  \"id_pa\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "009 GET departamentos?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/departamentos?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "010 GET departamentos/{{id_2}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/departamentos/{{id_2}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "011 PUT departamentos/{{id_2}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/departamentos/{{id_2}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_dep\": \"Prueba {{id_2}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "012 DELETE departamentos/{{id_2}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/departamentos/{{id_2}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "013 GET departamentos/{{id_2}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/departamentos/{{id_2}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "014 POST municipios → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/municipios",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_mun\": {{id_3}},\n  \"nombre_mun\": \"Prueba {{id_3}}\",\n  \"id_dep\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "015 GET municipios?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/municipios?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "016 GET municipios/{{id_3}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/municipios/{{id_3}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "017 PUT municipios/{{id_3}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/municipios/{{id_3}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_mun\": \"Prueba {{id_3}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "018 DELETE municipios/{{id_3}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/municipios/{{id_3}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "019 GET municipios/{{id_3}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/municipios/{{id_3}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "020 POST tipos-tienda → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/tipos-tienda",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_tip_tie\": {{id_4}},\n  \"nombre_tip_tie\": \"Prueba {{id_4}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "021 GET tipos-tienda?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tipos-tienda?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "022 GET tipos-tienda/{{id_4}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tipos-tienda/{{id_4}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "023 PUT tipos-tienda/{{id_4}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/tipos-tienda/{{id_4}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_tip_tie\": \"Prueba {{id_4}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "024 DELETE tipos-tienda/{{id_4}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/tipos-tienda/{{id_4}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "025 GET tipos-tienda/{{id_4}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tipos-tienda/{{id_4}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "026 POST tipos-identificacion → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/tipos-identificacion",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_tip_ide\": {{id_5}},\n  \"nombre_tip_ide\": \"Prueba {{id_5}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "027 GET tipos-identificacion?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tipos-identificacion?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "028 GET tipos-identificacion/{{id_5}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tipos-identificacion/{{id_5}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "029 PUT tipos-identificacion/{{id_5}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/tipos-identificacion/{{id_5}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_tip_ide\": \"Prueba {{id_5}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "030 DELETE tipos-identificacion/{{id_5}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/tipos-identificacion/{{id_5}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "031 GET tipos-identificacion/{{id_5}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tipos-identificacion/{{id_5}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "032 POST cargos → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/cargos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_car\": {{id_6}},\n  \"nombre_car\": \"Prueba {{id_6}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "033 GET cargos?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/cargos?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "034 GET cargos/{{id_6}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/cargos/{{id_6}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "035 PUT cargos/{{id_6}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/cargos/{{id_6}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_car\": \"Prueba {{id_6}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "036 DELETE cargos/{{id_6}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/cargos/{{id_6}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "037 GET cargos/{{id_6}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/cargos/{{id_6}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "038 POST categorias → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/categorias",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_cat\": {{id_7}},\n  \"nombre_cat\": \"Prueba {{id_7}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "039 GET categorias?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/categorias?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "040 GET categorias/{{id_7}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/categorias/{{id_7}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "041 PUT categorias/{{id_7}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/categorias/{{id_7}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_cat\": \"Prueba {{id_7}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "042 DELETE categorias/{{id_7}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/categorias/{{id_7}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "043 GET categorias/{{id_7}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/categorias/{{id_7}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "044 POST marcas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/marcas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_mar\": {{id_8}},\n  \"nombre_mar\": \"Prueba {{id_8}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "045 GET marcas?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/marcas?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "046 GET marcas/{{id_8}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/marcas/{{id_8}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "047 PUT marcas/{{id_8}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/marcas/{{id_8}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_mar\": \"Prueba {{id_8}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "048 DELETE marcas/{{id_8}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/marcas/{{id_8}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "049 GET marcas/{{id_8}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/marcas/{{id_8}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "050 POST estados-venta → 409",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/estados-venta",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_es_ven\": {{id_9}},\n  \"nombre_es_ven\": \"REGISTRADA\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 409', () => pm.response.to.have.status(409));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Ya existe un registro con esa llave o valor unico\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "051 PUT estados-venta/1 → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/estados-venta/1",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_es_ven\": \"REGISTRADA\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "052 DELETE estados-venta/1 → 409",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/estados-venta/1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 409', () => pm.response.to.have.status(409));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"La operacion viola una relacion o restriccion de la base de datos\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "053 GET estados-venta?limit=10 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/estados-venta?limit=10"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "054 POST metodos-pago → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/metodos-pago",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_met_pag\": {{id_10}},\n  \"nombre_met_pag\": \"Prueba {{id_10}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "055 GET metodos-pago?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/metodos-pago?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "056 GET metodos-pago/{{id_10}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/metodos-pago/{{id_10}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "057 PUT metodos-pago/{{id_10}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/metodos-pago/{{id_10}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_met_pag\": \"Prueba {{id_10}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "058 DELETE metodos-pago/{{id_10}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/metodos-pago/{{id_10}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "059 GET metodos-pago/{{id_10}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/metodos-pago/{{id_10}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "060 POST personas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/personas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_per\": {{id_11}},\n  \"nombre_per\": \"Prueba {{id_11}}\",\n  \"apellido_per\": \"Garcia\",\n  \"telefono\": \"59398441\",\n  \"correo_per\": \"t{{id_11}}@example.test\",\n  \"direccion_per\": \"13 Calle 3-74 zona 4\",\n  \"id_mun\": 41\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "061 GET personas?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/personas?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "062 GET personas/{{id_11}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/personas/{{id_11}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "063 PUT personas/{{id_11}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/personas/{{id_11}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_per\": \"Prueba {{id_11}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "064 DELETE personas/{{id_11}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/personas/{{id_11}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "065 GET personas/{{id_11}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/personas/{{id_11}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "066 POST tiendas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/tiendas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ti\": {{id_12}},\n  \"nombre_ti\": \"Prueba {{id_12}}\",\n  \"direccion_ti\": \"18 Avenida 7-38 zona 15\",\n  \"telefono_ti\": \"24335942\",\n  \"id_mun\": 41,\n  \"id_tip_tie\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "067 GET tiendas?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tiendas?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "068 GET tiendas/{{id_12}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tiendas/{{id_12}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "069 PUT tiendas/{{id_12}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/tiendas/{{id_12}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_ti\": \"Prueba {{id_12}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "070 DELETE tiendas/{{id_12}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/tiendas/{{id_12}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "071 GET tiendas/{{id_12}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/tiendas/{{id_12}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "072 POST personas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/personas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_per\": {{id_18}},\n  \"nombre_per\": \"Cristina\",\n  \"apellido_per\": \"Garcia\",\n  \"telefono\": \"59398441\",\n  \"correo_per\": \"aux{{id_13}}@example.test\",\n  \"direccion_per\": \"13 Calle 3-74 zona 4\",\n  \"id_mun\": 41\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "073 POST empleados → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/empleados",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_emp\": {{id_13}},\n  \"fecha_contratacion\": \"2021-09-15\",\n  \"id_ti\": 1,\n  \"id_car\": 1,\n  \"id_per\": {{id_18}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "074 GET empleados?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/empleados?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "075 GET empleados/{{id_13}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/empleados/{{id_13}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "076 PUT empleados/{{id_13}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/empleados/{{id_13}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fecha_contratacion\": \"2021-09-15\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "077 DELETE empleados/{{id_13}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/empleados/{{id_13}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "078 GET empleados/{{id_13}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/empleados/{{id_13}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "079 DELETE personas/{{id_18}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/personas/{{id_18}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "080 POST personas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/personas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_per\": {{id_19}},\n  \"nombre_per\": \"Cristina\",\n  \"apellido_per\": \"Garcia\",\n  \"telefono\": \"59398441\",\n  \"correo_per\": \"aux{{id_14}}@example.test\",\n  \"direccion_per\": \"13 Calle 3-74 zona 4\",\n  \"id_mun\": 41\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "081 POST clientes → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/clientes",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_cli\": {{id_14}},\n  \"id_tip_ide\": 1,\n  \"numero_identificacion\": \"{{id_14}}\",\n  \"id_per\": {{id_19}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "082 GET clientes?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/clientes?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "083 GET clientes/{{id_14}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/clientes/{{id_14}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "084 PUT clientes/{{id_14}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/clientes/{{id_14}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_tip_ide\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "085 DELETE clientes/{{id_14}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/clientes/{{id_14}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "086 GET clientes/{{id_14}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/clientes/{{id_14}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "087 DELETE personas/{{id_19}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/personas/{{id_19}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "088 POST productos → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/productos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pro\": {{id_15}},\n  \"nombre_pro\": \"Prueba {{id_15}}\",\n  \"descripcion_pro\": \"Agua pura presentacion original, categoria Bebidas\",\n  \"id_cat\": 1,\n  \"id_mar\": 4\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "089 GET productos?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/productos?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "090 GET productos/{{id_15}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/productos/{{id_15}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "091 PUT productos/{{id_15}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/productos/{{id_15}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_pro\": \"Prueba {{id_15}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "092 DELETE productos/{{id_15}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/productos/{{id_15}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "093 GET productos/{{id_15}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/productos/{{id_15}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "094 POST productos → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/productos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pro\": {{id_20}},\n  \"nombre_pro\": \"Agua pura Original\",\n  \"descripcion_pro\": \"Agua pura presentacion original, categoria Bebidas\",\n  \"id_cat\": 1,\n  \"id_mar\": 4\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "095 POST catalogos-producto → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/catalogos-producto",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"precio_vigente_cat_pro\": 231.22,\n  \"existencia_actual_cat_pro\": 107,\n  \"id_ti\": 1,\n  \"id_pro\": {{id_20}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "096 GET catalogos-producto?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "097 GET catalogos-producto/1/{{id_20}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/1/{{id_20}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(107));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "098 PUT catalogos-producto/1/{{id_20}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/catalogos-producto/1/{{id_20}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"precio_vigente_cat_pro\": 231.22\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "099 DELETE catalogos-producto/1/{{id_20}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/1/{{id_20}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "100 GET catalogos-producto/1/{{id_20}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/1/{{id_20}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "101 DELETE productos/{{id_20}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/productos/{{id_20}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "102 POST ventas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/ventas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_16}},\n  \"fecha_ven\": \"2026-08-23\",\n  \"id_ti\": 3,\n  \"id_emp\": 11,\n  \"id_cli\": 10,\n  \"id_es_ven\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "103 GET ventas?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "104 GET ventas/{{id_16}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_16}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Total calculado en SQL', () => pm.expect(pm.response.json().total_ven).to.eql(0));",
+              "pm.test('Estado correcto', () => pm.expect(pm.response.json().id_es_ven).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "105 PUT ventas/{{id_16}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/ventas/{{id_16}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fecha_ven\": \"2026-08-23\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "106 DELETE ventas/{{id_16}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_16}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "107 POST ventas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/ventas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_21}},\n  \"fecha_ven\": \"2026-08-23\",\n  \"id_ti\": 3,\n  \"id_emp\": 11,\n  \"id_cli\": 10,\n  \"id_es_ven\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "108 POST detalles-venta → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cantidad_des_ven\": 1,\n  \"precio_unitario_des_ven\": 10,\n  \"id_ven\": {{id_21}},\n  \"id_pro\": 23\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "109 GET detalles-venta?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/detalles-venta?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "110 GET detalles-venta/{{id_21}}/23 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/detalles-venta/{{id_21}}/23"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "111 PUT detalles-venta/{{id_21}}/23 → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta/{{id_21}}/23",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cantidad_des_ven\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "112 DELETE detalles-venta/{{id_21}}/23 → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/detalles-venta/{{id_21}}/23"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "113 GET detalles-venta/{{id_21}}/23 → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/detalles-venta/{{id_21}}/23"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "114 DELETE ventas/{{id_21}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_21}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "115 POST ventas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/ventas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_22}},\n  \"fecha_ven\": \"2026-08-23\",\n  \"id_ti\": 3,\n  \"id_emp\": 11,\n  \"id_cli\": 10,\n  \"id_es_ven\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "116 POST detalles-venta → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_22}},\n  \"id_pro\": 23,\n  \"cantidad_des_ven\": 1,\n  \"precio_unitario_des_ven\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "117 POST pagos → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/pagos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pag\": {{id_17}},\n  \"monto_pag\": 2,\n  \"id_met_pag\": 1,\n  \"id_ven\": {{id_22}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "118 GET pagos?limit=1 → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/pagos?limit=1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "119 GET pagos/{{id_17}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/pagos/{{id_17}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "120 PUT pagos/{{id_17}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/pagos/{{id_17}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"monto_pag\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "121 DELETE pagos/{{id_17}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/pagos/{{id_17}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "122 GET pagos/{{id_17}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/pagos/{{id_17}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "123 DELETE detalles-venta/{{id_22}}/23 → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/detalles-venta/{{id_22}}/23"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "124 DELETE ventas/{{id_22}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_22}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "125 POST productos → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/productos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pro\": {{id_23}},\n  \"nombre_pro\": \"Inventario {{id_0}}\",\n  \"descripcion_pro\": \"Agua pura presentacion original, categoria Bebidas\",\n  \"id_cat\": 1,\n  \"id_mar\": 4\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "126 POST catalogos-producto → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/catalogos-producto",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ti\": 3,\n  \"id_pro\": {{id_23}},\n  \"precio_vigente_cat_pro\": 10,\n  \"existencia_actual_cat_pro\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "127 POST ventas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/ventas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_24}},\n  \"fecha_ven\": \"2026-08-23\",\n  \"id_ti\": 3,\n  \"id_emp\": 11,\n  \"id_cli\": 10,\n  \"id_es_ven\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "128 POST ventas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/ventas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_25}},\n  \"fecha_ven\": \"2026-08-23\",\n  \"id_ti\": 3,\n  \"id_emp\": 11,\n  \"id_cli\": 10,\n  \"id_es_ven\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "129 POST ventas → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/ventas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_26}},\n  \"fecha_ven\": \"2026-08-23\",\n  \"id_ti\": 3,\n  \"id_emp\": 11,\n  \"id_cli\": 10,\n  \"id_es_ven\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "130 POST detalles-venta → 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_24}},\n  \"id_pro\": {{id_23}},\n  \"cantidad_des_ven\": 11,\n  \"precio_unitario_des_ven\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Stock insuficiente\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "131 GET catalogos-producto/3/{{id_23}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(10));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "132 GET detalles-venta/{{id_24}}/{{id_23}} → 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/detalles-venta/{{id_24}}/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Registro no encontrado\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "133 POST detalles-venta → 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta",
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  {\n    \"id_ven\": {{id_24}},\n    \"id_pro\": {{id_23}},\n    \"cantidad_des_ven\": 6,\n    \"precio_unitario_des_ven\": 10\n  },\n  {\n    \"id_ven\": {{id_25}},\n    \"id_pro\": {{id_23}},\n    \"cantidad_des_ven\": 6,\n    \"precio_unitario_des_ven\": 10\n  }\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Stock insuficiente\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "134 GET catalogos-producto/3/{{id_23}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(10));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "135 POST detalles-venta → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_24}},\n  \"id_pro\": {{id_23}},\n  \"cantidad_des_ven\": 2,\n  \"precio_unitario_des_ven\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "136 GET catalogos-producto/3/{{id_23}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(8));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "137 PUT detalles-venta/{{id_24}}/{{id_23}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta/{{id_24}}/{{id_23}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cantidad_des_ven\": 3\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "138 GET catalogos-producto/3/{{id_23}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(7));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "139 GET ventas/{{id_24}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_24}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Total calculado en SQL', () => pm.expect(pm.response.json().total_ven).to.eql(30));",
+              "pm.test('Estado correcto', () => pm.expect(pm.response.json().id_es_ven).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "140 POST pagos → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/pagos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pag\": {{id_27}},\n  \"monto_pag\": 10,\n  \"id_met_pag\": 1,\n  \"id_ven\": {{id_24}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "141 GET ventas/{{id_24}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_24}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Total calculado en SQL', () => pm.expect(pm.response.json().total_ven).to.eql(30));",
+              "pm.test('Estado correcto', () => pm.expect(pm.response.json().id_es_ven).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "142 POST pagos → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/pagos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pag\": {{id_28}},\n  \"monto_pag\": 20,\n  \"id_met_pag\": 1,\n  \"id_ven\": {{id_24}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "143 GET ventas/{{id_24}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_24}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Total calculado en SQL', () => pm.expect(pm.response.json().total_ven).to.eql(30));",
+              "pm.test('Estado correcto', () => pm.expect(pm.response.json().id_es_ven).to.eql(2));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "144 DELETE pagos/{{id_28}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/pagos/{{id_28}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "145 GET ventas/{{id_24}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_24}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Total calculado en SQL', () => pm.expect(pm.response.json().total_ven).to.eql(30));",
+              "pm.test('Estado correcto', () => pm.expect(pm.response.json().id_es_ven).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "146 PUT pagos/{{id_27}} → 200",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/pagos/{{id_27}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"monto_pag\": 35\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "147 GET ventas/{{id_24}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_24}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Total calculado en SQL', () => pm.expect(pm.response.json().total_ven).to.eql(30));",
+              "pm.test('Estado correcto', () => pm.expect(pm.response.json().id_es_ven).to.eql(2));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "148 POST detalles-venta → 201",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_25}},\n  \"id_pro\": {{id_23}},\n  \"cantidad_des_ven\": 5,\n  \"precio_unitario_des_ven\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Llaves devueltas', () => { const b=JSON.parse(pm.variables.replaceIn(pm.request.body.raw)); const r=pm.response.json(); Object.keys(b).filter(k=>k.startsWith('id_')).forEach(k=>pm.expect(r[k]).to.eql(b[k])); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "149 POST detalles-venta → 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/detalles-venta",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_ven\": {{id_26}},\n  \"id_pro\": {{id_23}},\n  \"cantidad_des_ven\": 5,\n  \"precio_unitario_des_ven\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Stock insuficiente\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "150 GET catalogos-producto/3/{{id_23}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(2));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "151 GET reportes/ventas-ubicacion → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/reportes/ventas-ubicacion"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "152 GET reportes/top-productos → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/reportes/top-productos"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "153 GET reportes/saldos-pendientes → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/reportes/saldos-pendientes"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "154 GET catalogos-producto/3/{{id_23}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(2));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "155 DELETE ventas/{{id_24}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_24}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "156 GET catalogos-producto/3/{{id_23}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(5));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "157 DELETE ventas/{{id_24}} → 200",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/ventas/{{id_24}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "158 GET catalogos-producto/3/{{id_23}} → 200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/catalogos-producto/3/{{id_23}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Inventario correcto', () => pm.expect(pm.response.json().existencia_actual_cat_pro).to.eql(5));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "159 POST pagos → 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/pagos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pag\": {{id_29}},\n  \"monto_pag\": 1,\n  \"id_met_pag\": 1,\n  \"id_ven\": {{id_24}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"No se pueden modificar pagos de ventas ANULADAS\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "160 POST paises → 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/paises",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_pa\": {{id_30}},\n  \"nombre_pa\": \"X\",\n  \"inyeccion\": \"DROP TABLE venta\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"Campo desconocido: inyeccion\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "161 GET productos/no-es-id → 400",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/productos/no-es-id"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('Respuesta JSON', () => pm.response.to.be.json);",
+              "pm.test('Mensaje esperado', () => pm.expect(pm.response.json().error).to.eql(\"id_pro debe ser un entero entre 0 y 9999999999\"));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

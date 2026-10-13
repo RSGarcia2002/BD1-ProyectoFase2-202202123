@@ -1,0 +1,66 @@
+Se conserva el archivo .env existente.
+time="2026-10-12T19:46:06-06:00" level=warning msg="already running, ignoring"
+
+added 137 packages in 1s
+time="2026-10-12T19:46:08-06:00" level=warning msg="buildx Docker CLI plugin not found: falling back to the classic builder. BuildKit-only build features (multi-arch, secrets, ssh, additional contexts, ...) will not be available"
+ Image estrella-fase2-202202123-api Building 
+ Image estrella-fase2-202202123-api Building 
+Sending build context to Docker daemon  42.26kB
+Step 1/9 : FROM node:22-alpine
+ ---> 0a7108bf6c7b
+Step 2/9 : WORKDIR /app
+ ---> Using cache
+ ---> 243020e45639
+Step 3/9 : COPY package*.json ./
+ ---> 0c0ed46675b6
+Step 4/9 : RUN npm ci --omit=dev
+ ---> Running in 366c900d0520
+
+added 134 packages, and audited 135 packages in 2s
+
+43 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+[91mnpm notice
+npm notice New major version of npm available! 10.9.9 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+[0m ---> Removed intermediate container 366c900d0520
+ ---> f5f6f41df5f2
+Step 5/9 : COPY src ./src
+ ---> f3c69199296a
+Step 6/9 : USER node
+ ---> Running in 26659c87aad2
+ ---> Removed intermediate container 26659c87aad2
+ ---> 4d985c1ea64d
+Step 7/9 : EXPOSE 3000
+ ---> Running in 92763b8642dd
+ ---> Removed intermediate container 92763b8642dd
+ ---> cabe8d31a0f1
+Step 8/9 : CMD ["node", "src/server.js"]
+ ---> Running in 089e91556cff
+ ---> Removed intermediate container 089e91556cff
+ ---> c8eb372995d4
+Step 9/9 : LABEL com.docker.compose.image.builder=classic
+ ---> Running in d2c882be3e02
+ ---> Removed intermediate container d2c882be3e02
+ ---> 7bd4465c5162
+Successfully built 7bd4465c5162
+Successfully tagged estrella-fase2-202202123-api:latest
+ Image estrella-fase2-202202123-api Built 
+ Image estrella-fase2-202202123-api Built 
+ Container estrella-fase2-202202123-sqlserver-1 Running 
+ Container estrella-fase2-202202123-api-1 Recreate 
+ Container estrella-fase2-202202123-api-1 Recreated 
+ Container estrella-fase2-202202123-sqlserver-1 Waiting 
+ Container estrella-fase2-202202123-sqlserver-1 Healthy 
+ Container estrella-fase2-202202123-init-1 Starting 
+ Container estrella-fase2-202202123-init-1 Started 
+ Container estrella-fase2-202202123-init-1 Waiting 
+ Container estrella-fase2-202202123-init-1 Exited 
+ Container estrella-fase2-202202123-api-1 Starting 
+ Container estrella-fase2-202202123-api-1 Started 
+La base ya tiene datos; se conserva su contenido.
+API: http://localhost:3002/api
