@@ -1,0 +1,25 @@
+{
+  "fecha": "2026-10-24T04:58:00.784Z",
+  "zonaHoraria": "America/Guatemala",
+  "resultado": "APROBADO",
+  "sql": {
+    "version_sql": "16.0.4295.3",
+    "usuario": "estrella_lectura",
+    "puede_insertar": 0
+  },
+  "tablas": 19,
+  "vistas": 3,
+  "triggers": 3,
+  "pruebasUnitarias": 5,
+  "peticionesIntegracion": 160,
+  "peticionesPostman": 161,
+  "comprobacionesPostman": 402,
+  "fallosPostman": 0,
+  "dbeaver": [
+    {
+      "program_name": "DBeaver 26.2.2 - SQLEditor <verificar-estructura.sql>",
+      "last_request_end_time": "2026-10-24T04:57:11.727Z",
+      "ultima_consulta": "-- Verificacion estructural: solo lectura\nSELECT N'USUARIO' AS tipo, SUSER_SNAME"
+    }
+  ]
+}

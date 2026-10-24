@@ -64,3 +64,11 @@ npm run evidencias
 ```
 
 El renderizador usa Google Chrome si esta instalado en macOS; en otros equipos puede requerir `npx playwright install chromium`. No es necesario regenerar las capturas para ejecutar o evaluar la API.
+
+## Revision previa a calificacion - 23 de octubre de 2026
+
+Se iniciaron de nuevo Colima, SQL Server 2022 y la API. Pasaron las 5 pruebas unitarias, 160 peticiones de integracion y 402 comprobaciones en 161 peticiones ejecutadas desde Postman. Los tres reportes coincidieron con el calculo independiente. DBeaver ejecuto la consulta estructural con `estrella_lectura`, sin permiso de INSERT.
+
+Resumen: `precalificacion-2026-10-23.json`. La captura siguiente corresponde a esta nueva ejecucion en la aplicacion.
+
+![Postman listo para calificacion](06-postman-calificacion-2026-10-23.png)

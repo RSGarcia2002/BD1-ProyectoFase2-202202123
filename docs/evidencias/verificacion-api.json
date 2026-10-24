@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-13T01:36:49.082Z",
+  "fecha": "2026-10-24T04:56:41.016Z",
   "resultado": "APROBADO",
   "peticiones": 160,
   "casos": [
@@ -28,13 +28,13 @@
       "method": "POST",
       "path": "paises",
       "body": {
-        "id_pa": 8855408490,
-        "nombre_pa": "Prueba 8855408490"
+        "id_pa": 8817800025,
+        "nombre_pa": "Prueba 8817800025"
       },
       "status": 201,
       "response": {
-        "id_pa": 8855408490,
-        "nombre_pa": "Prueba 8855408490"
+        "id_pa": 8817800025,
+        "nombre_pa": "Prueba 8817800025"
       }
     },
     {
@@ -48,35 +48,35 @@
             "nombre_pa": "Guatemala"
           }
         ],
-        "total": 4,
+        "total": 5,
         "limit": 1,
         "offset": 0
       }
     },
     {
       "method": "GET",
-      "path": "paises/8855408490",
+      "path": "paises/8817800025",
       "status": 200,
       "response": {
-        "id_pa": 8855408490,
-        "nombre_pa": "Prueba 8855408490"
+        "id_pa": 8817800025,
+        "nombre_pa": "Prueba 8817800025"
       }
     },
     {
       "method": "PUT",
-      "path": "paises/8855408490",
+      "path": "paises/8817800025",
       "body": {
-        "nombre_pa": "Prueba 8855408490"
+        "nombre_pa": "Prueba 8817800025"
       },
       "status": 200,
       "response": {
-        "id_pa": 8855408490,
-        "nombre_pa": "Prueba 8855408490"
+        "id_pa": 8817800025,
+        "nombre_pa": "Prueba 8817800025"
       }
     },
     {
       "method": "DELETE",
-      "path": "paises/8855408490",
+      "path": "paises/8817800025",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -84,7 +84,7 @@
     },
     {
       "method": "GET",
-      "path": "paises/8855408490",
+      "path": "paises/8817800025",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -94,14 +94,14 @@
       "method": "POST",
       "path": "departamentos",
       "body": {
-        "id_dep": 8855408491,
-        "nombre_dep": "Prueba 8855408491",
+        "id_dep": 8817800026,
+        "nombre_dep": "Prueba 8817800026",
         "id_pa": 1
       },
       "status": 201,
       "response": {
-        "id_dep": 8855408491,
-        "nombre_dep": "Prueba 8855408491",
+        "id_dep": 8817800026,
+        "nombre_dep": "Prueba 8817800026",
         "id_pa": 1
       }
     },
@@ -124,30 +124,30 @@
     },
     {
       "method": "GET",
-      "path": "departamentos/8855408491",
+      "path": "departamentos/8817800026",
       "status": 200,
       "response": {
-        "id_dep": 8855408491,
-        "nombre_dep": "Prueba 8855408491",
+        "id_dep": 8817800026,
+        "nombre_dep": "Prueba 8817800026",
         "id_pa": 1
       }
     },
     {
       "method": "PUT",
-      "path": "departamentos/8855408491",
+      "path": "departamentos/8817800026",
       "body": {
-        "nombre_dep": "Prueba 8855408491"
+        "nombre_dep": "Prueba 8817800026"
       },
       "status": 200,
       "response": {
-        "id_dep": 8855408491,
-        "nombre_dep": "Prueba 8855408491",
+        "id_dep": 8817800026,
+        "nombre_dep": "Prueba 8817800026",
         "id_pa": 1
       }
     },
     {
       "method": "DELETE",
-      "path": "departamentos/8855408491",
+      "path": "departamentos/8817800026",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -155,7 +155,7 @@
     },
     {
       "method": "GET",
-      "path": "departamentos/8855408491",
+      "path": "departamentos/8817800026",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -165,14 +165,14 @@
       "method": "POST",
       "path": "municipios",
       "body": {
-        "id_mun": 8855408492,
-        "nombre_mun": "Prueba 8855408492",
+        "id_mun": 8817800027,
+        "nombre_mun": "Prueba 8817800027",
         "id_dep": 1
       },
       "status": 201,
       "response": {
-        "id_mun": 8855408492,
-        "nombre_mun": "Prueba 8855408492",
+        "id_mun": 8817800027,
+        "nombre_mun": "Prueba 8817800027",
         "id_dep": 1
       }
     },
@@ -195,30 +195,30 @@
     },
     {
       "method": "GET",
-      "path": "municipios/8855408492",
+      "path": "municipios/8817800027",
       "status": 200,
       "response": {
-        "id_mun": 8855408492,
-        "nombre_mun": "Prueba 8855408492",
+        "id_mun": 8817800027,
+        "nombre_mun": "Prueba 8817800027",
         "id_dep": 1
       }
     },
     {
       "method": "PUT",
-      "path": "municipios/8855408492",
+      "path": "municipios/8817800027",
       "body": {
-        "nombre_mun": "Prueba 8855408492"
+        "nombre_mun": "Prueba 8817800027"
       },
       "status": 200,
       "response": {
-        "id_mun": 8855408492,
-        "nombre_mun": "Prueba 8855408492",
+        "id_mun": 8817800027,
+        "nombre_mun": "Prueba 8817800027",
         "id_dep": 1
       }
     },
     {
       "method": "DELETE",
-      "path": "municipios/8855408492",
+      "path": "municipios/8817800027",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -226,7 +226,7 @@
     },
     {
       "method": "GET",
-      "path": "municipios/8855408492",
+      "path": "municipios/8817800027",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -236,13 +236,13 @@
       "method": "POST",
       "path": "tipos-tienda",
       "body": {
-        "id_tip_tie": 8855408493,
-        "nombre_tip_tie": "Prueba 8855408493"
+        "id_tip_tie": 8817800028,
+        "nombre_tip_tie": "Prueba 8817800028"
       },
       "status": 201,
       "response": {
-        "id_tip_tie": 8855408493,
-        "nombre_tip_tie": "Prueba 8855408493"
+        "id_tip_tie": 8817800028,
+        "nombre_tip_tie": "Prueba 8817800028"
       }
     },
     {
@@ -263,28 +263,28 @@
     },
     {
       "method": "GET",
-      "path": "tipos-tienda/8855408493",
+      "path": "tipos-tienda/8817800028",
       "status": 200,
       "response": {
-        "id_tip_tie": 8855408493,
-        "nombre_tip_tie": "Prueba 8855408493"
+        "id_tip_tie": 8817800028,
+        "nombre_tip_tie": "Prueba 8817800028"
       }
     },
     {
       "method": "PUT",
-      "path": "tipos-tienda/8855408493",
+      "path": "tipos-tienda/8817800028",
       "body": {
-        "nombre_tip_tie": "Prueba 8855408493"
+        "nombre_tip_tie": "Prueba 8817800028"
       },
       "status": 200,
       "response": {
-        "id_tip_tie": 8855408493,
-        "nombre_tip_tie": "Prueba 8855408493"
+        "id_tip_tie": 8817800028,
+        "nombre_tip_tie": "Prueba 8817800028"
       }
     },
     {
       "method": "DELETE",
-      "path": "tipos-tienda/8855408493",
+      "path": "tipos-tienda/8817800028",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -292,7 +292,7 @@
     },
     {
       "method": "GET",
-      "path": "tipos-tienda/8855408493",
+      "path": "tipos-tienda/8817800028",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -302,13 +302,13 @@
       "method": "POST",
       "path": "tipos-identificacion",
       "body": {
-        "id_tip_ide": 8855408494,
-        "nombre_tip_ide": "Prueba 8855408494"
+        "id_tip_ide": 8817800029,
+        "nombre_tip_ide": "Prueba 8817800029"
       },
       "status": 201,
       "response": {
-        "id_tip_ide": 8855408494,
-        "nombre_tip_ide": "Prueba 8855408494"
+        "id_tip_ide": 8817800029,
+        "nombre_tip_ide": "Prueba 8817800029"
       }
     },
     {
@@ -329,28 +329,28 @@
     },
     {
       "method": "GET",
-      "path": "tipos-identificacion/8855408494",
+      "path": "tipos-identificacion/8817800029",
       "status": 200,
       "response": {
-        "id_tip_ide": 8855408494,
-        "nombre_tip_ide": "Prueba 8855408494"
+        "id_tip_ide": 8817800029,
+        "nombre_tip_ide": "Prueba 8817800029"
       }
     },
     {
       "method": "PUT",
-      "path": "tipos-identificacion/8855408494",
+      "path": "tipos-identificacion/8817800029",
       "body": {
-        "nombre_tip_ide": "Prueba 8855408494"
+        "nombre_tip_ide": "Prueba 8817800029"
       },
       "status": 200,
       "response": {
-        "id_tip_ide": 8855408494,
-        "nombre_tip_ide": "Prueba 8855408494"
+        "id_tip_ide": 8817800029,
+        "nombre_tip_ide": "Prueba 8817800029"
       }
     },
     {
       "method": "DELETE",
-      "path": "tipos-identificacion/8855408494",
+      "path": "tipos-identificacion/8817800029",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -358,7 +358,7 @@
     },
     {
       "method": "GET",
-      "path": "tipos-identificacion/8855408494",
+      "path": "tipos-identificacion/8817800029",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -368,13 +368,13 @@
       "method": "POST",
       "path": "cargos",
       "body": {
-        "id_car": 8855408495,
-        "nombre_car": "Prueba 8855408495"
+        "id_car": 8817800030,
+        "nombre_car": "Prueba 8817800030"
       },
       "status": 201,
       "response": {
-        "id_car": 8855408495,
-        "nombre_car": "Prueba 8855408495"
+        "id_car": 8817800030,
+        "nombre_car": "Prueba 8817800030"
       }
     },
     {
@@ -395,28 +395,28 @@
     },
     {
       "method": "GET",
-      "path": "cargos/8855408495",
+      "path": "cargos/8817800030",
       "status": 200,
       "response": {
-        "id_car": 8855408495,
-        "nombre_car": "Prueba 8855408495"
+        "id_car": 8817800030,
+        "nombre_car": "Prueba 8817800030"
       }
     },
     {
       "method": "PUT",
-      "path": "cargos/8855408495",
+      "path": "cargos/8817800030",
       "body": {
-        "nombre_car": "Prueba 8855408495"
+        "nombre_car": "Prueba 8817800030"
       },
       "status": 200,
       "response": {
-        "id_car": 8855408495,
-        "nombre_car": "Prueba 8855408495"
+        "id_car": 8817800030,
+        "nombre_car": "Prueba 8817800030"
       }
     },
     {
       "method": "DELETE",
-      "path": "cargos/8855408495",
+      "path": "cargos/8817800030",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -424,7 +424,7 @@
     },
     {
       "method": "GET",
-      "path": "cargos/8855408495",
+      "path": "cargos/8817800030",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -434,13 +434,13 @@
       "method": "POST",
       "path": "categorias",
       "body": {
-        "id_cat": 8855408496,
-        "nombre_cat": "Prueba 8855408496"
+        "id_cat": 8817800031,
+        "nombre_cat": "Prueba 8817800031"
       },
       "status": 201,
       "response": {
-        "id_cat": 8855408496,
-        "nombre_cat": "Prueba 8855408496"
+        "id_cat": 8817800031,
+        "nombre_cat": "Prueba 8817800031"
       }
     },
     {
@@ -461,28 +461,28 @@
     },
     {
       "method": "GET",
-      "path": "categorias/8855408496",
+      "path": "categorias/8817800031",
       "status": 200,
       "response": {
-        "id_cat": 8855408496,
-        "nombre_cat": "Prueba 8855408496"
+        "id_cat": 8817800031,
+        "nombre_cat": "Prueba 8817800031"
       }
     },
     {
       "method": "PUT",
-      "path": "categorias/8855408496",
+      "path": "categorias/8817800031",
       "body": {
-        "nombre_cat": "Prueba 8855408496"
+        "nombre_cat": "Prueba 8817800031"
       },
       "status": 200,
       "response": {
-        "id_cat": 8855408496,
-        "nombre_cat": "Prueba 8855408496"
+        "id_cat": 8817800031,
+        "nombre_cat": "Prueba 8817800031"
       }
     },
     {
       "method": "DELETE",
-      "path": "categorias/8855408496",
+      "path": "categorias/8817800031",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -490,7 +490,7 @@
     },
     {
       "method": "GET",
-      "path": "categorias/8855408496",
+      "path": "categorias/8817800031",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -500,13 +500,13 @@
       "method": "POST",
       "path": "marcas",
       "body": {
-        "id_mar": 8855408497,
-        "nombre_mar": "Prueba 8855408497"
+        "id_mar": 8817800032,
+        "nombre_mar": "Prueba 8817800032"
       },
       "status": 201,
       "response": {
-        "id_mar": 8855408497,
-        "nombre_mar": "Prueba 8855408497"
+        "id_mar": 8817800032,
+        "nombre_mar": "Prueba 8817800032"
       }
     },
     {
@@ -527,28 +527,28 @@
     },
     {
       "method": "GET",
-      "path": "marcas/8855408497",
+      "path": "marcas/8817800032",
       "status": 200,
       "response": {
-        "id_mar": 8855408497,
-        "nombre_mar": "Prueba 8855408497"
+        "id_mar": 8817800032,
+        "nombre_mar": "Prueba 8817800032"
       }
     },
     {
       "method": "PUT",
-      "path": "marcas/8855408497",
+      "path": "marcas/8817800032",
       "body": {
-        "nombre_mar": "Prueba 8855408497"
+        "nombre_mar": "Prueba 8817800032"
       },
       "status": 200,
       "response": {
-        "id_mar": 8855408497,
-        "nombre_mar": "Prueba 8855408497"
+        "id_mar": 8817800032,
+        "nombre_mar": "Prueba 8817800032"
       }
     },
     {
       "method": "DELETE",
-      "path": "marcas/8855408497",
+      "path": "marcas/8817800032",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -556,7 +556,7 @@
     },
     {
       "method": "GET",
-      "path": "marcas/8855408497",
+      "path": "marcas/8817800032",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -566,7 +566,7 @@
       "method": "POST",
       "path": "estados-venta",
       "body": {
-        "id_es_ven": 8855408498,
+        "id_es_ven": 8817800033,
         "nombre_es_ven": "REGISTRADA"
       },
       "status": 409,
@@ -622,13 +622,13 @@
       "method": "POST",
       "path": "metodos-pago",
       "body": {
-        "id_met_pag": 8855408499,
-        "nombre_met_pag": "Prueba 8855408499"
+        "id_met_pag": 8817800034,
+        "nombre_met_pag": "Prueba 8817800034"
       },
       "status": 201,
       "response": {
-        "id_met_pag": 8855408499,
-        "nombre_met_pag": "Prueba 8855408499"
+        "id_met_pag": 8817800034,
+        "nombre_met_pag": "Prueba 8817800034"
       }
     },
     {
@@ -649,28 +649,28 @@
     },
     {
       "method": "GET",
-      "path": "metodos-pago/8855408499",
+      "path": "metodos-pago/8817800034",
       "status": 200,
       "response": {
-        "id_met_pag": 8855408499,
-        "nombre_met_pag": "Prueba 8855408499"
+        "id_met_pag": 8817800034,
+        "nombre_met_pag": "Prueba 8817800034"
       }
     },
     {
       "method": "PUT",
-      "path": "metodos-pago/8855408499",
+      "path": "metodos-pago/8817800034",
       "body": {
-        "nombre_met_pag": "Prueba 8855408499"
+        "nombre_met_pag": "Prueba 8817800034"
       },
       "status": 200,
       "response": {
-        "id_met_pag": 8855408499,
-        "nombre_met_pag": "Prueba 8855408499"
+        "id_met_pag": 8817800034,
+        "nombre_met_pag": "Prueba 8817800034"
       }
     },
     {
       "method": "DELETE",
-      "path": "metodos-pago/8855408499",
+      "path": "metodos-pago/8817800034",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -678,7 +678,7 @@
     },
     {
       "method": "GET",
-      "path": "metodos-pago/8855408499",
+      "path": "metodos-pago/8817800034",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -688,21 +688,21 @@
       "method": "POST",
       "path": "personas",
       "body": {
-        "id_per": 8855408500,
-        "nombre_per": "Prueba 8855408500",
+        "id_per": 8817800035,
+        "nombre_per": "Prueba 8817800035",
         "apellido_per": "Garcia",
         "telefono": "59398441",
-        "correo_per": "t8855408500@example.test",
+        "correo_per": "t8817800035@example.test",
         "direccion_per": "13 Calle 3-74 zona 4",
         "id_mun": 41
       },
       "status": 201,
       "response": {
-        "id_per": 8855408500,
-        "nombre_per": "Prueba 8855408500",
+        "id_per": 8817800035,
+        "nombre_per": "Prueba 8817800035",
         "apellido_per": "Garcia",
         "telefono": "59398441",
-        "correo_per": "t8855408500@example.test",
+        "correo_per": "t8817800035@example.test",
         "direccion_per": "13 Calle 3-74 zona 4",
         "id_mun": 41
       }
@@ -730,38 +730,38 @@
     },
     {
       "method": "GET",
-      "path": "personas/8855408500",
+      "path": "personas/8817800035",
       "status": 200,
       "response": {
-        "id_per": 8855408500,
-        "nombre_per": "Prueba 8855408500",
+        "id_per": 8817800035,
+        "nombre_per": "Prueba 8817800035",
         "apellido_per": "Garcia",
         "telefono": "59398441",
-        "correo_per": "t8855408500@example.test",
+        "correo_per": "t8817800035@example.test",
         "direccion_per": "13 Calle 3-74 zona 4",
         "id_mun": 41
       }
     },
     {
       "method": "PUT",
-      "path": "personas/8855408500",
+      "path": "personas/8817800035",
       "body": {
-        "nombre_per": "Prueba 8855408500"
+        "nombre_per": "Prueba 8817800035"
       },
       "status": 200,
       "response": {
-        "id_per": 8855408500,
-        "nombre_per": "Prueba 8855408500",
+        "id_per": 8817800035,
+        "nombre_per": "Prueba 8817800035",
         "apellido_per": "Garcia",
         "telefono": "59398441",
-        "correo_per": "t8855408500@example.test",
+        "correo_per": "t8817800035@example.test",
         "direccion_per": "13 Calle 3-74 zona 4",
         "id_mun": 41
       }
     },
     {
       "method": "DELETE",
-      "path": "personas/8855408500",
+      "path": "personas/8817800035",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -769,7 +769,7 @@
     },
     {
       "method": "GET",
-      "path": "personas/8855408500",
+      "path": "personas/8817800035",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -779,8 +779,8 @@
       "method": "POST",
       "path": "tiendas",
       "body": {
-        "id_ti": 8855408501,
-        "nombre_ti": "Prueba 8855408501",
+        "id_ti": 8817800036,
+        "nombre_ti": "Prueba 8817800036",
         "direccion_ti": "18 Avenida 7-38 zona 15",
         "telefono_ti": "24335942",
         "id_mun": 41,
@@ -788,8 +788,8 @@
       },
       "status": 201,
       "response": {
-        "id_ti": 8855408501,
-        "nombre_ti": "Prueba 8855408501",
+        "id_ti": 8817800036,
+        "nombre_ti": "Prueba 8817800036",
         "direccion_ti": "18 Avenida 7-38 zona 15",
         "telefono_ti": "24335942",
         "id_mun": 41,
@@ -818,11 +818,11 @@
     },
     {
       "method": "GET",
-      "path": "tiendas/8855408501",
+      "path": "tiendas/8817800036",
       "status": 200,
       "response": {
-        "id_ti": 8855408501,
-        "nombre_ti": "Prueba 8855408501",
+        "id_ti": 8817800036,
+        "nombre_ti": "Prueba 8817800036",
         "direccion_ti": "18 Avenida 7-38 zona 15",
         "telefono_ti": "24335942",
         "id_mun": 41,
@@ -831,14 +831,14 @@
     },
     {
       "method": "PUT",
-      "path": "tiendas/8855408501",
+      "path": "tiendas/8817800036",
       "body": {
-        "nombre_ti": "Prueba 8855408501"
+        "nombre_ti": "Prueba 8817800036"
       },
       "status": 200,
       "response": {
-        "id_ti": 8855408501,
-        "nombre_ti": "Prueba 8855408501",
+        "id_ti": 8817800036,
+        "nombre_ti": "Prueba 8817800036",
         "direccion_ti": "18 Avenida 7-38 zona 15",
         "telefono_ti": "24335942",
         "id_mun": 41,
@@ -847,7 +847,7 @@
     },
     {
       "method": "DELETE",
-      "path": "tiendas/8855408501",
+      "path": "tiendas/8817800036",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -855,7 +855,7 @@
     },
     {
       "method": "GET",
-      "path": "tiendas/8855408501",
+      "path": "tiendas/8817800036",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -865,21 +865,21 @@
       "method": "POST",
       "path": "personas",
       "body": {
-        "id_per": 8855408602,
+        "id_per": 8817800137,
         "nombre_per": "Cristina",
         "apellido_per": "Garcia",
         "telefono": "59398441",
-        "correo_per": "aux8855408502@example.test",
+        "correo_per": "aux8817800037@example.test",
         "direccion_per": "13 Calle 3-74 zona 4",
         "id_mun": 41
       },
       "status": 201,
       "response": {
-        "id_per": 8855408602,
+        "id_per": 8817800137,
         "nombre_per": "Cristina",
         "apellido_per": "Garcia",
         "telefono": "59398441",
-        "correo_per": "aux8855408502@example.test",
+        "correo_per": "aux8817800037@example.test",
         "direccion_per": "13 Calle 3-74 zona 4",
         "id_mun": 41
       }
@@ -888,19 +888,19 @@
       "method": "POST",
       "path": "empleados",
       "body": {
-        "id_emp": 8855408502,
+        "id_emp": 8817800037,
         "fecha_contratacion": "2021-09-15",
         "id_ti": 1,
         "id_car": 1,
-        "id_per": 8855408602
+        "id_per": 8817800137
       },
       "status": 201,
       "response": {
-        "id_emp": 8855408502,
+        "id_emp": 8817800037,
         "fecha_contratacion": "2021-09-15T00:00:00.000Z",
         "id_ti": 1,
         "id_car": 1,
-        "id_per": 8855408602
+        "id_per": 8817800137
       }
     },
     {
@@ -924,34 +924,34 @@
     },
     {
       "method": "GET",
-      "path": "empleados/8855408502",
+      "path": "empleados/8817800037",
       "status": 200,
       "response": {
-        "id_emp": 8855408502,
+        "id_emp": 8817800037,
         "fecha_contratacion": "2021-09-15T00:00:00.000Z",
         "id_ti": 1,
         "id_car": 1,
-        "id_per": 8855408602
+        "id_per": 8817800137
       }
     },
     {
       "method": "PUT",
-      "path": "empleados/8855408502",
+      "path": "empleados/8817800037",
       "body": {
         "fecha_contratacion": "2021-09-15"
       },
       "status": 200,
       "response": {
-        "id_emp": 8855408502,
+        "id_emp": 8817800037,
         "fecha_contratacion": "2021-09-15T00:00:00.000Z",
         "id_ti": 1,
         "id_car": 1,
-        "id_per": 8855408602
+        "id_per": 8817800137
       }
     },
     {
       "method": "DELETE",
-      "path": "empleados/8855408502",
+      "path": "empleados/8817800037",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -959,7 +959,7 @@
     },
     {
       "method": "GET",
-      "path": "empleados/8855408502",
+      "path": "empleados/8817800037",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -967,7 +967,7 @@
     },
     {
       "method": "DELETE",
-      "path": "personas/8855408602",
+      "path": "personas/8817800137",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -977,21 +977,21 @@
       "method": "POST",
       "path": "personas",
       "body": {
-        "id_per": 8855408603,
+        "id_per": 8817800138,
         "nombre_per": "Cristina",
         "apellido_per": "Garcia",
         "telefono": "59398441",
-        "correo_per": "aux8855408503@example.test",
+        "correo_per": "aux8817800038@example.test",
         "direccion_per": "13 Calle 3-74 zona 4",
         "id_mun": 41
       },
       "status": 201,
       "response": {
-        "id_per": 8855408603,
+        "id_per": 8817800138,
         "nombre_per": "Cristina",
         "apellido_per": "Garcia",
         "telefono": "59398441",
-        "correo_per": "aux8855408503@example.test",
+        "correo_per": "aux8817800038@example.test",
         "direccion_per": "13 Calle 3-74 zona 4",
         "id_mun": 41
       }
@@ -1000,17 +1000,17 @@
       "method": "POST",
       "path": "clientes",
       "body": {
-        "id_cli": 8855408503,
+        "id_cli": 8817800038,
         "id_tip_ide": 1,
-        "numero_identificacion": "8855408503",
-        "id_per": 8855408603
+        "numero_identificacion": "8817800038",
+        "id_per": 8817800138
       },
       "status": 201,
       "response": {
-        "id_cli": 8855408503,
+        "id_cli": 8817800038,
         "id_tip_ide": 1,
-        "numero_identificacion": "8855408503",
-        "id_per": 8855408603
+        "numero_identificacion": "8817800038",
+        "id_per": 8817800138
       }
     },
     {
@@ -1033,32 +1033,32 @@
     },
     {
       "method": "GET",
-      "path": "clientes/8855408503",
+      "path": "clientes/8817800038",
       "status": 200,
       "response": {
-        "id_cli": 8855408503,
+        "id_cli": 8817800038,
         "id_tip_ide": 1,
-        "numero_identificacion": "8855408503",
-        "id_per": 8855408603
+        "numero_identificacion": "8817800038",
+        "id_per": 8817800138
       }
     },
     {
       "method": "PUT",
-      "path": "clientes/8855408503",
+      "path": "clientes/8817800038",
       "body": {
         "id_tip_ide": 1
       },
       "status": 200,
       "response": {
-        "id_cli": 8855408503,
+        "id_cli": 8817800038,
         "id_tip_ide": 1,
-        "numero_identificacion": "8855408503",
-        "id_per": 8855408603
+        "numero_identificacion": "8817800038",
+        "id_per": 8817800138
       }
     },
     {
       "method": "DELETE",
-      "path": "clientes/8855408503",
+      "path": "clientes/8817800038",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1066,7 +1066,7 @@
     },
     {
       "method": "GET",
-      "path": "clientes/8855408503",
+      "path": "clientes/8817800038",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -1074,7 +1074,7 @@
     },
     {
       "method": "DELETE",
-      "path": "personas/8855408603",
+      "path": "personas/8817800138",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1084,16 +1084,16 @@
       "method": "POST",
       "path": "productos",
       "body": {
-        "id_pro": 8855408504,
-        "nombre_pro": "Prueba 8855408504",
+        "id_pro": 8817800039,
+        "nombre_pro": "Prueba 8817800039",
         "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
         "id_cat": 1,
         "id_mar": 4
       },
       "status": 201,
       "response": {
-        "id_pro": 8855408504,
-        "nombre_pro": "Prueba 8855408504",
+        "id_pro": 8817800039,
+        "nombre_pro": "Prueba 8817800039",
         "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
         "id_cat": 1,
         "id_mar": 4
@@ -1113,18 +1113,18 @@
             "id_mar": 4
           }
         ],
-        "total": 115,
+        "total": 120,
         "limit": 1,
         "offset": 0
       }
     },
     {
       "method": "GET",
-      "path": "productos/8855408504",
+      "path": "productos/8817800039",
       "status": 200,
       "response": {
-        "id_pro": 8855408504,
-        "nombre_pro": "Prueba 8855408504",
+        "id_pro": 8817800039,
+        "nombre_pro": "Prueba 8817800039",
         "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
         "id_cat": 1,
         "id_mar": 4
@@ -1132,14 +1132,14 @@
     },
     {
       "method": "PUT",
-      "path": "productos/8855408504",
+      "path": "productos/8817800039",
       "body": {
-        "nombre_pro": "Prueba 8855408504"
+        "nombre_pro": "Prueba 8817800039"
       },
       "status": 200,
       "response": {
-        "id_pro": 8855408504,
-        "nombre_pro": "Prueba 8855408504",
+        "id_pro": 8817800039,
+        "nombre_pro": "Prueba 8817800039",
         "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
         "id_cat": 1,
         "id_mar": 4
@@ -1147,7 +1147,7 @@
     },
     {
       "method": "DELETE",
-      "path": "productos/8855408504",
+      "path": "productos/8817800039",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1155,7 +1155,7 @@
     },
     {
       "method": "GET",
-      "path": "productos/8855408504",
+      "path": "productos/8817800039",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -1165,7 +1165,7 @@
       "method": "POST",
       "path": "productos",
       "body": {
-        "id_pro": 8855408989,
+        "id_pro": 8817800524,
         "nombre_pro": "Agua pura Original",
         "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
         "id_cat": 1,
@@ -1173,7 +1173,7 @@
       },
       "status": 201,
       "response": {
-        "id_pro": 8855408989,
+        "id_pro": 8817800524,
         "nombre_pro": "Agua pura Original",
         "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
         "id_cat": 1,
@@ -1187,14 +1187,14 @@
         "precio_vigente_cat_pro": 231.22,
         "existencia_actual_cat_pro": 107,
         "id_ti": 1,
-        "id_pro": 8855408989
+        "id_pro": 8817800524
       },
       "status": 201,
       "response": {
         "precio_vigente_cat_pro": 231.22,
         "existencia_actual_cat_pro": 107,
         "id_ti": 1,
-        "id_pro": 8855408989
+        "id_pro": 8817800524
       }
     },
     {
@@ -1210,25 +1210,25 @@
             "id_pro": 1
           }
         ],
-        "total": 1425,
+        "total": 1430,
         "limit": 1,
         "offset": 0
       }
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/1/8855408989",
+      "path": "catalogos-producto/1/8817800524",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 231.22,
         "existencia_actual_cat_pro": 107,
         "id_ti": 1,
-        "id_pro": 8855408989
+        "id_pro": 8817800524
       }
     },
     {
       "method": "PUT",
-      "path": "catalogos-producto/1/8855408989",
+      "path": "catalogos-producto/1/8817800524",
       "body": {
         "precio_vigente_cat_pro": 231.22
       },
@@ -1237,12 +1237,12 @@
         "precio_vigente_cat_pro": 231.22,
         "existencia_actual_cat_pro": 107,
         "id_ti": 1,
-        "id_pro": 8855408989
+        "id_pro": 8817800524
       }
     },
     {
       "method": "DELETE",
-      "path": "catalogos-producto/1/8855408989",
+      "path": "catalogos-producto/1/8817800524",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1250,7 +1250,7 @@
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/1/8855408989",
+      "path": "catalogos-producto/1/8817800524",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -1258,7 +1258,7 @@
     },
     {
       "method": "DELETE",
-      "path": "productos/8855408989",
+      "path": "productos/8817800524",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1268,7 +1268,7 @@
       "method": "POST",
       "path": "ventas",
       "body": {
-        "id_ven": 8855408506,
+        "id_ven": 8817800041,
         "fecha_ven": "2026-08-23",
         "id_ti": 3,
         "id_emp": 11,
@@ -1277,7 +1277,7 @@
       },
       "status": 201,
       "response": {
-        "id_ven": 8855408506,
+        "id_ven": 8817800041,
         "total_ven": 0,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1302,17 +1302,17 @@
             "id_es_ven": 2
           }
         ],
-        "total": 1501,
+        "total": 1531,
         "limit": 1,
         "offset": 0
       }
     },
     {
       "method": "GET",
-      "path": "ventas/8855408506",
+      "path": "ventas/8817800041",
       "status": 200,
       "response": {
-        "id_ven": 8855408506,
+        "id_ven": 8817800041,
         "total_ven": 0,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1323,13 +1323,13 @@
     },
     {
       "method": "PUT",
-      "path": "ventas/8855408506",
+      "path": "ventas/8817800041",
       "body": {
         "fecha_ven": "2026-08-23"
       },
       "status": 200,
       "response": {
-        "id_ven": 8855408506,
+        "id_ven": 8817800041,
         "total_ven": 0,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1340,7 +1340,7 @@
     },
     {
       "method": "DELETE",
-      "path": "ventas/8855408506",
+      "path": "ventas/8817800041",
       "status": 200,
       "response": {
         "message": "Venta ANULADA; inventario restituido"
@@ -1350,7 +1350,7 @@
       "method": "POST",
       "path": "ventas",
       "body": {
-        "id_ven": 8855408990,
+        "id_ven": 8817800525,
         "fecha_ven": "2026-08-23",
         "id_ti": 3,
         "id_emp": 11,
@@ -1359,7 +1359,7 @@
       },
       "status": 201,
       "response": {
-        "id_ven": 8855408990,
+        "id_ven": 8817800525,
         "total_ven": 0,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1374,7 +1374,7 @@
       "body": {
         "cantidad_des_ven": 1,
         "precio_unitario_des_ven": 10,
-        "id_ven": 8855408990,
+        "id_ven": 8817800525,
         "id_pro": 23
       },
       "status": 201,
@@ -1382,7 +1382,7 @@
         "cantidad_des_ven": 1,
         "precio_unitario_des_ven": 10,
         "subtotal_des_ven": 10,
-        "id_ven": 8855408990,
+        "id_ven": 8817800525,
         "id_pro": 23
       }
     },
@@ -1400,26 +1400,26 @@
             "id_pro": 35
           }
         ],
-        "total": 3688,
+        "total": 3698,
         "limit": 1,
         "offset": 0
       }
     },
     {
       "method": "GET",
-      "path": "detalles-venta/8855408990/23",
+      "path": "detalles-venta/8817800525/23",
       "status": 200,
       "response": {
         "cantidad_des_ven": 1,
         "precio_unitario_des_ven": 10,
         "subtotal_des_ven": 10,
-        "id_ven": 8855408990,
+        "id_ven": 8817800525,
         "id_pro": 23
       }
     },
     {
       "method": "PUT",
-      "path": "detalles-venta/8855408990/23",
+      "path": "detalles-venta/8817800525/23",
       "body": {
         "cantidad_des_ven": 1
       },
@@ -1428,13 +1428,13 @@
         "cantidad_des_ven": 1,
         "precio_unitario_des_ven": 10,
         "subtotal_des_ven": 10,
-        "id_ven": 8855408990,
+        "id_ven": 8817800525,
         "id_pro": 23
       }
     },
     {
       "method": "DELETE",
-      "path": "detalles-venta/8855408990/23",
+      "path": "detalles-venta/8817800525/23",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1442,7 +1442,7 @@
     },
     {
       "method": "GET",
-      "path": "detalles-venta/8855408990/23",
+      "path": "detalles-venta/8817800525/23",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -1450,7 +1450,7 @@
     },
     {
       "method": "DELETE",
-      "path": "ventas/8855408990",
+      "path": "ventas/8817800525",
       "status": 200,
       "response": {
         "message": "Venta ANULADA; inventario restituido"
@@ -1460,7 +1460,7 @@
       "method": "POST",
       "path": "ventas",
       "body": {
-        "id_ven": 8855408991,
+        "id_ven": 8817800526,
         "fecha_ven": "2026-08-23",
         "id_ti": 3,
         "id_emp": 11,
@@ -1469,7 +1469,7 @@
       },
       "status": 201,
       "response": {
-        "id_ven": 8855408991,
+        "id_ven": 8817800526,
         "total_ven": 0,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1482,7 +1482,7 @@
       "method": "POST",
       "path": "detalles-venta",
       "body": {
-        "id_ven": 8855408991,
+        "id_ven": 8817800526,
         "id_pro": 23,
         "cantidad_des_ven": 1,
         "precio_unitario_des_ven": 10
@@ -1492,7 +1492,7 @@
         "cantidad_des_ven": 1,
         "precio_unitario_des_ven": 10,
         "subtotal_des_ven": 10,
-        "id_ven": 8855408991,
+        "id_ven": 8817800526,
         "id_pro": 23
       }
     },
@@ -1500,17 +1500,17 @@
       "method": "POST",
       "path": "pagos",
       "body": {
-        "id_pag": 8855408508,
+        "id_pag": 8817800043,
         "monto_pag": 2,
         "id_met_pag": 1,
-        "id_ven": 8855408991
+        "id_ven": 8817800526
       },
       "status": 201,
       "response": {
-        "id_pag": 8855408508,
+        "id_pag": 8817800043,
         "monto_pag": 2,
         "id_met_pag": 1,
-        "id_ven": 8855408991
+        "id_ven": 8817800526
       }
     },
     {
@@ -1526,39 +1526,39 @@
             "id_ven": 1
           }
         ],
-        "total": 1390,
+        "total": 1395,
         "limit": 1,
         "offset": 0
       }
     },
     {
       "method": "GET",
-      "path": "pagos/8855408508",
+      "path": "pagos/8817800043",
       "status": 200,
       "response": {
-        "id_pag": 8855408508,
+        "id_pag": 8817800043,
         "monto_pag": 2,
         "id_met_pag": 1,
-        "id_ven": 8855408991
+        "id_ven": 8817800526
       }
     },
     {
       "method": "PUT",
-      "path": "pagos/8855408508",
+      "path": "pagos/8817800043",
       "body": {
         "monto_pag": 2
       },
       "status": 200,
       "response": {
-        "id_pag": 8855408508,
+        "id_pag": 8817800043,
         "monto_pag": 2,
         "id_met_pag": 1,
-        "id_ven": 8855408991
+        "id_ven": 8817800526
       }
     },
     {
       "method": "DELETE",
-      "path": "pagos/8855408508",
+      "path": "pagos/8817800043",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1566,7 +1566,7 @@
     },
     {
       "method": "GET",
-      "path": "pagos/8855408508",
+      "path": "pagos/8817800043",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -1574,7 +1574,7 @@
     },
     {
       "method": "DELETE",
-      "path": "detalles-venta/8855408991/23",
+      "path": "detalles-venta/8817800526/23",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1582,7 +1582,7 @@
     },
     {
       "method": "DELETE",
-      "path": "ventas/8855408991",
+      "path": "ventas/8817800526",
       "status": 200,
       "response": {
         "message": "Venta ANULADA; inventario restituido"
@@ -1592,16 +1592,16 @@
       "method": "POST",
       "path": "productos",
       "body": {
-        "id_pro": 8855409189,
-        "nombre_pro": "Inventario 8855408489",
+        "id_pro": 8817800724,
+        "nombre_pro": "Inventario 8817800024",
         "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
         "id_cat": 1,
         "id_mar": 4
       },
       "status": 201,
       "response": {
-        "id_pro": 8855409189,
-        "nombre_pro": "Inventario 8855408489",
+        "id_pro": 8817800724,
+        "nombre_pro": "Inventario 8817800024",
         "descripcion_pro": "Agua pura presentacion original, categoria Bebidas",
         "id_cat": 1,
         "id_mar": 4
@@ -1612,7 +1612,7 @@
       "path": "catalogos-producto",
       "body": {
         "id_ti": 3,
-        "id_pro": 8855409189,
+        "id_pro": 8817800724,
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 10
       },
@@ -1621,14 +1621,14 @@
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 10,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
       "method": "POST",
       "path": "ventas",
       "body": {
-        "id_ven": 8855409190,
+        "id_ven": 8817800725,
         "fecha_ven": "2026-08-23",
         "id_ti": 3,
         "id_emp": 11,
@@ -1637,7 +1637,7 @@
       },
       "status": 201,
       "response": {
-        "id_ven": 8855409190,
+        "id_ven": 8817800725,
         "total_ven": 0,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1650,7 +1650,7 @@
       "method": "POST",
       "path": "ventas",
       "body": {
-        "id_ven": 8855409191,
+        "id_ven": 8817800726,
         "fecha_ven": "2026-08-23",
         "id_ti": 3,
         "id_emp": 11,
@@ -1659,7 +1659,7 @@
       },
       "status": 201,
       "response": {
-        "id_ven": 8855409191,
+        "id_ven": 8817800726,
         "total_ven": 0,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1672,7 +1672,7 @@
       "method": "POST",
       "path": "ventas",
       "body": {
-        "id_ven": 8855409192,
+        "id_ven": 8817800727,
         "fecha_ven": "2026-08-23",
         "id_ti": 3,
         "id_emp": 11,
@@ -1681,7 +1681,7 @@
       },
       "status": 201,
       "response": {
-        "id_ven": 8855409192,
+        "id_ven": 8817800727,
         "total_ven": 0,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1694,8 +1694,8 @@
       "method": "POST",
       "path": "detalles-venta",
       "body": {
-        "id_ven": 8855409190,
-        "id_pro": 8855409189,
+        "id_ven": 8817800725,
+        "id_pro": 8817800724,
         "cantidad_des_ven": 11,
         "precio_unitario_des_ven": 10
       },
@@ -1706,18 +1706,18 @@
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/3/8855409189",
+      "path": "catalogos-producto/3/8817800724",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 10,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
       "method": "GET",
-      "path": "detalles-venta/8855409190/8855409189",
+      "path": "detalles-venta/8817800725/8817800724",
       "status": 404,
       "response": {
         "error": "Registro no encontrado"
@@ -1728,14 +1728,14 @@
       "path": "detalles-venta",
       "body": [
         {
-          "id_ven": 8855409190,
-          "id_pro": 8855409189,
+          "id_ven": 8817800725,
+          "id_pro": 8817800724,
           "cantidad_des_ven": 6,
           "precio_unitario_des_ven": 10
         },
         {
-          "id_ven": 8855409191,
-          "id_pro": 8855409189,
+          "id_ven": 8817800726,
+          "id_pro": 8817800724,
           "cantidad_des_ven": 6,
           "precio_unitario_des_ven": 10
         }
@@ -1747,21 +1747,21 @@
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/3/8855409189",
+      "path": "catalogos-producto/3/8817800724",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 10,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
       "method": "POST",
       "path": "detalles-venta",
       "body": {
-        "id_ven": 8855409190,
-        "id_pro": 8855409189,
+        "id_ven": 8817800725,
+        "id_pro": 8817800724,
         "cantidad_des_ven": 2,
         "precio_unitario_des_ven": 10
       },
@@ -1770,24 +1770,24 @@
         "cantidad_des_ven": 2,
         "precio_unitario_des_ven": 10,
         "subtotal_des_ven": 20,
-        "id_ven": 8855409190,
-        "id_pro": 8855409189
+        "id_ven": 8817800725,
+        "id_pro": 8817800724
       }
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/3/8855409189",
+      "path": "catalogos-producto/3/8817800724",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 8,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
       "method": "PUT",
-      "path": "detalles-venta/8855409190/8855409189",
+      "path": "detalles-venta/8817800725/8817800724",
       "body": {
         "cantidad_des_ven": 3
       },
@@ -1796,27 +1796,27 @@
         "cantidad_des_ven": 3,
         "precio_unitario_des_ven": 10,
         "subtotal_des_ven": 30,
-        "id_ven": 8855409190,
-        "id_pro": 8855409189
+        "id_ven": 8817800725,
+        "id_pro": 8817800724
       }
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/3/8855409189",
+      "path": "catalogos-producto/3/8817800724",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 7,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
       "method": "GET",
-      "path": "ventas/8855409190",
+      "path": "ventas/8817800725",
       "status": 200,
       "response": {
-        "id_ven": 8855409190,
+        "id_ven": 8817800725,
         "total_ven": 30,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1829,25 +1829,25 @@
       "method": "POST",
       "path": "pagos",
       "body": {
-        "id_pag": 8855409199,
+        "id_pag": 8817800734,
         "monto_pag": 10,
         "id_met_pag": 1,
-        "id_ven": 8855409190
+        "id_ven": 8817800725
       },
       "status": 201,
       "response": {
-        "id_pag": 8855409199,
+        "id_pag": 8817800734,
         "monto_pag": 10,
         "id_met_pag": 1,
-        "id_ven": 8855409190
+        "id_ven": 8817800725
       }
     },
     {
       "method": "GET",
-      "path": "ventas/8855409190",
+      "path": "ventas/8817800725",
       "status": 200,
       "response": {
-        "id_ven": 8855409190,
+        "id_ven": 8817800725,
         "total_ven": 30,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1860,25 +1860,25 @@
       "method": "POST",
       "path": "pagos",
       "body": {
-        "id_pag": 8855409200,
+        "id_pag": 8817800735,
         "monto_pag": 20,
         "id_met_pag": 1,
-        "id_ven": 8855409190
+        "id_ven": 8817800725
       },
       "status": 201,
       "response": {
-        "id_pag": 8855409200,
+        "id_pag": 8817800735,
         "monto_pag": 20,
         "id_met_pag": 1,
-        "id_ven": 8855409190
+        "id_ven": 8817800725
       }
     },
     {
       "method": "GET",
-      "path": "ventas/8855409190",
+      "path": "ventas/8817800725",
       "status": 200,
       "response": {
-        "id_ven": 8855409190,
+        "id_ven": 8817800725,
         "total_ven": 30,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1889,7 +1889,7 @@
     },
     {
       "method": "DELETE",
-      "path": "pagos/8855409200",
+      "path": "pagos/8817800735",
       "status": 200,
       "response": {
         "message": "Registro eliminado"
@@ -1897,10 +1897,10 @@
     },
     {
       "method": "GET",
-      "path": "ventas/8855409190",
+      "path": "ventas/8817800725",
       "status": 200,
       "response": {
-        "id_ven": 8855409190,
+        "id_ven": 8817800725,
         "total_ven": 30,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1911,24 +1911,24 @@
     },
     {
       "method": "PUT",
-      "path": "pagos/8855409199",
+      "path": "pagos/8817800734",
       "body": {
         "monto_pag": 35
       },
       "status": 200,
       "response": {
-        "id_pag": 8855409199,
+        "id_pag": 8817800734,
         "monto_pag": 35,
         "id_met_pag": 1,
-        "id_ven": 8855409190
+        "id_ven": 8817800725
       }
     },
     {
       "method": "GET",
-      "path": "ventas/8855409190",
+      "path": "ventas/8817800725",
       "status": 200,
       "response": {
-        "id_ven": 8855409190,
+        "id_ven": 8817800725,
         "total_ven": 30,
         "fecha_ven": "2026-08-23T00:00:00.000Z",
         "id_ti": 3,
@@ -1941,18 +1941,18 @@
       "caso": "Compras concurrentes",
       "resultados": [
         {
-          "sale": 8855409191,
+          "sale": 8817800726,
           "status": 201,
           "body": {
             "cantidad_des_ven": 5,
             "precio_unitario_des_ven": 10,
             "subtotal_des_ven": 50,
-            "id_ven": 8855409191,
-            "id_pro": 8855409189
+            "id_ven": 8817800726,
+            "id_pro": 8817800724
           }
         },
         {
-          "sale": 8855409192,
+          "sale": 8817800727,
           "status": 400,
           "body": {
             "error": "Stock insuficiente"
@@ -1962,13 +1962,13 @@
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/3/8855409189",
+      "path": "catalogos-producto/3/8817800724",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 2,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
@@ -2082,8 +2082,8 @@
             "municipio": "Mixco",
             "departamento": "Guatemala",
             "pais": "Guatemala",
-            "cantidad_ventas": 69,
-            "total_facturado": 72808.23
+            "cantidad_ventas": 79,
+            "total_facturado": 73058.23
           },
           {
             "id_ti": 7,
@@ -3079,12 +3079,52 @@
             "monto_total_generado": 1287.39
           },
           {
-            "codigo_producto": 8855409189,
-            "producto": "Inventario 8855408489",
+            "codigo_producto": 8817800724,
+            "producto": "Inventario 8817800024",
             "categoria": "Bebidas",
             "marca": "PuroSabor",
             "unidades_totales_vendidas": 8,
             "monto_total_generado": 80
+          },
+          {
+            "codigo_producto": 8855409189,
+            "producto": "Inventario 8855408489",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 5,
+            "monto_total_generado": 50
+          },
+          {
+            "codigo_producto": 8855473746,
+            "producto": "Inventario 8855473046",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 5,
+            "monto_total_generado": 50
+          },
+          {
+            "codigo_producto": 8855624446,
+            "producto": "Inventario 8855623746",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 5,
+            "monto_total_generado": 50
+          },
+          {
+            "codigo_producto": 8923289314,
+            "producto": "Inventario 8923288614",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 5,
+            "monto_total_generado": 50
+          },
+          {
+            "codigo_producto": 8923828239,
+            "producto": "Inventario 8923827539",
+            "categoria": "Bebidas",
+            "marca": "PuroSabor",
+            "unidades_totales_vendidas": 5,
+            "monto_total_generado": 50
           }
         ]
       }
@@ -6174,6 +6214,24 @@
             "saldo_pendiente": 2615.01
           },
           {
+            "id_ven": 8817800726,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 50,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 50
+          },
+          {
+            "id_ven": 8817800727,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 0,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 0
+          },
+          {
             "id_ven": 8855409191,
             "fecha_ven": "2026-08-23T00:00:00.000Z",
             "id_ti": 3,
@@ -6190,24 +6248,96 @@
             "total_venta": 0,
             "monto_total_pagado": 0,
             "saldo_pendiente": 0
+          },
+          {
+            "id_ven": 8855473748,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 0,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 0
+          },
+          {
+            "id_ven": 8855473749,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 50,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 50
+          },
+          {
+            "id_ven": 8855624448,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 50,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 50
+          },
+          {
+            "id_ven": 8855624449,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 0,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 0
+          },
+          {
+            "id_ven": 8923289316,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 50,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 50
+          },
+          {
+            "id_ven": 8923289317,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 0,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 0
+          },
+          {
+            "id_ven": 8923828241,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 50,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 50
+          },
+          {
+            "id_ven": 8923828242,
+            "fecha_ven": "2026-08-23T00:00:00.000Z",
+            "id_ti": 3,
+            "id_cli": 10,
+            "total_venta": 0,
+            "monto_total_pagado": 0,
+            "saldo_pendiente": 0
           }
         ]
       }
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/3/8855409189",
+      "path": "catalogos-producto/3/8817800724",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 2,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
       "method": "DELETE",
-      "path": "ventas/8855409190",
+      "path": "ventas/8817800725",
       "status": 200,
       "response": {
         "message": "Venta ANULADA; inventario restituido"
@@ -6215,18 +6345,18 @@
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/3/8855409189",
+      "path": "catalogos-producto/3/8817800724",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 5,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
       "method": "DELETE",
-      "path": "ventas/8855409190",
+      "path": "ventas/8817800725",
       "status": 200,
       "response": {
         "message": "Venta ANULADA; inventario restituido"
@@ -6234,23 +6364,23 @@
     },
     {
       "method": "GET",
-      "path": "catalogos-producto/3/8855409189",
+      "path": "catalogos-producto/3/8817800724",
       "status": 200,
       "response": {
         "precio_vigente_cat_pro": 10,
         "existencia_actual_cat_pro": 5,
         "id_ti": 3,
-        "id_pro": 8855409189
+        "id_pro": 8817800724
       }
     },
     {
       "method": "POST",
       "path": "pagos",
       "body": {
-        "id_pag": 8855409201,
+        "id_pag": 8817800736,
         "monto_pag": 1,
         "id_met_pag": 1,
-        "id_ven": 8855409190
+        "id_ven": 8817800725
       },
       "status": 400,
       "response": {
@@ -6261,7 +6391,7 @@
       "method": "POST",
       "path": "paises",
       "body": {
-        "id_pa": 8855409488,
+        "id_pa": 8817801023,
         "nombre_pa": "X",
         "inyeccion": "DROP TABLE venta"
       },
